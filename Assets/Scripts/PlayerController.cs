@@ -1,74 +1,92 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Transform body;
-    [SerializeField] private Transform weapon;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float minimumDistance;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform barrel;
-    [SerializeField] private float bulletSpeed;
-    private Rigidbody2D rigidbody;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _dashForce;
+    [SerializeField] private float _dashCooldown;
+    [SerializeField] private float _dashAmount;
+    [SerializeField] private Transform _hand;
+    [SerializeField] private float _minimumDistance;
+    [SerializeField] private float _rotationSpeed;
+    [SerializeField] private Sprite _dashSprite;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    private Sprite originalSprite;
+
+    public float DashAmount
+    {
+        get => _dashAmount;
+        set => _dashAmount = Mathf.Clamp(value, 0, MaxDashes);
+    }
+
+    public float MaxDashes { get; set; }
+
+    private float dashedTimes;
+    private Rigidbody2D _rigidbody;
     private Vector2 direction;
-    private Vector2 mousePosition;
-    private Camera camera;
+    private bool dashing;
+    private bool readyToDash = true;
+    private Camera _camera;
+    private Vector3 mousePosition;
+
 
     private void Awake()
     {
-        camera = Camera.main;
-        rigidbody = GetComponent<Rigidbody2D>();
+        originalSprite = _spriteRenderer.sprite;
+        MaxDashes = DashAmount;
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _camera = Camera.main;
     }
 
     private void GetInput()
     {
-        direction.x = Input.GetAxisRaw("Horizontal");
-        direction.y = Input.GetAxisRaw("Vertical");
+        direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        dashing = Input.GetKey(KeyCode.Space);
         mousePosition = Input.mousePosition;
     }
     
     private void Update()
     {
         GetInput();
-        if (Input.GetMouseButtonDown(0)) Shoot();
     }
 
     private void FixedUpdate()
     {
         Movement();
-        WeaponRotation();
-    }
-
-    private void Shoot()
-    {
-        var bullet = Instantiate(bulletPrefab, barrel.position, weapon.rotation);
-        var bulletRb = bullet.GetComponent<Rigidbody2D>();
-        bulletRb.velocity = weapon.right * bulletSpeed; // Change 10f to adjust the bullet speed
+        HandRotation();
+        if (dashing && readyToDash && DashAmount > 0) StartCoroutine(PerformDash());;
     }
 
     private void Movement()
     {
-        var move = direction.normalized * (speed * Time.fixedDeltaTime);
-        rigidbody.velocity = move;
+        var move = direction * (_speed * Time.fixedDeltaTime);
+        _rigidbody.velocity = move;
     }
+    
 
-    private void WeaponRotation()
+    private IEnumerator PerformDash()
     {
-        var mouseWorldPosition = camera.ScreenToWorldPoint(mousePosition);
-        var position = weapon.position;
-        var direction = new Vector2(mouseWorldPosition.x - position.x,
-                                    mouseWorldPosition.y - position.y);
-        if (direction.magnitude < minimumDistance) return;
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        _spriteRenderer.sprite = _dashSprite;
+        DashAmount--;
+        readyToDash = false;
+        _rigidbody.AddForce(direction * _dashForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.1f);
+        _spriteRenderer.sprite = originalSprite;
+        readyToDash = true;
+        yield return new WaitForSeconds(_dashCooldown);
+        DashAmount++;
+    }
+    
+    private void HandRotation()
+    {
+        var mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
+        var position = _hand.position;
+        var directionToMouse = new Vector2(mouseWorldPosition.x - position.x,
+            mouseWorldPosition.y - position.y);
+        if (directionToMouse.magnitude < _minimumDistance) return;
+        var angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
         var rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        weapon.rotation = Quaternion.Lerp(weapon.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
+        _hand.rotation = Quaternion.Lerp(_hand.rotation, rotation, _rotationSpeed * Time.fixedDeltaTime);
     }
 }
