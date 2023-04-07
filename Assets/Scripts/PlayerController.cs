@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Sprite _dashSprite;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator animator;
     private Sprite originalSprite;
 
     public float DashAmount
@@ -45,10 +46,17 @@ public class PlayerController : MonoBehaviour
         dashing = Input.GetKey(KeyCode.Space);
         mousePosition = Input.mousePosition;
     }
-    
+
+    private void Animate()
+    {
+        animator.SetFloat("x", direction.x);
+        animator.SetFloat("y", direction.y);
+    }
+
     private void Update()
     {
         GetInput();
+        Animate();
     }
 
     private void FixedUpdate()
