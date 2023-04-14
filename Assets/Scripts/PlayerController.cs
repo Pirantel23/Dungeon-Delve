@@ -1,8 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _hand;
     [SerializeField] private float _minimumDistance;
     [SerializeField] private float _rotationSpeed;
+    [SerializeField] private Sprite _dashSprite;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator animator;
+    private Sprite originalSprite;
 
     public float DashAmount
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        originalSprite = _spriteRenderer.sprite;
         MaxDashes = DashAmount;
         _rigidbody = GetComponent<Rigidbody2D>();
         _camera = Camera.main;
@@ -44,11 +46,17 @@ public class PlayerController : MonoBehaviour
         dashing = Input.GetKey(KeyCode.Space);
         mousePosition = Input.mousePosition;
     }
-    
+
+    private void Animate()
+    {
+        animator.SetFloat("x", direction.x);
+        animator.SetFloat("y", direction.y);
+    }
+
     private void Update()
     {
         GetInput();
-        Debug.Log($"{DashAmount} {readyToDash}");
+        Animate();
     }
 
     private void FixedUpdate()
@@ -67,10 +75,12 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PerformDash()
     {
+        _spriteRenderer.sprite = _dashSprite;
         DashAmount--;
         readyToDash = false;
         _rigidbody.AddForce(direction * _dashForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.1f);
+        _spriteRenderer.sprite = originalSprite;
         readyToDash = true;
         yield return new WaitForSeconds(_dashCooldown);
         DashAmount++;
