@@ -26,10 +26,17 @@ public class PlayerController : MonoBehaviour
     private float dashedTimes;
     private Rigidbody2D _rigidbody;
     private Vector2 direction;
+    private Vector2 lastDirection;
+    private bool walking;
     private bool dashing;
     private bool readyToDash = true;
     private Camera _camera;
     private Vector3 mousePosition;
+    private static readonly int X = Animator.StringToHash("x");
+    private static readonly int Y = Animator.StringToHash("y");
+    private static readonly int LastDirX = Animator.StringToHash("lastDir_x");
+    private static readonly int LastDirY = Animator.StringToHash("lastDir_y");
+    private static readonly int Walking = Animator.StringToHash("walking");
 
 
     private void Awake()
@@ -42,15 +49,22 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
+        walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         dashing = Input.GetKey(KeyCode.Space);
         mousePosition = Input.mousePosition;
+        if (direction.magnitude == 0) return;
+        lastDirection = direction;
+        walking = true;
     }
 
     private void Animate()
     {
-        animator.SetFloat("x", direction.x);
-        animator.SetFloat("y", direction.y);
+        animator.SetFloat(X, direction.x);
+        animator.SetFloat(Y, direction.y);
+        animator.SetFloat(LastDirX, lastDirection.x);
+        animator.SetFloat(LastDirY, lastDirection.y);
+        animator.SetBool(Walking, walking);
     }
 
     private void Update()
