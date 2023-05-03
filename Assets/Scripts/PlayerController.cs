@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int LastDirX = Animator.StringToHash("lastDir_x");
     private static readonly int LastDirY = Animator.StringToHash("lastDir_y");
     private static readonly int Walking = Animator.StringToHash("walking");
+    private static readonly int Dashing = Animator.StringToHash("dashing");
 
 
     private void Awake()
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        dashing = Input.GetKey(KeyCode.Space);
+        dashing = Input.GetKey(KeyCode.Space) && readyToDash;
         mousePosition = Input.mousePosition;
         if (direction.magnitude == 0) return;
         lastDirection = direction;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat(LastDirX, lastDirection.x);
         animator.SetFloat(LastDirY, lastDirection.y);
         animator.SetBool(Walking, walking);
+        animator.SetBool(Dashing, dashing);
     }
 
     private void Update()
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
         DashAmount--;
         readyToDash = false;
         _rigidbody.AddForce(direction * _dashForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         _spriteRenderer.sprite = originalSprite;
         readyToDash = true;
         yield return new WaitForSeconds(_dashCooldown);
