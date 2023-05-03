@@ -52,10 +52,11 @@ public class PlayerController : MonoBehaviour
     {
         walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        dashing = Input.GetKey(KeyCode.Space) && readyToDash;
         mousePosition = Input.mousePosition;
         if (direction.magnitude == 0) return;
+        // Don't need this if player isn't moving
         lastDirection = direction;
+        dashing = Input.GetKey(KeyCode.Space) && readyToDash && DashAmount > 0;
         walking = true;
     }
 
