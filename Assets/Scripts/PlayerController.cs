@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Sprite _dashSprite;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator animator;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float attackDamage;
     private Sprite originalSprite;
 
     public float DashAmount
@@ -30,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private bool walking;
     private bool dashing;
     private bool readyToDash = true;
+    private bool readyToAttack = true;
+    private bool attacking;
     private Camera _camera;
     private Vector3 mousePosition;
     private static readonly int X = Animator.StringToHash("x");
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour
         walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         mousePosition = Input.mousePosition;
+        attacking = Input.GetMouseButton(0);
         if (direction.magnitude == 0) return;
         // Don't need this if player isn't moving
         lastDirection = direction;
@@ -102,7 +108,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(_dashCooldown);
         DashAmount++;
     }
-    
+
     private void HandRotation()
     {
         var mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
