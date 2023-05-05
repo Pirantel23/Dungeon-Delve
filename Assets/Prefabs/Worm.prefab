@@ -115,13 +115,13 @@ GameObject:
   m_Component:
   - component: {fileID: 129066371980968419}
   - component: {fileID: 129066371980968428}
+  - component: {fileID: 1090566028208764262}
   - component: {fileID: 129066371980968430}
   - component: {fileID: 129066371980968429}
   - component: {fileID: 6147662149930861470}
-  - component: {fileID: 1090566028208764262}
   m_Layer: 6
   m_Name: Worm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 129066371062769210}
+  - {fileID: 7290584232586510624}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,15 +155,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858f8c97a5bdf8349a167161a05ecc37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flying: 0
   detectionRange: 2
   minimumRange: 0.1
   speed: 20
-  damage: 0
-  attackSpeed: 0
-  attackRange: 0
+  attackDamage: 20
+  attackCooldown: 0.5
+  attackRange: 0.1
   target: {fileID: 0}
   animator: {fileID: 129066371062769211}
+  attackPoint: {fileID: 7290584232586510624}
+  attackPointExtension: 0.1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &1090566028208764262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129066371980968418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20
+  animator: {fileID: 129066371062769211}
+  despawnTime: 5
 --- !u!50 &129066371980968430
 Rigidbody2D:
   serializedVersion: 4
@@ -226,16 +246,34 @@ CircleCollider2D:
   m_Offset: {x: 0.015865326, y: 0}
   serializedVersion: 2
   m_Radius: 0.03
---- !u!114 &1090566028208764262
-MonoBehaviour:
+--- !u!1 &3013421696032338061
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129066371980968418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 20
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7290584232586510624}
+  m_Layer: 6
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7290584232586510624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013421696032338061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 129066371980968419}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

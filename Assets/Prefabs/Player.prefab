@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5299528363916092779}
   - component: {fileID: 5299528363916092778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5299528364347464700}
   - component: {fileID: 5299528364347464701}
   - component: {fileID: 5299528364347464702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -149,6 +149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackPoint: {fileID: 4953132631367167499}
+  attackPointExtension: 0.1
 --- !u!61 &5299528364347464701
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5299528364763110849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5299528365230985166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +271,8 @@ GameObject:
   - component: {fileID: 5299528365544194668}
   - component: {fileID: 5299528365544194667}
   - component: {fileID: 5299528365544194669}
-  m_Layer: 0
+  - component: {fileID: 850539420441188940}
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,6 +366,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &850539420441188940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299528365544194670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  animator: {fileID: 0}
+  despawnTime: 0
 --- !u!1 &7933994281337342008
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4953132631367167499}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

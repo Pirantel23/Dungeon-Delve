@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attackDamage;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackPointExtension;
 
     public float DashAmount
     {
@@ -115,8 +116,9 @@ public class PlayerController : MonoBehaviour
     private void MoveAttackPoint()
     {
         var position = transform.position;
-        attackPoint.position =
-            new Vector2(position.x + lastDirection.x * 0.1f, position.y + lastDirection.y * 0.1f);
+        attackPoint.position = new Vector2(
+                position.x + lastDirection.x * attackPointExtension, 
+                position.y + lastDirection.y * attackPointExtension);
     }
 
     private IEnumerator PerformAttack()
