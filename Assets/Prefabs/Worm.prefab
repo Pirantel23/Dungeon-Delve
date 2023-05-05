@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 129066371062769210}
   - component: {fileID: 129066371062769188}
   - component: {fileID: 129066371062769211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,8 @@ GameObject:
   - component: {fileID: 129066371980968430}
   - component: {fileID: 129066371980968429}
   - component: {fileID: 6147662149930861470}
-  m_Layer: 0
+  - component: {fileID: 1090566028208764262}
+  m_Layer: 6
   m_Name: Worm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,3 +226,16 @@ CircleCollider2D:
   m_Offset: {x: 0.015865326, y: 0}
   serializedVersion: 2
   m_Radius: 0.03
+--- !u!114 &1090566028208764262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129066371980968418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 20

@@ -1,22 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float amount;
-    void Start()
+    private float maxHealth;
+    
+    private void Start()
     {
+        maxHealth = amount;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(float damage)
     {
-        
+        amount -= damage;
+        if (amount <= 0) Die();
     }
 
-    public void ChangeHealth(float changeAmount)
+    public void Die()
     {
-        amount += changeAmount;
+        Destroy(gameObject);
     }
 }
