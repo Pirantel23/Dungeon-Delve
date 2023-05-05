@@ -143,6 +143,9 @@ MonoBehaviour:
   _dashSprite: {fileID: -2413806693520163455, guid: 9cbfac2e9d91e5945863a82fc9e19550, type: 3}
   _spriteRenderer: {fileID: 5299528365544194667}
   animator: {fileID: 5299528365544194669}
+  attackRange: 0
+  attackCooldown: 0
+  attackDamage: 0
 --- !u!61 &5299528364347464701
 BoxCollider2D:
   m_ObjectHideFlags: 0
