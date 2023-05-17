@@ -1,8 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -19,6 +15,8 @@ public class Health : MonoBehaviour
         maxHealth = amount;
     }
 
+    public float GetAmount() => amount;
+    
     public void TakeDamage(float damage)
     {
         amount -= damage;
@@ -32,6 +30,7 @@ public class Health : MonoBehaviour
         animator.SetBool(Dead, true);
         if (CompareTag("Player")) GetComponent<PlayerController>().enabled = false;
         else if (CompareTag("Enemy")) GetComponent<Enemy>().enabled = false;
+        Money.ChangeValue(2);
         yield return new WaitForSeconds(despawnTime);
         Destroy(gameObject);
     }

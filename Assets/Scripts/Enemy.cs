@@ -85,7 +85,6 @@ public class Enemy : MonoBehaviour
         foreach (var hit in hits)
         {
             if (!hit.isTrigger) continue;
-            Debug.Log(hit);
             hit.GetComponent<Health>().TakeDamage(attackDamage);
         }
         yield return new WaitForSeconds(attackCooldown);
