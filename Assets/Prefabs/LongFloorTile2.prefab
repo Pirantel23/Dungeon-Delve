@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 512135074131296448}
   - component: {fileID: 4856098175693157301}
   m_Layer: 0
-  m_Name: FloorTile2
+  m_Name: LongFloorTile2
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1950024828, guid: 5ae18d53179e57d4b8b262c73214702a, type: 3}
+  m_Sprite: {fileID: 1013933060, guid: 5ae18d53179e57d4b8b262c73214702a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
