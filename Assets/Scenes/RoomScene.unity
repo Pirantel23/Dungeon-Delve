@@ -177,7 +177,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 3.9496555
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -226,7 +226,14 @@ MonoBehaviour:
   - {fileID: 2193479397483252800, guid: 1bd078102a1645d98c75c86654fb1e8a, type: 3}
   - {fileID: 2193479397483252800, guid: 69c2b8c5456393c4c8279132f63c56d8, type: 3}
   - {fileID: 2193479397483252800, guid: 456dbd4a545ed6c4c9a0a0131b082673, type: 3}
-  shadowFloorTiles: []
+  shadowUpFloorTiles:
+  - {fileID: 2193479397483252800, guid: 8af011aad241ec94891f42eb66a575f9, type: 3}
+  - {fileID: 2193479397483252800, guid: d277fb5132c123a46a6f3c73d8455efd, type: 3}
+  - {fileID: 2193479397483252800, guid: 71f602be6a07ad14ea832a7700ef7464, type: 3}
+  - {fileID: 2193479397483252800, guid: 67bca8c5337a6584d9121593ca9a9529, type: 3}
+  - {fileID: 2193479397483252800, guid: ba67748e790016d4080b4c1c7826cec9, type: 3}
+  entranceDoorPrefab: {fileID: 8832177172035222094, guid: 7450c25970c4da74cbe5b372b82cc87a, type: 3}
+  doorPrefab: {fileID: 8832177172035222094, guid: 9973ba5997a2dc64a8b6857e266e05c1, type: 3}
   width: 20
   height: 16
   xOffset: -4
