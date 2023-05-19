@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
     [SerializeField] private LayerMask targetLayer;
+    public int moneyDropped;
     private Collider2D[] hits;
     private Vector2 direction;
     private Rigidbody2D _rigidbody;
