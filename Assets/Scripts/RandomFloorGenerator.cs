@@ -28,19 +28,28 @@ public class RandomFloorGenerator : MonoBehaviour
     [SerializeField] private GameObject doorPrefab;
 
     // Размер матрицы пола
-    [SerializeField] private int width = 20;
-    [SerializeField] private int height = 16;
+    [SerializeField] private int minWidth = 10;
+    [SerializeField] private int minHeight = 8;
+    [SerializeField] private int maxWidth = 20;
+    [SerializeField] private int maxHeight = 16;
+    
 
     // Отступы для центрирования матрицы на сцене
-    [SerializeField] private float xOffset = -4f;
-    [SerializeField] private float yOffset = -2.8f;
     [SerializeField] private float sizeMultiplier = 0.4f;
+    [SerializeField] private int maximumRoomsOnFloor = 7;
+    [SerializeField] private int minimumRoomsOnFloor = 5;
 
+    private const int NewRoomChance = 50;
+    
     private (float, float)[] tilesSizes;
     private Side lastEntranceSide = Side.Up;
-    private int newRoomChance = 100;
+    private int roomCounter;
     private Side[] nearRoomSides;
-    private List<GameObject> doorTiles = new ();
+    private List<GameObject> doorTiles = new();
+    private float xOffset;
+    private float yOffset;
+    private int width;
+    private int height;
 
     // Ссылка на созданные тайлы поля
     private GameObject[,] fieldTiles;
@@ -55,12 +64,10 @@ public class RandomFloorGenerator : MonoBehaviour
     private void Start()
     {
         FillTileSizes();
-        // Создаем матрицу пола
-        fieldTiles = new GameObject[height, width];
+        roomCounter = 1;
         nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
-        var floorMatrix = CreateFloorMatrix();
-        DrawFloorTiles(floorMatrix);
-        DrawDoorsTiles();
+        
+        GenerateCurrentRoom();
     }
 
     private void Update()
@@ -70,11 +77,10 @@ public class RandomFloorGenerator : MonoBehaviour
             ClearFloorTiles();
             ClearDoorTiles();
             lastEntranceSide = Side.Up;
-            newRoomChance = 100;
-            var floorMatrix = CreateFloorMatrix();
+            roomCounter = 1;
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
-            DrawFloorTiles(floorMatrix);
-            DrawDoorsTiles();
+            
+            GenerateCurrentRoom();
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -87,7 +93,6 @@ public class RandomFloorGenerator : MonoBehaviour
             {
                 Debug.Log("Вы успешно прошли вверх");
                 lastEntranceSide = Side.Down;
-                newRoomChance -= Random.Range(1, 4) * 3;
                 GenerateMoveToNextRoom();
             }
             else
@@ -95,6 +100,7 @@ public class RandomFloorGenerator : MonoBehaviour
                 Debug.Log("Нельзя идти туда, где нет двери");
             }
         }
+
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (lastEntranceSide == Side.Down)
@@ -112,6 +118,7 @@ public class RandomFloorGenerator : MonoBehaviour
                 Debug.Log("Нельзя идти туда, где нет двери");
             }
         }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (lastEntranceSide == Side.Left)
@@ -129,6 +136,7 @@ public class RandomFloorGenerator : MonoBehaviour
                 Debug.Log("Нельзя идти туда, где нет двери");
             }
         }
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (lastEntranceSide == Side.Right)
@@ -146,8 +154,18 @@ public class RandomFloorGenerator : MonoBehaviour
                 Debug.Log("Нельзя идти туда, где нет двери");
             }
         }
+    }
 
-
+    private void GenerateCurrentRoom()
+    {
+        height = Random.Range(minHeight, maxHeight) * 2;
+        width = Random.Range(minWidth, maxWidth) * 2;
+        xOffset = width * 0.5f * -sizeMultiplier;
+        yOffset = height * 0.5f * -sizeMultiplier + 0.4f;
+        fieldTiles = new GameObject[height, width];
+        var floorMatrix = CreateFloorMatrix();
+        DrawFloorTiles(floorMatrix);
+        DrawDoorsTiles();
     }
 
     private int[,] CreateFloorMatrix()
@@ -337,7 +355,7 @@ public class RandomFloorGenerator : MonoBehaviour
         };
         doorTiles.Add(entranceDoorTile);
     }
-    
+
     private void ClearDoorTiles()
     {
         foreach (var door in doorTiles)
@@ -348,12 +366,21 @@ public class RandomFloorGenerator : MonoBehaviour
 
     private void GenerateMoveToNextRoom()
     {
-        nearRoomSides = newRoomChance <= 0 ? Array.Empty<Side>() : GenerateNearRoomSides(lastEntranceSide);
-                
+        var a = Random.Range(1, 100);
+        if (roomCounter < minimumRoomsOnFloor)
+            nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
+        if ((a > NewRoomChance && maximumRoomsOnFloor > roomCounter &&
+             roomCounter >= minimumRoomsOnFloor) || roomCounter < minimumRoomsOnFloor)
+            nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
+        else
+            nearRoomSides = Array.Empty<Side>();
+
+        Debug.Log(a);
+        Debug.Log($"roomCounter: {roomCounter}, a:{a}, nearRoomSides: {nearRoomSides.Length}");
         ClearFloorTiles();
         ClearDoorTiles();
-        var floorMatrix = CreateFloorMatrix();
-        DrawFloorTiles(floorMatrix);
-        DrawDoorsTiles();
+        roomCounter++;
+        
+        GenerateCurrentRoom();
     }
 }
