@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float _strength;
     [SerializeField] private float _speed;
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashCooldown;
@@ -17,14 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
 
-    public float DashAmount
-    {
-        get => _dashAmount;
-        set => _dashAmount = Mathf.Clamp(value, 0, MaxDashes);
-    }
-
-    public float MaxDashes { get; set; }
-
+    private float maxDashes;
     private float dashedTimes;
     private Rigidbody2D _rigidbody;
     private Vector2 direction;
@@ -45,11 +40,12 @@ public class PlayerController : MonoBehaviour
     private static readonly int Dashing = Animator.StringToHash("dashing");
     private static readonly int Attacking = Animator.StringToHash("attacking");
     public Weapon weapon;
+    private static readonly int WeaponID = Animator.StringToHash("weaponID");
 
 
     private void Awake()
     {
-        MaxDashes = DashAmount;
+        maxDashes = _dashAmount;
         _rigidbody = GetComponent<Rigidbody2D>();
         _camera = Camera.main;
     }
@@ -63,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (direction.magnitude == 0) return;
         // Don't need this if player isn't moving
         lastDirection = direction;
-        dashing = Input.GetKey(KeyCode.Space) && readyToDash && DashAmount > 0;
+        dashing = Input.GetKey(KeyCode.Space) && readyToDash && _dashAmount > 0;
         walking = true;
     }
 
@@ -76,6 +72,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(Walking, walking);
         animator.SetBool(Dashing, dashing);
         animator.SetBool(Attacking, attacking);
+        animator.SetInteger(WeaponID, weapon is null ? 0 : weapon.id);
     }
 
     private void Update()
@@ -89,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         HandRotation();
-        if (dashing && readyToDash && DashAmount > 0) StartCoroutine(PerformDash());
+        if (dashing && readyToDash && _dashAmount > 0) StartCoroutine(PerformDash());
         if (attacking && readyToAttack) StartCoroutine(PerformAttack());
     }
 
@@ -102,13 +99,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PerformDash()
     {
-        DashAmount--;
+        _dashAmount--;
         readyToDash = false;
         _rigidbody.AddForce(direction * _dashForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.5f);
         readyToDash = true;
         yield return new WaitForSeconds(_dashCooldown);
-        DashAmount++;
+        _dashAmount++;
     }
 
     private void MoveAttackPoint()
@@ -128,8 +125,8 @@ public class PlayerController : MonoBehaviour
         foreach (var hit in enemyHits)
         {
             if (!hit.isTrigger) continue;
-            Debug.Log(hit);
             hit.GetComponent<Health>().TakeDamage(weapon.damage);
+            if (!weapon.splashDamage) break;
         }
         yield return new WaitForSeconds(weapon.cooldown);
         readyToAttack = true;
