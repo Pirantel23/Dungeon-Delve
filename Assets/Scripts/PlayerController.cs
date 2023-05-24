@@ -13,9 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _minimumDistance;
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Animator animator;
-    [SerializeField] private float attackRange;
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private float attackDamage;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
@@ -47,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int Walking = Animator.StringToHash("walking");
     private static readonly int Dashing = Animator.StringToHash("dashing");
     private static readonly int Attacking = Animator.StringToHash("attacking");
+    public Weapon weapon;
 
 
     private void Awake()
@@ -123,15 +121,17 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PerformAttack()
     {
+        if (weapon is null) yield break; 
         readyToAttack = false;
-        enemyHits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        enemyHits = Physics2D.OverlapCircleAll(attackPoint.position, weapon.range, enemyLayer);
+        yield return new WaitForSeconds(weapon.timeToDamage);
         foreach (var hit in enemyHits)
         {
             if (!hit.isTrigger) continue;
             Debug.Log(hit);
-            hit.GetComponent<Health>().TakeDamage(attackDamage);
+            hit.GetComponent<Health>().TakeDamage(weapon.damage);
         }
-        yield return new WaitForSeconds(attackCooldown);
+        yield return new WaitForSeconds(weapon.cooldown);
         readyToAttack = true;
     }
     

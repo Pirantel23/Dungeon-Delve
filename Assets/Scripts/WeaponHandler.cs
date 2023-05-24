@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class WeaponHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private PlayerController player;
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerController>();
+        Debug.Log(player.weapon);
     }
 
     // Update is called once per frame
