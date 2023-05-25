@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         Debug.Log($"Loading scene {sceneIndex}");
+        AudioManager.instance.Stop(SoundType.BackGround);
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
