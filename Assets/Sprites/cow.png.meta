@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0fc8ed850a0bfec42b1306ec219905c9
+guid: 23f7aff0dad819240975205f1b0b3f55
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,253 +117,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: upgrades_0
+      name: cow_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 481
-        width: 28
-        height: 17
+        x: 18
+        y: 744
+        width: 280
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b116ec1b1572e043bfc535471400213
-      internalID: 139733271
+      spriteID: cbd8ce4ceace3334dab8ac4ee24baf95
+      internalID: 539804293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_1
+      name: cow_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 372
-        width: 211
-        height: 112
+        x: 313
+        y: 744
+        width: 300
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235ff19007c69684da93b2bbd5617acc
-      internalID: -2080267698
+      spriteID: 10e9c5d245e76884cab33fe55b88dcaf
+      internalID: 318651680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_2
+      name: cow_2
       rect:
         serializedVersion: 2
-        x: 337
-        y: 472
-        width: 16
-        height: 9
+        x: 628
+        y: 744
+        width: 310
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5717520d505956e449dbe5089b35a88e
-      internalID: -1254050039
+      spriteID: 06dffdafed338484eaa52cbb55835a15
+      internalID: 940943037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_3
+      name: cow_3
       rect:
         serializedVersion: 2
-        x: 358
-        y: 477
-        width: 39
-        height: 4
+        x: 5
+        y: 504
+        width: 300
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fcdbac477e423d408658ca4d044675b
-      internalID: 1932191688
+      spriteID: 93491d0060ccd464285cd8afe6bcd871
+      internalID: -1377171281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_4
+      name: cow_4
       rect:
         serializedVersion: 2
-        x: 358
-        y: 472
-        width: 39
-        height: 4
+        x: 319
+        y: 504
+        width: 310
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d46a431065f8c2141b4a25b12ebd45da
-      internalID: 1723491832
+      spriteID: 1249e48531030da4cb4feaba64ac1227
+      internalID: 173063060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_5
+      name: cow_5
       rect:
         serializedVersion: 2
-        x: 337
-        y: 461
-        width: 16
-        height: 9
+        x: 644
+        y: 505
+        width: 300
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d43bb0fa1411764a8ec8d705be01193
-      internalID: 1737012871
+      spriteID: 978ab183f38db5f49a5c818d9fcb58d2
+      internalID: 844765766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_6
+      name: cow_6
       rect:
         serializedVersion: 2
-        x: 357
-        y: 452
-        width: 17
-        height: 17
+        x: 4
+        y: 248
+        width: 309
+        height: 220
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 917eeff5f8942fd48b23c3a5b08efe4e
-      internalID: -1903719111
+      spriteID: f081f0a90f0821c479def029f5b8a9de
+      internalID: 77625951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_7
+      name: cow_7
       rect:
         serializedVersion: 2
-        x: 389
-        y: 452
-        width: 17
-        height: 17
+        x: 11
+        y: 0
+        width: 280
+        height: 249
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853fe39fa972b7342949e329c8f2630f
-      internalID: 497733188
+      spriteID: ef6c9a2eca475574aa97c28e1b8366bc
+      internalID: -838428167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_8
+      name: cow_8
       rect:
         serializedVersion: 2
-        x: 421
-        y: 452
-        width: 17
-        height: 17
+        x: 335
+        y: 248
+        width: 280
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed49fe879a26024cb746c13dd8ab7a5
-      internalID: -49013196
+      spriteID: 4f948e30554ba3349b5aba56f8fe5e5c
+      internalID: 1745798139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_9
+      name: cow_9
       rect:
         serializedVersion: 2
-        x: 336
-        y: 448
-        width: 18
-        height: 11
+        x: 338
+        y: 0
+        width: 280
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8951efbd0bceaa24497846707bd9cb81
-      internalID: -1366443909
+      spriteID: 34c9fbdf82f2e0a428de9277291a7e68
+      internalID: 1887242655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_10
+      name: cow_10
       rect:
         serializedVersion: 2
-        x: 357
-        y: 433
-        width: 17
-        height: 17
+        x: 632
+        y: 248
+        width: 280
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6719a2bafd942dc4486cc06feff30b27
-      internalID: -790424853
+      spriteID: b2f64f9a722171841ad133493ee1eb14
+      internalID: 1876996054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrades_11
+      name: cow_11
       rect:
         serializedVersion: 2
-        x: 389
-        y: 433
-        width: 17
-        height: 17
+        x: 648
+        y: 0
+        width: 280
+        height: 250
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e45f298d26cda42b99d34bd8edbf23
-      internalID: 1323650066
+      spriteID: 393f91a0f8d110041b1e73d712393657
+      internalID: 1492375860
       vertices: []
       indices: 
       edges: []
@@ -379,18 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      upgrades_0: 139733271
-      upgrades_1: -2080267698
-      upgrades_10: -790424853
-      upgrades_11: 1323650066
-      upgrades_2: -1254050039
-      upgrades_3: 1932191688
-      upgrades_4: 1723491832
-      upgrades_5: 1737012871
-      upgrades_6: -1903719111
-      upgrades_7: 497733188
-      upgrades_8: -49013196
-      upgrades_9: -1366443909
+      cow_0: 539804293
+      cow_1: 318651680
+      cow_10: 1876996054
+      cow_11: 1492375860
+      cow_2: 940943037
+      cow_3: -1377171281
+      cow_4: 173063060
+      cow_5: 844765766
+      cow_6: 77625951
+      cow_7: -838428167
+      cow_8: 1745798139
+      cow_9: 1887242655
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
