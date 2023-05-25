@@ -157,61 +157,6 @@ Transform:
   m_Father: {fileID: 1819581193}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &101275304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 101275306}
-  - component: {fileID: 101275305}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &101275305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101275304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785635358181f454d8ba8f9fe1c981e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - type: 1
-    clip: {fileID: 8300000, guid: b874bd2c53f105546a6ec420fcd302ac, type: 3}
-    volume: 0.639
-    loop: 1
-    source: {fileID: 0}
-  - type: 5
-    clip: {fileID: 8300000, guid: 7866361b0cf039b41b464b5aa7c63426, type: 3}
-    volume: 0.829
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &101275306
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101275304}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500.43542, y: 359.88638, z: 5.0696945}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146887413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,3 +1031,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011182933}
   m_CullTransparentMesh: 1
+--- !u!1001 &9179640548857880847
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 500.43542
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 359.88638
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.0696945
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156133, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179640548959156135, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}

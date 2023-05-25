@@ -24,6 +24,12 @@ public class Health : MonoBehaviour
         else animator.SetTrigger(Hurt);
     }
 
+    public void SetNewMaxHealth(float newValue)
+    {
+        maxHealth = newValue;
+        amount = newValue;
+    }
+
     // ReSharper disable Unity.PerformanceAnalysis
     public IEnumerator Die()
     {
@@ -38,5 +44,11 @@ public class Health : MonoBehaviour
         
         yield return new WaitForSeconds(despawnTime);
         Destroy(gameObject);
+    }
+
+    public void Heal(float hp)
+    {
+        amount += hp;
+        if (amount > maxHealth) amount = maxHealth;
     }
 }

@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public float damage;
     public float timeToDamage;
     public bool splashDamage;
+    public bool ranged;
 
     private void OnTriggerStay2D(Collider2D other)
     {

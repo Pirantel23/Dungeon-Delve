@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
-
-    private float maxDashes;
+    [SerializeField] private float healAmount;
+    [SerializeField] private float attackSpeed;
+    
     private float dashedTimes;
     private Rigidbody2D _rigidbody;
     private Vector2 direction;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private bool readyToDash = true;
     private bool readyToAttack = true;
     private bool attacking;
+    private Health health;
     private Camera _camera;
     private Vector3 mousePosition;
     private Collider2D[] enemyHits;
@@ -43,11 +45,23 @@ public class PlayerController : MonoBehaviour
     private static readonly int WeaponID = Animator.StringToHash("weaponID");
 
 
-    private void Awake()
+    private void Start()
     {
-        maxDashes = _dashAmount;
         _rigidbody = GetComponent<Rigidbody2D>();
         _camera = Camera.main;
+        health = GetComponent<Health>();
+        StartCoroutine(Heal());
+        InitUpgrades();
+    }
+
+    public void InitUpgrades()
+    {
+        _strength = PlayerPrefs.GetFloat("STRENGTH");
+        _speed = PlayerPrefs.GetFloat("SPEED");
+        _dashAmount = PlayerPrefs.GetFloat("DASH");
+        healAmount = PlayerPrefs.GetFloat("HEAL");
+        attackSpeed = PlayerPrefs.GetFloat("AGILITY");
+        health.SetNewMaxHealth(PlayerPrefs.GetFloat("HEALTH"));
     }
 
     private void GetInput()
@@ -120,15 +134,16 @@ public class PlayerController : MonoBehaviour
     {
         if (weapon is null) yield break; 
         readyToAttack = false;
+        AudioManager.instance.Play(GetWeaponSoundType());
         enemyHits = Physics2D.OverlapCircleAll(attackPoint.position, weapon.range, enemyLayer);
         yield return new WaitForSeconds(weapon.timeToDamage);
         foreach (var hit in enemyHits)
         {
             if (!hit.isTrigger) continue;
-            hit.GetComponent<Health>().TakeDamage(weapon.damage);
+            hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
             if (!weapon.splashDamage) break;
         }
-        yield return new WaitForSeconds(weapon.cooldown);
+        yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
         readyToAttack = true;
     }
     
@@ -142,5 +157,22 @@ public class PlayerController : MonoBehaviour
         var angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
         var rotation = Quaternion.Euler(new Vector3(0, 0, angle));
         _hand.rotation = Quaternion.Lerp(_hand.rotation, rotation, _rotationSpeed * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator Heal()
+    {
+        health.Heal(healAmount);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Heal());
+    }
+
+    private SoundType GetWeaponSoundType()
+    {
+        return weapon.id switch
+        {
+            1 => SoundType.ForkAttack,
+            2 => SoundType.ShovelAttack,
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 }
