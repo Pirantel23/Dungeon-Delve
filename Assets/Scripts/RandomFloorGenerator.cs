@@ -25,6 +25,7 @@ public class RandomFloorGenerator : MonoBehaviour
 
     // префабы дверей
     [SerializeField] private GameObject entranceDoorPrefab;
+    [SerializeField] private GameObject shopDoorPrefab;
     [SerializeField] private GameObject doorPrefab;
 
     // Размер матрицы пола
@@ -32,15 +33,16 @@ public class RandomFloorGenerator : MonoBehaviour
     [SerializeField] private int minHeight = 8;
     [SerializeField] private int maxWidth = 20;
     [SerializeField] private int maxHeight = 16;
-    
 
-    // Отступы для центрирования матрицы на сцене
-    [SerializeField] private float sizeMultiplier = 0.4f;
     [SerializeField] private int maximumRoomsOnFloor = 7;
     [SerializeField] private int minimumRoomsOnFloor = 5;
+    [SerializeField] private int shopsOnFloor = 3;
 
     private const int NewRoomChance = 50;
-    
+    private const int ShopHeight = 8;
+    private const int ShopWidth = 12;
+
+    private float sizeMultiplier = 0.4f;
     private (float, float)[] tilesSizes;
     private Side lastEntranceSide = Side.Up;
     private int roomCounter;
@@ -50,6 +52,7 @@ public class RandomFloorGenerator : MonoBehaviour
     private float yOffset;
     private int width;
     private int height;
+    private int shopsFound;
 
     // Ссылка на созданные тайлы поля
     private GameObject[,] fieldTiles;
@@ -66,7 +69,7 @@ public class RandomFloorGenerator : MonoBehaviour
         FillTileSizes();
         roomCounter = 1;
         nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
-        
+
         GenerateCurrentRoom();
     }
 
@@ -78,82 +81,48 @@ public class RandomFloorGenerator : MonoBehaviour
             ClearDoorTiles();
             lastEntranceSide = Side.Up;
             roomCounter = 1;
+            shopsFound = 0;
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
-            
+
             GenerateCurrentRoom();
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Door"))
         {
-            if (lastEntranceSide == Side.Up)
+            var doorPos = other.transform.position;
+
+            switch (doorPos.x)
             {
-                Debug.Log("Нельзя вернуться назад");
-            }
-            else if (nearRoomSides.Contains(Side.Up))
-            {
-                Debug.Log("Вы успешно прошли вверх");
-                lastEntranceSide = Side.Down;
-                GenerateMoveToNextRoom();
-            }
-            else
-            {
-                Debug.Log("Нельзя идти туда, где нет двери");
+                case 0 when doorPos.y > 0:
+                    lastEntranceSide = Side.Down;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("up");
+                    break;
+                case 0 when doorPos.y < 0:
+                    lastEntranceSide = Side.Up;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("down");
+                    break;
+                case > 0 when doorPos.y == 0:
+                    lastEntranceSide = Side.Left;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("right");
+                    break;
+                case < 0 when doorPos.y == 0:
+                    lastEntranceSide = Side.Right;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("left");
+                    break;
             }
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            if (lastEntranceSide == Side.Down)
-            {
-                Debug.Log("Нельзя вернуться назад");
-            }
-            else if (nearRoomSides.Contains(Side.Down))
-            {
-                Debug.Log("Вы успешно прошли вниз");
-                lastEntranceSide = Side.Up;
-                GenerateMoveToNextRoom();
-            }
-            else
-            {
-                Debug.Log("Нельзя идти туда, где нет двери");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (lastEntranceSide == Side.Left)
-            {
-                Debug.Log("Нельзя вернуться назад");
-            }
-            else if (nearRoomSides.Contains(Side.Left))
-            {
-                Debug.Log("Вы успешно прошли налево");
-                lastEntranceSide = Side.Right;
-                GenerateMoveToNextRoom();
-            }
-            else
-            {
-                Debug.Log("Нельзя идти туда, где нет двери");
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (lastEntranceSide == Side.Right)
-            {
-                Debug.Log("Нельзя вернуться назад");
-            }
-            else if (nearRoomSides.Contains(Side.Right))
-            {
-                Debug.Log("Вы успешно прошли направо");
-                lastEntranceSide = Side.Left;
-                GenerateMoveToNextRoom();
-            }
-            else
-            {
-                Debug.Log("Нельзя идти туда, где нет двери");
-            }
-        }
+    private void TeleportToPosition(Vector3 newPosition)
+    {
+        transform.position = newPosition;
     }
 
     private void GenerateCurrentRoom()
@@ -165,7 +134,33 @@ public class RandomFloorGenerator : MonoBehaviour
         fieldTiles = new GameObject[height, width];
         var floorMatrix = CreateFloorMatrix();
         DrawFloorTiles(floorMatrix);
+        MovePlayerToNextRoom();
         DrawDoorsTiles();
+    }
+
+    private void MovePlayerToNextRoom()
+    {
+        var up = new Vector3(0, height * 0.5f * sizeMultiplier - 1, 0);
+        var left = new Vector3(-width * 0.5f * sizeMultiplier + 1, 0, 0);
+        var right = new Vector3(width * 0.5f * sizeMultiplier - 1, 0, 0);
+        var down = new Vector3(0, -height * 0.5f * sizeMultiplier + 1, 0);
+        switch (lastEntranceSide)
+        {
+            case Side.Up:
+                TeleportToPosition(up);
+                break;
+            case Side.Down:
+                TeleportToPosition(down);
+                break;
+            case Side.Left:
+                TeleportToPosition(left);
+                break;
+            case Side.Right:
+                TeleportToPosition(right);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     private int[,] CreateFloorMatrix()
@@ -345,6 +340,7 @@ public class RandomFloorGenerator : MonoBehaviour
             }
         }
 
+
         var entranceDoorTile = lastEntranceSide switch
         {
             Side.Up => Instantiate(entranceDoorPrefab, up, Quaternion.identity),
@@ -368,19 +364,20 @@ public class RandomFloorGenerator : MonoBehaviour
     {
         var a = Random.Range(1, 100);
         if (roomCounter < minimumRoomsOnFloor)
+        {
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
+        }
+
         if ((a > NewRoomChance && maximumRoomsOnFloor > roomCounter &&
              roomCounter >= minimumRoomsOnFloor) || roomCounter < minimumRoomsOnFloor)
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
         else
             nearRoomSides = Array.Empty<Side>();
 
-        Debug.Log(a);
-        Debug.Log($"roomCounter: {roomCounter}, a:{a}, nearRoomSides: {nearRoomSides.Length}");
         ClearFloorTiles();
         ClearDoorTiles();
         roomCounter++;
-        
+
         GenerateCurrentRoom();
     }
 }
