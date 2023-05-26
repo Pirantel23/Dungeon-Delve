@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,6 +23,14 @@ public class SceneLoader : MonoBehaviour
         {
             loadingScreen.color = new Color(255, 255, 255, operation.progress);
             yield return null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            LoadScene(2);
         }
     }
 }

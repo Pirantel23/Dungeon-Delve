@@ -25,58 +25,78 @@ public class PlayerUpgrader : MonoBehaviour
 
     [SerializeField] private float costMultiplier;
     private int hayCount;
+    private PlayerController player;
     
     private void Awake()
     {
         CheckForFirstLaunch();
+        player = FindObjectOfType<PlayerController>();
     }
 
     public void UpgradeStrength()
     {
-        if (hayCount < strengthCost) return;
+        var t = PlayerPrefs.GetInt("STRENGTH_T");
+        if (hayCount < strengthCost || t > 5) return;
         PlayerPrefs.SetFloat("STRENGTH", PlayerPrefs.GetFloat("STRENGTH") + baseStrength);
+        PlayerPrefs.SetInt("STRENGTH_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(strengthCost * costMultiplier);
+        player.InitUpgrades();
     }
     
     public void UpgradeSpeed()
     {
-        if (hayCount < speedCost) return;
+        var t = PlayerPrefs.GetInt("SPEED_T");
+        if (hayCount < speedCost || t > 5) return;
         PlayerPrefs.SetFloat("SPEED", PlayerPrefs.GetFloat("SPEED") + baseSpeed);
+        PlayerPrefs.SetInt("SPEED_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(speedCost * costMultiplier);
+        player.InitUpgrades();
     }
     
     public void UpgradeDash()
     {
-        if (hayCount < dashCost) return;
+        var t = PlayerPrefs.GetInt("DASH_T");
+        if (hayCount < dashCost || t > 5) return;
         PlayerPrefs.SetFloat("DASH", PlayerPrefs.GetFloat("DASH") + baseDash);
+        PlayerPrefs.SetInt("DASH_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(dashCost * costMultiplier);
+        player.InitUpgrades();
     }
     
     public void UpgradeHeal()
     {
-        if (hayCount < healCost) return;
+        var t = PlayerPrefs.GetInt("HEAL_T");
+        if (hayCount < healCost || t > 5) return;
         PlayerPrefs.SetFloat("HEAL", PlayerPrefs.GetFloat("HEAL") + baseHeal);
+        PlayerPrefs.SetInt("HEAL_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(healCost * costMultiplier);
+        player.InitUpgrades();
     }
     
     public void UpgradeHealth()
     {
-        if (hayCount < healthCost) return;
+        var t = PlayerPrefs.GetInt("HEALTH_T");
+        if (hayCount < healthCost || t > 5) return;
         PlayerPrefs.SetFloat("HEALTH", PlayerPrefs.GetFloat("HEALTH") + baseHealth);
+        PlayerPrefs.SetInt("HEALTH_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(healthCost * costMultiplier);
+        player.InitUpgrades();
     }
     
     public void UpgradeAgility()
     {
-        if (hayCount < agilityCost) return;
+        var t = PlayerPrefs.GetInt("AGILITY_T");
+        if (hayCount < agilityCost || t > 5) return;
         PlayerPrefs.SetFloat("AGILITY", PlayerPrefs.GetFloat("AGILITY") + baseAgility);
+        PlayerPrefs.SetInt("AGILITY_T", t + 1);
         hayCount -= strengthCost;
         strengthCost = (int)(agilityCost * costMultiplier);
+        player.InitUpgrades();
     }
 
     private void CheckForFirstLaunch()
@@ -89,6 +109,13 @@ public class PlayerUpgrader : MonoBehaviour
         PlayerPrefs.SetFloat("HEAL", baseHeal);
         PlayerPrefs.SetFloat("HEALTH", baseHealth);
         PlayerPrefs.SetFloat("AGILITY", baseAgility);
+        
+        PlayerPrefs.SetInt("STRENGTH_T", 0);
+        PlayerPrefs.SetInt("SPEED_T", 0);
+        PlayerPrefs.SetInt("DASH_T", 0);
+        PlayerPrefs.SetInt("HEAL_T", 0);
+        PlayerPrefs.SetInt("HEALTH_T", 0);
+        PlayerPrefs.SetInt("AGILITY_T", 0);
             
         PlayerPrefs.SetInt("PLAYED", 1);
     }
