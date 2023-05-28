@@ -2,6 +2,7 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine.TestTools;
 
+
 namespace Tests
 {
     public class LevelGenerationTests
@@ -12,7 +13,6 @@ namespace Tests
         {
             var r1 = new Room(4, 5);
             var r2 = new Room(4, 5);
-            
             Assert.True(r1.Equals(r2));
         }
 
