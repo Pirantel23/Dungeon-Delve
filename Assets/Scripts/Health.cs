@@ -34,7 +34,11 @@ public class Health : MonoBehaviour
     public IEnumerator Die()
     {
         animator.SetBool(Dead, true);
-        if (CompareTag("Player")) GetComponent<PlayerController>().enabled = false;
+        if (CompareTag("Player"))
+        {
+            GetComponent<PlayerController>().enabled = false;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
         else if (CompareTag("Enemy"))
         {
             var script = GetComponent<Enemy>();

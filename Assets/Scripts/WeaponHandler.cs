@@ -60,20 +60,41 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
+    public void TryChangeWeapon(Weapon weapon)
+    {
+        if (changingWeapon) return;
+        StartCoroutine(ChangeWeapon(weapon));
+    }
+    
     public IEnumerator ChangeWeapon(Weapon weapon)
     {
+        Debug.Log($"changing to {weapon} from {weapon1.weapon} and {changingWeapon}");
         changingWeapon = true;
         if (currentSlot == 1)
         {
-            if (weapon1.weapon != null) Instantiate(weapon1.weapon, weapon1.weapon.transform.position, Quaternion.identity);
+            if (weapon1.weapon is not null)
+            {
+                var a = Instantiate(weapon1.weapon.prefab, player.transform.position, Quaternion.identity)
+                    .GetComponent<Weapon>();
+                a.inUI = false;
+                a.sprite.enabled = true;
+            }
             weapon1.weapon = weapon;
-            Destroy(weapon.gameObject);
+            weapon.sprite.enabled = false;
+            weapon.inUI = true;
         }
         else
         {
-            if (weapon2.weapon != null) Instantiate(weapon2.weapon, weapon2.weapon.transform.position, Quaternion.identity);
+            if (weapon2.weapon is not null)
+            {
+                var a = Instantiate(weapon2.weapon.prefab, player.transform.position, Quaternion.identity)
+                    .GetComponent<Weapon>();
+                a.inUI = false;
+                a.sprite.enabled = true;
+            }
             weapon2.weapon = weapon;
-            Destroy(weapon.gameObject);
+            weapon.sprite.enabled = false;
+            weapon.inUI = true;
         }
 
         yield return new WaitForSeconds(weaponChangeCooldown);

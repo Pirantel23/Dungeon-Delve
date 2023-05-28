@@ -11,9 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashCooldown;
     [SerializeField] private float _dashAmount;
-    [SerializeField] private Transform _hand;
-    [SerializeField] private float _minimumDistance;
-    [SerializeField] private float _rotationSpeed;
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private Transform attackPoint;
@@ -32,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool attacking;
     private Health health;
     private Camera _camera;
+    private Vector2 attackDirection;
     private Vector3 mousePosition;
     private Collider2D[] enemyHits;
     private static readonly int X = Animator.StringToHash("x");
@@ -43,6 +41,8 @@ public class PlayerController : MonoBehaviour
     private static readonly int Attacking = Animator.StringToHash("attacking");
     public Weapon weapon;
     private static readonly int WeaponID = Animator.StringToHash("weaponID");
+    private static readonly int AttackX = Animator.StringToHash("Attack_X");
+    private static readonly int AttackY = Animator.StringToHash("Attack_Y");
 
 
     private void Start()
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        mousePosition = Input.mousePosition;
+        mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         attacking = Input.GetMouseButton(0) && readyToAttack;
         if (direction.magnitude == 0) return;
         // Don't need this if player isn't moving
@@ -87,6 +87,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool(Dashing, dashing);
         animator.SetBool(Attacking, attacking);
         animator.SetInteger(WeaponID, weapon is null ? 0 : weapon.id);
+        animator.SetFloat(AttackX, attackDirection.x);
+        animator.SetFloat(AttackY, attackDirection.y);
     }
 
     private void Update()
@@ -99,9 +101,11 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Movement();
-        HandRotation();
         if (dashing && readyToDash && _dashAmount > 0) StartCoroutine(PerformDash());
-        if (attacking && readyToAttack) StartCoroutine(PerformAttack());
+        if (attacking && readyToAttack && weapon is not null)
+        {
+            StartCoroutine(weapon.ranged ? PerformRangedAttack() : PerformMeleeAttack());
+        }
     }
 
     private void Movement()
@@ -130,9 +134,8 @@ public class PlayerController : MonoBehaviour
                 position.y + lastDirection.y * attackPointExtension);
     }
 
-    private IEnumerator PerformAttack()
+    private IEnumerator PerformMeleeAttack()
     {
-        if (weapon is null) yield break; 
         readyToAttack = false;
         AudioManager.instance.Play(GetWeaponSoundType());
         enemyHits = Physics2D.OverlapCircleAll(attackPoint.position, weapon.range, enemyLayer);
@@ -146,19 +149,27 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
         readyToAttack = true;
     }
-    
-    private void HandRotation()
-    {
-        var mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
-        var position = _hand.position;
-        var directionToMouse = new Vector2(mouseWorldPosition.x - position.x,
-            mouseWorldPosition.y - position.y);
-        if (directionToMouse.magnitude < _minimumDistance) return;
-        var angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
-        var rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        _hand.rotation = Quaternion.Lerp(_hand.rotation, rotation, _rotationSpeed * Time.fixedDeltaTime);
-    }
 
+    private IEnumerator PerformRangedAttack()
+    {
+        readyToAttack = false;
+        AudioManager.instance.Play(GetWeaponSoundType());
+        attackDirection =
+            new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y).normalized;
+        var projectile = Instantiate(weapon.projectile, 
+            new Vector3(transform.position.x + attackDirection.x * attackPointExtension, 
+                        transform.position.y + attackDirection.y * attackPointExtension, 
+                        transform.position.z), Quaternion.identity);
+        
+        yield return new WaitForSeconds(weapon.timeToDamage);
+        projectile.GetComponent<BoxCollider2D>().isTrigger = false;
+        projectile.GetComponent<Projectile>().damage = weapon.damage;
+        projectile.GetComponent<Rigidbody2D>().velocity = attackDirection * weapon.speed;
+        yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
+        readyToAttack = true;
+    }
+    
+    
     private IEnumerator Heal()
     {
         health.Heal(healAmount);
@@ -172,6 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             1 => SoundType.ForkAttack,
             2 => SoundType.ShovelAttack,
+            3 => SoundType.ButtonClick,
             _ => throw new ArgumentOutOfRangeException()
         };
     }

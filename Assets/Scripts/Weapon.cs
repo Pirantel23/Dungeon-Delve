@@ -1,8 +1,12 @@
 using System;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public GameObject prefab;
+    public SpriteRenderer sprite;
     public int id;
     public Sprite icon;
     public float range;
@@ -11,14 +15,13 @@ public class Weapon : MonoBehaviour
     public float timeToDamage;
     public bool splashDamage;
     public bool ranged;
+    public GameObject projectile;
+    public float speed;
+    public bool inUI;
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
-        {
-            var weaponHandler = FindObjectOfType<WeaponHandler>();
-            if (weaponHandler.changingWeapon) return;
-            StartCoroutine(weaponHandler.ChangeWeapon(this));
-        }
+        if (!other.CompareTag("Player") || !Input.GetKey(KeyCode.E) || inUI) return;
+        FindObjectOfType<WeaponHandler>().TryChangeWeapon(this);
     }
 }
