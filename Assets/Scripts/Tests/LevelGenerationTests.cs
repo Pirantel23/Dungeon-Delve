@@ -10,10 +10,10 @@ namespace Tests
         [Test]
         public void RoomEqualTest()
         {
-            // var r1 = new Room(4, 5);
-            // var r2 = new Room(4, 5);
-            //
-            // Assert.True(r1.Equals(r2));
+            var r1 = new Room(4, 5);
+            var r2 = new Room(4, 5);
+            
+            Assert.True(r1.Equals(r2));
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
