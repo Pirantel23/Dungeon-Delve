@@ -6,29 +6,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float detectionRange;
-    [SerializeField] private float minimumRange;
-    [SerializeField] private float speed;
-    [SerializeField] private float attackDamage;
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private float attackRange;
-    [SerializeField] private Transform target;
-    [SerializeField] private Animator animator;
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackPointExtension;
-    [SerializeField] private LayerMask targetLayer;
+    [SerializeField] public float detectionRange;
+    [SerializeField] public float minimumRange;
+    [SerializeField] public float speed;
+    [SerializeField] public float attackDamage;
+    [SerializeField] public float attackCooldown;
+    [SerializeField] public float attackRange;
+    [SerializeField] public Transform target;
+    [SerializeField] public Animator animator;
+    [SerializeField] public Transform attackPoint;
+    [SerializeField] public float attackPointExtension;
+    [SerializeField] public LayerMask targetLayer;
     public int moneyDropped;
-    private Collider2D[] hits;
-    private Vector2 direction;
-    private Rigidbody2D _rigidbody;
+    public Collider2D[] hits;
+    public Vector2 direction;
+    public Rigidbody2D _rigidbody;
     private static readonly int X = Animator.StringToHash("x");
     private static readonly int Y = Animator.StringToHash("y");
-    private float distanceToTarget;
-    private bool colliding;
-    private bool attacking;
-    private bool readyToAttack = true;
-    private Vector2 normal;
-    private static readonly int Attacking = Animator.StringToHash("attacking");
+    public float distanceToTarget;
+    public bool colliding;
+    public bool attacking;
+    public bool readyToAttack = true;
+    public Vector2 normal;
+    public static readonly int Attacking = Animator.StringToHash("attacking");
 
     private void Start()
     {
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
         animator.SetFloat(Y, direction.y);
     }
     
-    private void MoveAttackPoint()
+    public void MoveAttackPoint()
     {
         var position = transform.position;
         attackPoint.position = new Vector2(
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
                 position.y + direction.y * attackPointExtension);
     }
 
-    private IEnumerator PerformAttack()
+    public IEnumerator PerformAttack()
     {
         readyToAttack = false;
         animator.SetTrigger(Attacking);
@@ -92,14 +92,14 @@ public class Enemy : MonoBehaviour
         readyToAttack = true;
     }
     
-    private void OnCollisionEnter2D(Collision2D col)
+    public void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Level")) return;
         colliding = true;
         normal = col.contacts[0].normal;
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    public void OnCollisionExit2D(Collision2D other)
     {
         colliding = false;
     }

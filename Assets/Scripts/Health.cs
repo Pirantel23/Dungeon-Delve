@@ -50,6 +50,11 @@ public class Health : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void ChangeAmount(float amount)
+    {
+        this.amount = amount;
+    }
+    
     public void Heal(float hp)
     {
         amount += hp;

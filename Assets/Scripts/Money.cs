@@ -17,4 +17,9 @@ public class Money : MonoBehaviour
         money += value;
         text.text = money.ToString();
     }
+
+    public static int GetAmount()
+    {
+        return money;
+    }
 }
