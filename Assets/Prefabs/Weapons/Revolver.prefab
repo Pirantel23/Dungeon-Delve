@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620f8dbed24571a46aefe3e12b506b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3975479769540847860}
+  prefab: {fileID: 3975479769540847860, guid: 07603607fe5ca174bb70b78d497b7d73, type: 3}
   sprite: {fileID: 1459834700156261297}
   id: 3
   icon: {fileID: 526593035, guid: c904dc1d5a0fe56479b2a5b3a17fc30e, type: 3}
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 526593035, guid: c904dc1d5a0fe56479b2a5b3a17fc30e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

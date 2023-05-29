@@ -15,8 +15,8 @@ public class WeaponHandler : MonoBehaviour
     private bool changingToSlot2;
     private bool scrolling;
     private int currentSlot = 1;
-    private WeaponContainer weapon1;
-    private WeaponContainer weapon2;
+    public WeaponContainer weapon1;
+    public WeaponContainer weapon2;
     public bool changingWeapon;
     private float weaponChangeCooldown = 0.5f;
     

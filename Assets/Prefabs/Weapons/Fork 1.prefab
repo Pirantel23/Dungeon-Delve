@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3821811842292269569}
   - component: {fileID: 6059768526594972356}
   m_Layer: 0
-  m_Name: Fork
+  m_Name: Fork 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620f8dbed24571a46aefe3e12b506b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3821811842292269570, guid: 418cc3ebfc6a21d449cf4413315eb1f4, type: 3}
+  prefab: {fileID: 0}
   sprite: {fileID: 2959709953351875430}
   id: 1
   icon: {fileID: -1549059878, guid: 8c5012716c4f8e341ad372c9d1977546, type: 3}

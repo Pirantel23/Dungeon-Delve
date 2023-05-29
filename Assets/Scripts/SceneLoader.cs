@@ -8,10 +8,20 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private Image loadingScreen;
+    [SerializeField] private bool saveData;
+    [SerializeField] private bool loadData;
+
+
+    private void Start()
+    {
+        if (loadData) FindObjectOfType<GameManager>().Load();
+    }
+
     public void LoadScene(int sceneIndex)
     {
         Debug.Log($"Loading scene {sceneIndex}");
         AudioManager.instance.Stop(SoundType.BackGround);
+        if (saveData) FindObjectOfType<GameManager>().Save();;
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
