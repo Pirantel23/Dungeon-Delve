@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] public Transform attackPoint;
     [SerializeField] public float attackPointExtension;
     [SerializeField] public LayerMask targetLayer;
+    [SerializeField] private bool ranged;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private float timeToDamage;
     public int moneyDropped;
     public Collider2D[] hits;
     public Vector2 direction;
@@ -45,7 +49,8 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         FollowTarget();
-        if (distanceToTarget <= attackRange && readyToAttack) StartCoroutine(PerformAttack());
+        if (distanceToTarget <= attackRange && readyToAttack)
+            StartCoroutine(ranged ? PerformRangedAttack() : PerformMeleeAttack());
     }
 
     private void FollowTarget()
@@ -77,11 +82,11 @@ public class Enemy : MonoBehaviour
                 position.y + direction.y * attackPointExtension);
     }
 
-    public IEnumerator PerformAttack()
+    private IEnumerator PerformMeleeAttack()
     {
         readyToAttack = false;
         animator.SetTrigger(Attacking);
-        yield return new WaitForSeconds(attackCooldown / 2);
+        yield return new WaitForSeconds(timeToDamage);
         hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, targetLayer);
         foreach (var hit in hits)
         {
@@ -91,7 +96,20 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(attackCooldown);
         readyToAttack = true;
     }
-    
+
+    private IEnumerator PerformRangedAttack()
+    {
+        readyToAttack = false;
+        animator.SetTrigger(Attacking);
+        Instantiate(projectile, attackPoint.position, Quaternion.identity);
+        yield return new WaitForSeconds(timeToDamage);
+        projectile.GetComponent<BoxCollider2D>().isTrigger = false;
+        projectile.GetComponent<Projectile>().damage = attackDamage;
+        projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+        yield return new WaitForSeconds(attackCooldown);
+        readyToAttack = true;
+    }
+
     public void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.gameObject.CompareTag("Level")) return;
