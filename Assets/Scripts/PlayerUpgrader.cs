@@ -35,9 +35,12 @@ public class PlayerUpgrader : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speedIcon;
 
     [SerializeField] private TextMeshProUGUI hayIcon;
+
+    [SerializeField] private GameObject sprite;
+
     private int hayCount;
     private PlayerController player;
-    
+
     private void Awake()
     {
         hayCount = PlayerPrefs.GetInt("HAY");
@@ -58,83 +61,37 @@ public class PlayerUpgrader : MonoBehaviour
 
     private void ChangeText(TextMeshProUGUI text, string newValue) => text.text = newValue;
 
-    public void UpgradeStrength()
+    private void UpgradeParameter(string parameterName, int parameterCost, TextMeshProUGUI textObject)
     {
-        var t = PlayerPrefs.GetInt("STRENGTH_T");
-        if (hayCount < strengthCost || t > 5) return;
-        PlayerPrefs.SetFloat("STRENGTH", PlayerPrefs.GetFloat("STRENGTH") * upgradeMultiplier);
-        PlayerPrefs.SetInt("STRENGTH_T", t + 1);
-        hayCount -= strengthCost;
-        strengthCost = (int)(strengthCost * costMultiplier);
+        var t = PlayerPrefs.GetInt($"{parameterName}_T");
+        if (hayCount < parameterCost || t > 5) return;
+        PlayerPrefs.SetFloat(parameterName, PlayerPrefs.GetFloat(parameterName) * upgradeMultiplier);
+        PlayerPrefs.SetInt($"{parameterName}_T", t + 1);
+        hayCount -= parameterCost;
+        parameterCost = (int)(parameterCost * costMultiplier);
         player.InitUpgrades();
-        ChangeText(strengthIcon, strengthCost.ToString());
+        ChangeText(textObject, parameterCost.ToString());
         PlayerPrefs.SetInt("HAY", hayCount);
     }
-    
-    public void UpgradeSpeed()
-    {
-        var t = PlayerPrefs.GetInt("SPEED_T");
-        if (hayCount < speedCost || t > 5) return;
-        PlayerPrefs.SetFloat("SPEED", PlayerPrefs.GetFloat("SPEED") * upgradeMultiplier);
-        PlayerPrefs.SetInt("SPEED_T", t + 1);
-        hayCount -= speedCost;
-        speedCost = (int)(speedCost * costMultiplier);
-        player.InitUpgrades();
-        ChangeText(speedIcon, speedCost.ToString());
-        PlayerPrefs.SetInt("HAY", hayCount);
-    }
-    
-    public void UpgradeDash()
-    {
-        var t = PlayerPrefs.GetInt("DASH_T");
-        if (hayCount < dashCost || t > 5) return;
-        PlayerPrefs.SetFloat("DASH", PlayerPrefs.GetFloat("DASH") + 1);
-        PlayerPrefs.SetInt("DASH_T", t + 1);
-        hayCount -= dashCost;
-        dashCost = (int)(dashCost * costMultiplier);
-        player.InitUpgrades();
-        ChangeText(dashIcon, dashCost.ToString());
-        PlayerPrefs.SetInt("HAY", hayCount);
-    }
-    
-    public void UpgradeHeal()
-    {
-        var t = PlayerPrefs.GetInt("HEAL_T");
-        if (hayCount < healCost || t > 5) return;
-        PlayerPrefs.SetFloat("HEAL", PlayerPrefs.GetFloat("HEAL") * upgradeMultiplier);
-        PlayerPrefs.SetInt("HEAL_T", t + 1);
-        hayCount -= healCost;
-        healCost = (int)(healCost * costMultiplier);
-        player.InitUpgrades();
-        ChangeText(healIcon, healCost.ToString());
-        PlayerPrefs.SetInt("HAY", hayCount);
-    }
-    
-    public void UpgradeHealth()
-    {
-        var t = PlayerPrefs.GetInt("HEALTH_T");
-        if (hayCount < healthCost || t > 5) return;
-        PlayerPrefs.SetFloat("HEALTH", PlayerPrefs.GetFloat("HEALTH") * upgradeMultiplier);
-        PlayerPrefs.SetInt("HEALTH_T", t + 1);
-        hayCount -= healthCost;
-        healthCost = (int)(healthCost * costMultiplier);
-        player.InitUpgrades();
-        ChangeText(healthIcon, healthCost.ToString());
-        PlayerPrefs.SetInt("HAY", hayCount);
-    }
-    
-    public void UpgradeAgility()
-    {
-        var t = PlayerPrefs.GetInt("AGILITY_T");
-        if (hayCount < agilityCost || t > 5) return;
-        PlayerPrefs.SetFloat("AGILITY", PlayerPrefs.GetFloat("AGILITY") * upgradeMultiplier);
-        PlayerPrefs.SetInt("AGILITY_T", t + 1);
-        hayCount -= agilityCost;
-        agilityCost = (int)(agilityCost * costMultiplier);
-        player.InitUpgrades();
-        ChangeText(agilityIcon, agilityCost.ToString());
-        PlayerPrefs.SetInt("HAY", hayCount);
-    }
+
+    public void UpgradeStrength() =>
+        UpgradeParameter("STRENGTH_T", strengthCost, strengthIcon);
+
+
+    public void UpgradeSpeed() =>
+        UpgradeParameter("SPEED_T", speedCost, speedIcon);
+
+    public void UpgradeDash() =>
+        UpgradeParameter("DASH_T", dashCost, dashIcon);
+
+    public void UpgradeHeal() =>
+        UpgradeParameter("HEAL_T", healCost, healIcon);
+
+    public void UpgradeHealth() =>
+        UpgradeParameter("HEALTH_T", healthCost, healthIcon);
+
+    public void UpgradeAgility() =>
+        UpgradeParameter("AGILITY_T", agilityCost, agilityIcon);
 
     private void CheckForFirstLaunch()
     {
@@ -146,34 +103,32 @@ public class PlayerUpgrader : MonoBehaviour
         PlayerPrefs.SetFloat("HEAL", baseHeal);
         PlayerPrefs.SetFloat("HEALTH", baseHealth);
         PlayerPrefs.SetFloat("AGILITY", baseAgility);
-        
+
         PlayerPrefs.SetInt("STRENGTH_T", 0);
         PlayerPrefs.SetInt("SPEED_T", 0);
         PlayerPrefs.SetInt("DASH_T", 0);
         PlayerPrefs.SetInt("HEAL_T", 0);
         PlayerPrefs.SetInt("HEALTH_T", 0);
         PlayerPrefs.SetInt("AGILITY_T", 0);
-        
+
         PlayerPrefs.SetInt("GOLD", 0);
         PlayerPrefs.SetInt("HAY", 100);
-            
+
         PlayerPrefs.SetInt("PLAYED", 1);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
-        {
             OpenUI();
-        }
+        else if (other.CompareTag("Player")) sprite.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            CloseUI();
-        }
+        if (!other.CompareTag("Player")) return;
+        CloseUI();
+        sprite.SetActive(false);
     }
 
     private void OpenUI()

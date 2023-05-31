@@ -21,7 +21,7 @@ public class SceneLoader : MonoBehaviour
     {
         Debug.Log($"Loading scene {sceneIndex}");
         var backGroundSound = Array.Find(AudioManager.instance.sounds,item => item.type == SoundType.BackGround);
-        backGroundSound.source.volume /= 0.5f;
+        backGroundSound.source.volume /= 2f;
         if (saveData) FindObjectOfType<GameManager>().Save();;
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
