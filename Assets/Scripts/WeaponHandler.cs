@@ -66,6 +66,7 @@ public class WeaponHandler : MonoBehaviour
         StartCoroutine(ChangeWeapon(weapon));
     }
     
+    // ReSharper disable Unity.PerformanceAnalysis
     public IEnumerator ChangeWeapon(Weapon weapon)
     {
         Debug.Log($"changing to {weapon} from {weapon1.weapon} and {changingWeapon}");

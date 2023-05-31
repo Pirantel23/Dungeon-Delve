@@ -16,21 +16,28 @@ public class PauseMenu : MonoBehaviour
         if (isPause) Resume();
         else Pause();
     }
-
+    
+    /// <summary>
+    ///continue scene 
+    /// </summary>
     public void Resume()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPause = false;
     }
-
+    /// <summary>
+    /// pause scene
+    /// </summary>
     public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isPause = true;
     }
-
+    /// <summary>
+    /// back to main menu
+    /// </summary>
     public void LoadMenu()
     {
         Time.timeScale = 1f;

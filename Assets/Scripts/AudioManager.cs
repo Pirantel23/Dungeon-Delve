@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public Slider slider;
+    [SerializeField] private Slider slider;
 
     public float globalValue = 10;
 
@@ -38,19 +38,25 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
-
+    /// <summary>
+    /// Starts the specified audio type
+    /// </summary>
     public void Play(SoundType sound)
     {
         var s = Array.Find(sounds, item => item.type == sound);
         s.source.Play();
     }
-
+    /// <summary>
+    /// Stops the specified audio type
+    /// </summary>
     public void Stop(SoundType sound)
     {
         var s = Array.Find(sounds, item => item.type == sound);
         s.source.Stop();
     }
-
+    /// <summary>
+    /// Sets new value of volume and saves it
+    /// </summary>
     public void setValue()
     {
         globalValue = slider.value;

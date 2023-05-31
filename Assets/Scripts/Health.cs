@@ -15,15 +15,25 @@ public class Health : MonoBehaviour
         maxHealth = amount;
     }
 
+    /// <summary>
+    /// return the current amount of health
+    /// </summary>
     public float GetAmount() => amount;
     
+    /// <summary>
+    /// Subtracts damage value from amount
+    /// </summary>
     public void TakeDamage(float damage)
     {
         amount -= damage;
         if (amount <= 0) StartCoroutine(Die());
         else animator.SetTrigger(Hurt);
     }
-
+    
+    /// <summary>
+    /// change max health and equate amount to it
+    /// </summary>
+    /// <param name="newValue"></param>
     public void SetNewMaxHealth(float newValue)
     {
         maxHealth = newValue;
@@ -54,7 +64,9 @@ public class Health : MonoBehaviour
     {
         this.amount = amount;
     }
-    
+    /// <summary>
+    /// add heal value to amount
+    /// </summary>
     public void Heal(float hp)
     {
         amount += hp;

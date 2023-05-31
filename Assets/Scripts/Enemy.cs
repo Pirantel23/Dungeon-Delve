@@ -6,33 +6,33 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] public float detectionRange;
-    [SerializeField] public float minimumRange;
-    [SerializeField] public float speed;
-    [SerializeField] public float attackDamage;
-    [SerializeField] public float attackCooldown;
-    [SerializeField] public float attackRange;
-    [SerializeField] public Transform target;
-    [SerializeField] public Animator animator;
-    [SerializeField] public Transform attackPoint;
-    [SerializeField] public float attackPointExtension;
-    [SerializeField] public LayerMask targetLayer;
+    [SerializeField] private float detectionRange;
+    [SerializeField] private float minimumRange;
+    [SerializeField] private float speed;
+    [SerializeField] private float attackDamage;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float attackRange;
+    [SerializeField] private Transform target;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackPointExtension;
+    [SerializeField] private LayerMask targetLayer;
     [SerializeField] private bool ranged;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float projectileSpeed;
     [SerializeField] private float timeToDamage;
     public int moneyDropped;
-    public Collider2D[] hits;
-    public Vector2 direction;
-    public Rigidbody2D _rigidbody;
+    private Collider2D[] hits;
+    private Vector2 direction;
+    private Rigidbody2D _rigidbody;
     private static readonly int X = Animator.StringToHash("x");
     private static readonly int Y = Animator.StringToHash("y");
-    public float distanceToTarget;
-    public bool colliding;
-    public bool attacking;
-    public bool readyToAttack = true;
-    public Vector2 normal;
-    public static readonly int Attacking = Animator.StringToHash("attacking");
+    private float distanceToTarget;
+    private bool colliding;
+    private bool attacking;
+    private bool readyToAttack = true;
+    private Vector2 normal;
+    private static readonly int Attacking = Animator.StringToHash("attacking");
 
     private void Start()
     {
