@@ -7,6 +7,7 @@ public class SpawnerScript : MonoBehaviour
     public GameObject[] mobs;
     [SerializeField] private int minAmount;
     [SerializeField] private int maxAmount;
+    
 
     public void Start()
     {
@@ -16,7 +17,8 @@ public class SpawnerScript : MonoBehaviour
         {
             var position = transform.position + new Vector3(Random.Range(0,0.5f), Random.Range(0,0.5f));
             var mob = Instantiate(mobs[Random.Range(0, mobs.Length)], position, Quaternion.identity);
-            mob.GetComponent<Enemy>().target = player;
+            if (mob.CompareTag("Boss"))  mob.GetComponent<Boss>().target = player;
+            else if (mob.CompareTag("Enemy")) mob.GetComponent<Enemy>().target = player;
         }
     }
 }
