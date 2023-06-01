@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackDamage;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackRange;
-    [SerializeField] private Transform target;
+    public Transform target;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
