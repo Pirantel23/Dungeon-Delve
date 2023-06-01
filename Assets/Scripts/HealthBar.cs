@@ -11,11 +11,10 @@ public class HealthBar : MonoBehaviour
     {
         health = player.GetComponent<Health>();
         slider = GetComponent<Slider>();
-        slider.maxValue = health.GetAmount();
     }
 
     public void Update()
     {
-        slider.value = health.GetAmount();
+        slider.value = health.GetAmount() / health.maxHealth;
     }
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Codice.Client.ChangeTrackerService;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
@@ -10,6 +12,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private float meleeSpeed;
     [SerializeField] private float rangedSpeed;
     [SerializeField] private float meleeDamage;
+    [SerializeField] private float laserDamage;
     [SerializeField] private float meleeCooldown;
     [SerializeField] private float rangedCooldown;
     [SerializeField] private float meleeRange;
@@ -22,7 +25,9 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject laser;
     [SerializeField] private float projectileSpeed;
-    [SerializeField] private float timeToDamage;
+    [SerializeField] private float timeToMeleeDamage;
+    [SerializeField] private float timeToRangedDamage;
+    [SerializeField] private float timeToLaserDamage;
     [SerializeField] private float decisionTime;
     [SerializeField] private int meleeModeChance;
     [SerializeField] private int laserAttackChance;
@@ -35,7 +40,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private int shieldChance;
     [SerializeField] private int shieldDuration;
     [SerializeField] private float shieldAbsorb;
-    
+
+    [SerializeField] private float invincibilityDuration;
     [SerializeField] private float secondPhaseHp;
     [SerializeField] private float secondPhaseHeal;
     [SerializeField] private int secondPhaseMeleeChance;
@@ -47,31 +53,40 @@ public class Boss : MonoBehaviour
     private Collider2D[] hits;
     private Vector2 direction;
     private Rigidbody2D _rigidbody;
+    private Animator laserAnimator;
     
     private float distanceToTarget;
+    private float maxHealth;
     private bool shielded;
     private bool attacking;
     private bool readyToAttack = true;
     private bool secondPhase;
-    
+    private bool transforming;
+
     private static readonly int Dead = Animator.StringToHash("Dead");
     private static readonly int Phase = Animator.StringToHash("SecondPhase");
     private static readonly int X = Animator.StringToHash("x");
     private static readonly int Y = Animator.StringToHash("y");
-    private static readonly int Attacking = Animator.StringToHash("attacking");
+    private static readonly int Melee = Animator.StringToHash("Melee");
+    private static readonly int Ranged = Animator.StringToHash("Ranged");
+    private static readonly int Laser1 = Animator.StringToHash("Laser");
+    private static readonly int Transforming = Animator.StringToHash("Transforming");
+    private static readonly int Armor = Animator.StringToHash("Armor");
 
     private void Start()
     {
+        maxHealth = health;
         _rigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(ChangeAttackDecision());
+        StartCoroutine(Heal());
+        laserAnimator = laser.GetComponent<Animator>();
     }
     
     private void Update()
     {
-        FollowTarget();
         Animate();
         MoveAttackPoint();
-        Heal();
+        UpdateHealthbar();
         if (!meleeMode) RotateLaser();
     }
 
@@ -82,33 +97,52 @@ public class Boss : MonoBehaviour
         yield return new WaitForSeconds(shieldDuration);
         shielded = false;
     }
+
+    private void UpdateHealthbar() => healthbar.value = health / maxHealth;
     
     public void TakeDamage(float amount)
     {
+        if (transforming) return;
+        Debug.Log($"damage {amount}");
         if (Random.Range(0, 100) < shieldChance && !shielded) StartCoroutine(Shield()); 
         health -= shielded ? amount * shieldAbsorb : amount;
-        if (!secondPhase && health <= secondPhaseHp) SecondPhase();
+        if (!secondPhase && health <= secondPhaseHp) StartCoroutine(SecondPhase());
         if (health <= 0) StartCoroutine(Die());
     }
 
-    private void SecondPhase()
+    private IEnumerator SecondPhase()
     {
+        var bodyType = _rigidbody.bodyType;
+        _rigidbody.velocity = Vector2.zero;
+        transforming = true;
+        secondPhase = true;
         meleeDamage = secondPhaseDamage;
         meleeModeChance = secondPhaseMeleeChance;
         meleeSpeed = secondPhaseSpeed;
         meleeCooldown = secondPhaseAttackCooldown;
         healAmount = secondPhaseHeal;
-        secondPhase = true;
+        yield return new WaitForSeconds(invincibilityDuration);
+        transforming = false;
+        bodyType = RigidbodyType2D.Dynamic;
+        _rigidbody.bodyType = bodyType;
     }
     
     private IEnumerator Die()
     {
         animator.SetBool(Dead, true);
+        enabled = false;
+        _rigidbody.velocity = Vector2.zero;
         yield return new WaitForSeconds(despawnTime);
         Destroy(gameObject);
     }
 
-    private void Heal() => health += healAmount;
+    private IEnumerator Heal()
+    {
+        health += healAmount;
+        if (health > maxHealth) health = maxHealth;
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Heal());
+    }
 
     private IEnumerator ChangeAttackDecision()
     {
@@ -119,11 +153,12 @@ public class Boss : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (transforming) return;
         FollowTarget();
-        if (distanceToTarget <= meleeRange && readyToAttack && meleeMode) StartCoroutine(PerformMeleeAttack());
-        else if (readyToAttack)
+        if (readyToAttack)
         {
-            StartCoroutine(Random.Range(0, 100) < laserAttackChance ? PerformLaserAttack() : PerformRangedAttack());
+            StartCoroutine(meleeMode ? PerformMeleeAttack() :
+                Random.Range(0, 100) < laserAttackChance ? PerformLaserAttack() : PerformRangedAttack());
         }
     }
 
@@ -133,7 +168,7 @@ public class Boss : MonoBehaviour
         distanceToTarget = direction.magnitude;
         if (distanceToTarget < minimumRange) return;
         direction = direction.normalized;
-        var move = direction * (meleeMode ? meleeSpeed : rangedSpeed * Time.fixedDeltaTime); 
+        var move = direction * (meleeMode ? meleeSpeed * Time.fixedDeltaTime : rangedSpeed * Time.fixedDeltaTime);
         _rigidbody.velocity = move;
     }
 
@@ -142,6 +177,8 @@ public class Boss : MonoBehaviour
         animator.SetFloat(X, direction.x);
         animator.SetFloat(Y, direction.y);
         animator.SetBool(Phase, secondPhase);
+        animator.SetBool(Transforming, transforming);
+        animator.SetBool(Armor, shielded);
     }
 
     private void RotateLaser()
@@ -152,7 +189,7 @@ public class Boss : MonoBehaviour
         if (dirToPlayer.magnitude < minimumRange) return;
         var angle = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
         var rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        laser.transform.rotation = Quaternion.Lerp(laser.transform.rotation, rotation, laserRotationSpeed * Time.fixedDeltaTime);
+        laser.transform.rotation = Quaternion.Slerp(laser.transform.rotation, rotation, laserRotationSpeed * Time.fixedDeltaTime);
     }
     
     public void MoveAttackPoint()
@@ -165,21 +202,30 @@ public class Boss : MonoBehaviour
 
     private IEnumerator PerformLaserAttack()
     {
-        Debug.Log("laser");
+        var l = laser.GetComponent<Laser>();
+        l.damage = 0;
+        animator.SetTrigger(Laser1);
         readyToAttack = false;
+        Debug.Log("laser");
+        yield return new WaitForSeconds(timeToLaserDamage);
         laser.SetActive(true);
+        laserAnimator.SetFloat("SecondPhase", secondPhase ? 1f : 0f);
+        yield return new WaitForSeconds(0.5f);
+        l.damage = laserDamage;
         yield return new WaitForSeconds(laserDuration);
         laser.SetActive(false);
+        yield return new WaitForSeconds(rangedCooldown);
         readyToAttack = true;
     }
     
     // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator PerformMeleeAttack()
     {
+        if (distanceToTarget > meleeRange) yield break;
+        animator.SetTrigger(Melee);
         Debug.Log("melee");
         readyToAttack = false;
-        animator.SetTrigger(Attacking);
-        yield return new WaitForSeconds(timeToDamage);
+        yield return new WaitForSeconds(timeToMeleeDamage);
         hits = Physics2D.OverlapCircleAll(attackPoint.position, meleeRange, targetLayer);
         foreach (var hit in hits)
         {
@@ -193,13 +239,15 @@ public class Boss : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator PerformRangedAttack()
     {
+        animator.SetTrigger(Ranged);
         Debug.Log("ranged");
         readyToAttack = false;
-        animator.SetTrigger(Attacking);
+        yield return new WaitForSeconds(0.7f);
         var p = Instantiate(projectile, attackPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(timeToDamage);
+        yield return new WaitForSeconds(timeToRangedDamage);
         p.GetComponent<BoxCollider2D>().isTrigger = false;
         p.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+        p.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI + 180f);
         yield return new WaitForSeconds(rangedCooldown);
         readyToAttack = true;
     }
