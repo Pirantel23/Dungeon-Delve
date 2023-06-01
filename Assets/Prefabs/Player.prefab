@@ -245,7 +245,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4339087029484761448
 BoxCollider2D:
@@ -288,3 +288,6 @@ MonoBehaviour:
   amount: 100
   animator: {fileID: 4339087029551385768}
   despawnTime: 5
+  deadScreen: {fileID: 0}
+  healBall: {fileID: 0}
+  maxHealth: 0
