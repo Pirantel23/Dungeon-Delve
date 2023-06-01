@@ -1184,17 +1184,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1574281013 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9179640548959156134, guid: f0414e1b03fcaca479525a144f9f0153, type: 3}
-  m_PrefabInstance: {fileID: 9179640548857880847}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785635358181f454d8ba8f9fe1c981e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1604243564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1304,7 @@ MonoBehaviour:
   health: 0
   weapon1: {fileID: 0}
   weapon2: {fileID: 0}
+  coins: 0
 --- !u!4 &1637722112
 Transform:
   m_ObjectHideFlags: 0
@@ -1679,6 +1669,7 @@ GameObject:
   - component: {fileID: 2109671000}
   - component: {fileID: 2109671001}
   - component: {fileID: 2109671002}
+  - component: {fileID: 2109671003}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1760,8 +1751,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1574281013}
-        m_TargetAssemblyTypeName: AudioManager, assembly
+      - m_Target: {fileID: 2109671003}
+        m_TargetAssemblyTypeName: UpdateVolume, assembly
         m_MethodName: setValue
         m_Mode: 1
         m_Arguments:
@@ -1784,6 +1775,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd4efde72dd39f4ba971a08f15954a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2109671003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109670999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88baa242a2a6cf449b83e8b0c15e56fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 2109671001}
 --- !u!1001 &9179640548857880847
 PrefabInstance:
   m_ObjectHideFlags: 0
