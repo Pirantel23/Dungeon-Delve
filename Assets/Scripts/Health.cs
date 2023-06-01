@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float despawnTime;
     [SerializeField] private GameObject deadScreen;
+    [SerializeField] private GameObject healBall;
     public float maxHealth;
     private static readonly int Hurt = Animator.StringToHash("hurt");
     private static readonly int Dead = Animator.StringToHash("dead");
@@ -61,6 +62,10 @@ public class Health : MonoBehaviour
         }
         
         yield return new WaitForSeconds(despawnTime);
+        if (Random.Range(0, 100) < 100)
+        {
+            Instantiate(healBall,transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 

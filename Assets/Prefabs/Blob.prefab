@@ -64,7 +64,7 @@ MonoBehaviour:
     m_Bits: 128
   ranged: 1
   projectile: {fileID: 2455617937724279203, guid: b3947aef10b16e740a552b6c5012e337, type: 3}
-  projectileSpeed: 2
+  projectileSpeed: 5
   timeToDamage: 0.05
   moneyDropped: 10
 --- !u!50 &6896334596924838916
@@ -116,10 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 100
+  amount: 200
   animator: {fileID: 6896334597162658302}
   despawnTime: 2
   deadScreen: {fileID: 0}
+  healBall: {fileID: 2811503559717506420, guid: 914a516ce543f9f47a9e7754b636eae1, type: 3}
   maxHealth: 0
 --- !u!1 &6896334597162658289
 GameObject:
