@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class audioSlider : MonoBehaviour
 {
     /// <summary>
-    /// get value from PlayerPrefs
+    /// Get value from PlayerPrefs
     /// </summary>
     private void OnEnable()
     {

@@ -18,6 +18,12 @@ public class Money : MonoBehaviour
         text.text = money.ToString();
     }
 
+    public static void SetAmount(int value)
+    {
+        money = value;
+        text.text = money.ToString();
+    }
+    
     public static int GetAmount()
     {
         return money;

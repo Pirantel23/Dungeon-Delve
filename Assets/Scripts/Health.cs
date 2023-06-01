@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     }
 
     /// <summary>
-    /// return the current amount of health
+    /// Return the current amount of health
     /// </summary>
     public float GetAmount() => amount;
     
@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
     }
     
     /// <summary>
-    /// change max health and equate amount to it
+    /// Change max health and equate amount to it
     /// </summary>
     /// <param name="newValue"></param>
     public void SetNewMaxHealth(float newValue)
@@ -64,8 +64,9 @@ public class Health : MonoBehaviour
     {
         this.amount = amount;
     }
+    
     /// <summary>
-    /// add heal value to amount
+    /// Add heal value to amount
     /// </summary>
     public void Heal(float hp)
     {

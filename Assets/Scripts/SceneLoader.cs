@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private Image loadingScreen;
     [SerializeField] private bool saveData;
     [SerializeField] private bool loadData;
+    private bool loading;
 
 
     private void Start()
@@ -20,9 +21,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         Debug.Log($"Loading scene {sceneIndex}");
-        var backGroundSound = Array.Find(AudioManager.instance.sounds,item => item.type == SoundType.BackGround);
-        backGroundSound.source.volume /= 2f;
-        if (saveData) FindObjectOfType<GameManager>().Save();;
+        if (saveData) FindObjectOfType<GameManager>().Save();
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 
@@ -39,10 +38,10 @@ public class SceneLoader : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("Player") && Input.GetKey(KeyCode.E))
+        if (col.CompareTag("Player") && Input.GetKey(KeyCode.E) && !loading)
         {
-            // LoadScene(2);
-            SceneManager.LoadScene(2);
+            loading = true;
+            LoadScene(2);
         }
     }
 }

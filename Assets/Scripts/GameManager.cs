@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public float health;
     public Weapon weapon1;
     public Weapon weapon2;
+    public int coins;
     void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -18,13 +20,31 @@ public class GameManager : MonoBehaviour
         weaponHandler.weapon1.weapon = weapon1;
         weaponHandler.weapon2.weapon = weapon2;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().ChangeAmount(health);
+        Money.SetAmount(coins);
     }
 
     public void Save()
     {
         var weaponHandler = FindObjectOfType<WeaponHandler>();
-        weapon1 = weaponHandler.weapon1.weapon.prefab.GetComponent<Weapon>();
-        weapon2 = weaponHandler.weapon2.weapon.prefab.GetComponent<Weapon>();
+        try
+        {
+            weapon1 = weaponHandler.weapon1.weapon.prefab.GetComponent<Weapon>();
+        }
+        catch (NullReferenceException)
+        {
+            weapon1 = null;
+        }
+        
+        try
+        {
+            weapon2 = weaponHandler.weapon2.weapon.prefab.GetComponent<Weapon>();
+        }
+        catch (NullReferenceException)
+        {
+            weapon2 = null;
+        }
+        
         health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().GetAmount();
+        coins = Money.GetAmount();
     }
 }

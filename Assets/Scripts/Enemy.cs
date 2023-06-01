@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour
                 position.y + direction.y * attackPointExtension);
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator PerformMeleeAttack()
     {
         readyToAttack = false;
@@ -97,15 +98,16 @@ public class Enemy : MonoBehaviour
         readyToAttack = true;
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     private IEnumerator PerformRangedAttack()
     {
         readyToAttack = false;
         animator.SetTrigger(Attacking);
-        Instantiate(projectile, attackPoint.position, Quaternion.identity);
+        var p = Instantiate(projectile, attackPoint.position, Quaternion.identity);
         yield return new WaitForSeconds(timeToDamage);
-        projectile.GetComponent<BoxCollider2D>().isTrigger = false;
-        projectile.GetComponent<Projectile>().damage = attackDamage;
-        projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+        p.GetComponent<BoxCollider2D>().isTrigger = false;
+        p.GetComponent<Projectile>().damage = attackDamage;
+        p.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
         yield return new WaitForSeconds(attackCooldown);
         readyToAttack = true;
     }

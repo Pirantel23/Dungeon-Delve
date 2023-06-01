@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonAudio : MonoBehaviour
 {
     /// <summary>
-    /// reproduces the sound of button's click on click
+    /// Reproduces the sound of button's click on click
     /// </summary>
     public void Click()
     {
