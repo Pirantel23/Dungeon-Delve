@@ -2217,7 +2217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_141
+      name: golem_1001
       rect:
         serializedVersion: 2
         x: 54
@@ -2238,7 +2238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_152
+      name: golem_1007
       rect:
         serializedVersion: 2
         x: 347
@@ -2259,7 +2259,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_161
+      name: golem_1000
       rect:
         serializedVersion: 2
         x: 36
@@ -2280,7 +2280,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_162
+      name: golem_1002
       rect:
         serializedVersion: 2
         x: 102
@@ -2301,7 +2301,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_163
+      name: golem_1003
       rect:
         serializedVersion: 2
         x: 150
@@ -2322,7 +2322,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_164
+      name: golem_1004
       rect:
         serializedVersion: 2
         x: 198
@@ -2343,7 +2343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_165
+      name: golem_1005
       rect:
         serializedVersion: 2
         x: 248
@@ -2364,7 +2364,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_166
+      name: golem_1006
       rect:
         serializedVersion: 2
         x: 298
@@ -2385,15 +2385,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_199
+      name: golem_201
       rect:
         serializedVersion: 2
         x: 21
         y: 925
-        width: 270
+        width: 271
         height: 44
       alignment: 9
-      pivot: {x: 0.08319911, y: 0.49126503}
+      pivot: {x: 0.08285348, y: 0.48966286}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2427,27 +2427,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_201
-      rect:
-        serializedVersion: 2
-        x: 1018
-        y: 919
-        width: 270
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a95a1c131a6882c4facad52f8e284bd6
-      internalID: -1152627344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: golem_202
       rect:
         serializedVersion: 2
@@ -2476,8 +2455,8 @@ TextureImporter:
         y: 830
         width: 264
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.062111594, y: 0.51475906}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2490,27 +2469,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: golem_204
-      rect:
-        serializedVersion: 2
-        x: 1007
-        y: 824
-        width: 264
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e48b61175b1bb454a824d019aa562d22
-      internalID: 1508516515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: golem_205
       rect:
         serializedVersion: 2
@@ -2518,8 +2476,8 @@ TextureImporter:
         y: 734
         width: 261
         height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.051794555, y: 0.47999924}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2527,27 +2485,6 @@ TextureImporter:
       bones: []
       spriteID: 18d305b6ca473694cb143720ca155e7d
       internalID: 1633007857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: golem_206
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 728
-        width: 261
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2c9bd9f1f7feab46837ad7ac31ef514
-      internalID: -357923520
       vertices: []
       indices: 
       edges: []
@@ -2567,6 +2504,14 @@ TextureImporter:
       golem_1: 215781914
       golem_10: -137684279
       golem_100: -88758959
+      golem_1000: 970809831
+      golem_1001: 466823345
+      golem_1002: 1984516957
+      golem_1003: -1283082535
+      golem_1004: 375876978
+      golem_1005: 1665617123
+      golem_1006: -1734081575
+      golem_1007: 413698168
       golem_101: 2100333309
       golem_102: 180550056
       golem_103: -1664643712
@@ -2611,7 +2556,6 @@ TextureImporter:
       golem_139: 494132533
       golem_14: -6401910
       golem_140: 1641774982
-      golem_141: 466823345
       golem_142: 1303869979
       golem_143: 1713737064
       golem_144: 30736954
@@ -2623,7 +2567,6 @@ TextureImporter:
       golem_15: -2014778391
       golem_150: 1605767255
       golem_151: -464143136
-      golem_152: 413698168
       golem_153: -846869534
       golem_154: 1741199362
       golem_155: -729736229
@@ -2633,13 +2576,6 @@ TextureImporter:
       golem_159: -1067494129
       golem_16: 1478488238
       golem_160: 2091617408
-      golem_161: 970809831
-      golem_162: 1984516957
-      golem_163: -1283082535
-      golem_164: 375876978
-      golem_165: 1665617123
-      golem_166: -1734081575
-      golem_167: 363149447
       golem_168: 420678721
       golem_169: 1408969928
       golem_17: -1449442520
@@ -2674,11 +2610,10 @@ TextureImporter:
       golem_196: -913383288
       golem_197: -63495776
       golem_198: -1709089822
-      golem_199: -326707186
       golem_2: -318077970
       golem_20: 69868020
       golem_200: -485535517
-      golem_201: -1152627344
+      golem_201: -326707186
       golem_202: 172576572
       golem_203: -174294892
       golem_204: 1508516515

@@ -9,14 +9,9 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        try
-        {
-            col.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Destroy(gameObject);
-        }
-        catch (NullReferenceException)
-        {
-            Destroy(gameObject);
-        }
+        if (col.gameObject.CompareTag("Player")) col.gameObject.GetComponent<Health>().TakeDamage(damage);
+        if (col.gameObject.CompareTag("Enemy")) col.gameObject.GetComponent<Health>().TakeDamage(damage);
+        if (col.gameObject.CompareTag("Boss")) col.gameObject.GetComponent<Boss>().TakeDamage(damage);
+        Destroy(gameObject);
     }
 }

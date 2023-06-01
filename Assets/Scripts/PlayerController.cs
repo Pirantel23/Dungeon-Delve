@@ -143,7 +143,8 @@ public class PlayerController : MonoBehaviour
         foreach (var hit in enemyHits)
         {
             if (!hit.isTrigger) continue;
-            hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
+            if (hit.CompareTag("Enemy")) hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
+            if (hit.CompareTag("Boss")) hit.GetComponent<Boss>().TakeDamage(_strength + weapon.damage);
             if (!weapon.splashDamage) break;
         }
         yield return new WaitForSeconds(weapon.cooldown / attackSpeed);

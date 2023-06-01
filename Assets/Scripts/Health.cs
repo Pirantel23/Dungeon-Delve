@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float despawnTime;
     [SerializeField] private GameObject deadScreen;
-    private float maxHealth;
+    public float maxHealth;
     private static readonly int Hurt = Animator.StringToHash("hurt");
     private static readonly int Dead = Animator.StringToHash("dead");
 
@@ -56,6 +56,7 @@ public class Health : MonoBehaviour
         {
             var script = GetComponent<Enemy>();
             Money.ChangeValue(script.moneyDropped);
+            PlayerPrefs.SetInt("HAY", PlayerPrefs.GetInt("HAY") + 1);
             script.enabled = false;
         }
         
