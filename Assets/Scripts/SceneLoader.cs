@@ -41,7 +41,8 @@ public class SceneLoader : MonoBehaviour
     {
         if (col.CompareTag("Player") && Input.GetKey(KeyCode.E))
         {
-            LoadScene(2);
+            // LoadScene(2);
+            SceneManager.LoadScene(2);
         }
     }
 }
