@@ -17,10 +17,6 @@ public class RandomFloorGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] floorTiles;
     [SerializeField] private GameObject[] shadowUpFloorTiles;
-    // [SerializeField] private GameObject justWall;
-    // [SerializeField] private GameObject rightUpWall;
-    // [SerializeField] private GameObject rightUpWallCorner;
-    // [SerializeField] private GameObject rightWall;
 
 
     // TODO: заглушка, нет боковых спрайтов с тенями.
@@ -37,7 +33,6 @@ public class RandomFloorGenerator : MonoBehaviour
     [SerializeField] private int minHeight = 8;
     [SerializeField] private int maxWidth = 20;
     [SerializeField] private int maxHeight = 16;
-    [SerializeField] private float floorPrefabScaleMultiplier = 0.2f;
 
     [SerializeField] private int maximumRoomsOnFloor = 7;
     [SerializeField] private int minimumRoomsOnFloor = 5;
@@ -47,7 +42,7 @@ public class RandomFloorGenerator : MonoBehaviour
     private const int ShopHeight = 8;
     private const int ShopWidth = 12;
 
-    private float sizeMultiplier;
+    private float sizeMultiplier = 0.4f;
     private (float, float)[] tilesSizes;
     private Side lastEntranceSide = Side.Up;
     private int roomCounter;
@@ -58,28 +53,19 @@ public class RandomFloorGenerator : MonoBehaviour
     private int width;
     private int height;
     private int shopsFound;
-    private GameObject player;
-    private GameObject camera;
-    private GameObject[] doors;
-    private List<GameObject> wallTiles = new();
 
     // Ссылка на созданные тайлы поля
     private GameObject[,] fieldTiles;
 
+    private void FillTileSizes()
+    {
+        tilesSizes = floorTiles.Select(tile =>
+                tile.GetComponent<Renderer>().bounds.size)
+            .Select(tileSize => (tileSize.x, tileSize.y)).ToArray();
+    }
+
     private void Start()
     {
-        sizeMultiplier = 0.4f * floorPrefabScaleMultiplier;
-
-        ResizePrefabsInArray(floorTiles);
-        ResizePrefabsInArray(shadowUpFloorTiles);
-
-        doorPrefab.transform.localScale *= floorPrefabScaleMultiplier;
-        entranceDoorPrefab.transform.localScale *= floorPrefabScaleMultiplier;
-        
-        // justWall.transform.localScale *= floorPrefabScaleMultiplier * 5;
-        // rightUpWall.transform.localScale *= floorPrefabScaleMultiplier * 5;
-        // rightWall.transform.localScale *= floorPrefabScaleMultiplier * 5;
-
         FillTileSizes();
         roomCounter = 1;
         nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
@@ -93,7 +79,6 @@ public class RandomFloorGenerator : MonoBehaviour
         {
             ClearFloorTiles();
             ClearDoorTiles();
-            ClearWallTiles();
             lastEntranceSide = Side.Up;
             roomCounter = 1;
             shopsFound = 0;
@@ -101,67 +86,43 @@ public class RandomFloorGenerator : MonoBehaviour
 
             GenerateCurrentRoom();
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.E))
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Door"))
         {
-            foreach (var door in doors)
+            var doorPos = other.transform.position;
+
+            switch (doorPos.x)
             {
-                var intersected = Physics2D.OverlapBoxAll(player.transform.position,
-                        player.GetComponent<BoxCollider2D>().size / 2, 0f)
-                    .Any(obj => obj.gameObject == door &&
-                                door.activeSelf); // определяем, пересекается ли игрок с текущей дверью
-
-                if (intersected)
-                {
-                    var doorPos = door.transform.position;
-
-                    switch (doorPos.x)
-                    {
-                        case 0 when doorPos.y > 0:
-                            lastEntranceSide = Side.Down;
-                            GenerateMoveToNextRoom();
-                            Debug.Log("up");
-                            break;
-                        case 0 when doorPos.y < 0:
-                            lastEntranceSide = Side.Up;
-                            GenerateMoveToNextRoom();
-                            Debug.Log("down");
-                            break;
-                        case > 0 when doorPos.y == 0:
-                            lastEntranceSide = Side.Left;
-                            GenerateMoveToNextRoom();
-                            Debug.Log("right");
-                            break;
-                        case < 0 when doorPos.y == 0:
-                            lastEntranceSide = Side.Right;
-                            GenerateMoveToNextRoom();
-                            Debug.Log("left");
-                            break;
-                    }
-                }
+                case 0 when doorPos.y > 0:
+                    lastEntranceSide = Side.Down;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("up");
+                    break;
+                case 0 when doorPos.y < 0:
+                    lastEntranceSide = Side.Up;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("down");
+                    break;
+                case > 0 when doorPos.y == 0:
+                    lastEntranceSide = Side.Left;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("right");
+                    break;
+                case < 0 when doorPos.y == 0:
+                    lastEntranceSide = Side.Right;
+                    GenerateMoveToNextRoom();
+                    Debug.Log("left");
+                    break;
             }
         }
     }
 
     private void TeleportToPosition(Vector3 newPosition)
     {
-        player.transform.position = newPosition;
-        camera.transform.position = newPosition;
-    }
-
-    private void ResizePrefabsInArray(IEnumerable<GameObject> prefabs)
-    {
-        foreach (var prefab in prefabs)
-        {
-            prefab.transform.localScale *= floorPrefabScaleMultiplier;
-        }
-    }
-
-    private void FillTileSizes()
-    {
-        tilesSizes = floorTiles.Select(tile =>
-                tile.GetComponent<Renderer>().bounds.size)
-            .Select(tileSize => (tileSize.x, tileSize.y)).ToArray();
+        transform.position = newPosition;
     }
 
     private void GenerateCurrentRoom()
@@ -169,27 +130,20 @@ public class RandomFloorGenerator : MonoBehaviour
         height = Random.Range(minHeight, maxHeight) * 2;
         width = Random.Range(minWidth, maxWidth) * 2;
         xOffset = width * 0.5f * -sizeMultiplier;
-        yOffset = height * 0.5f * -sizeMultiplier + sizeMultiplier;
+        yOffset = height * 0.5f * -sizeMultiplier + 0.4f;
         fieldTiles = new GameObject[height, width];
         var floorMatrix = CreateFloorMatrix();
-
-        player = GameObject.FindGameObjectWithTag("Player"); // находим игрока по тегу
-        camera = GameObject.FindGameObjectWithTag("MainCamera"); // находим камеру
-
         DrawFloorTiles(floorMatrix);
         MovePlayerToNextRoom();
         DrawDoorsTiles();
-        // DrawWalls();
-
-        doors = GameObject.FindGameObjectsWithTag("Door"); // находим все объекты с тегом "Door"
     }
 
     private void MovePlayerToNextRoom()
     {
-        var up = new Vector3(0, height * 0.5f * sizeMultiplier - sizeMultiplier, 0);
-        var left = new Vector3(-width * 0.5f * sizeMultiplier + sizeMultiplier, 0, 0);
-        var right = new Vector3(width * 0.5f * sizeMultiplier - sizeMultiplier, 0, 0);
-        var down = new Vector3(0, -height * 0.5f * sizeMultiplier + sizeMultiplier, 0);
+        var up = new Vector3(0, height * 0.5f * sizeMultiplier - 1, 0);
+        var left = new Vector3(-width * 0.5f * sizeMultiplier + 1, 0, 0);
+        var right = new Vector3(width * 0.5f * sizeMultiplier - 1, 0, 0);
+        var down = new Vector3(0, -height * 0.5f * sizeMultiplier + 1, 0);
         switch (lastEntranceSide)
         {
             case Side.Up:
@@ -223,44 +177,6 @@ public class RandomFloorGenerator : MonoBehaviour
         }
 
         return floorMatrix;
-    }
-
-    private void DrawWalls()
-    {
-        var currentX = xOffset;
-        var currentY = yOffset;
-        var maxX = xOffset + width * sizeMultiplier;
-        var maxY = yOffset + height * sizeMultiplier;
-        var modified = maxX - sizeMultiplier * 3;
-        
-        // while (currentX < modified)
-        // {
-        //     var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
-        //     var tile = Instantiate(justWall, position, Quaternion.identity);
-        //     wallTiles.Add(tile);
-        //     currentX += sizeMultiplier * 2;
-        //     
-        //     if (currentX < modified) continue;
-        //     
-        //     position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
-        //     tile = Instantiate(rightUpWall, position, Quaternion.identity);
-        //     wallTiles.Add(tile);
-        //     currentX += sizeMultiplier * 2;
-        //     
-        //     position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
-        //     tile = Instantiate(rightUpWallCorner, position, Quaternion.identity);
-        //     wallTiles.Add(tile);
-        //     maxY -= sizeMultiplier * 2;
-        // }
-        //
-        // while (currentY < maxY)
-        // {
-        //     var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
-        //     var tile = Instantiate(rightWall, position, Quaternion.identity);
-        //     wallTiles.Add(tile);
-        //     maxY -= sizeMultiplier * 2;
-        // }
-
     }
 
     private (GameObject, int, int) GenerateAnyTile(int index, Vector3 position, bool isShadowedUp, bool isShadowedRight)
@@ -444,16 +360,6 @@ public class RandomFloorGenerator : MonoBehaviour
         }
     }
 
-    private void ClearWallTiles()
-    {
-        foreach (var wall in wallTiles)
-        {
-            Destroy(wall);
-        }
-
-        wallTiles.Clear();
-    }
-
     private void GenerateMoveToNextRoom()
     {
         var a = Random.Range(1, 100);
@@ -467,8 +373,7 @@ public class RandomFloorGenerator : MonoBehaviour
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
         else
             nearRoomSides = Array.Empty<Side>();
-        
-        ClearWallTiles();
+
         ClearFloorTiles();
         ClearDoorTiles();
         roomCounter++;
