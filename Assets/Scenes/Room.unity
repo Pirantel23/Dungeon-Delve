@@ -173,13 +173,20 @@ MonoBehaviour:
   downLeftCornerTile: {fileID: 2193479397483252800, guid: 874945ff9a8f2834597ad3ca64bcb6b0, type: 3}
   leftWallTile: {fileID: 2193479397483252800, guid: a968b34801677244c8d776bddb6933a2, type: 3}
   upLeftCorner: {fileID: 2193479397483252800, guid: 375c9966ef16c4e42878cba6c34af242, type: 3}
-  entranceDoorPrefab: {fileID: 8832177172035222094, guid: 9973ba5997a2dc64a8b6857e266e05c1, type: 3}
+  entranceDoorPrefab: {fileID: 8832177172035222094, guid: 7450c25970c4da74cbe5b372b82cc87a, type: 3}
+  entranceLeftDoorPrefab: {fileID: 8832177172035222094, guid: 87826c9e5e3a50d42b5cdd4c37584e2e, type: 3}
+  entranceRightDoorPrefab: {fileID: 8832177172035222094, guid: 9bdb4b01304a85c4095bd744a09cbc9a, type: 3}
   shopDoorPrefab: {fileID: 0}
-  doorPrefab: {fileID: 8832177172035222094, guid: 9973ba5997a2dc64a8b6857e266e05c1, type: 3}
+  doorPrefab: {fileID: 8832177172035222094, guid: c5766a5ac0859b34f8d2b1ab5404c275, type: 3}
+  doorLeftPrefab: {fileID: 8832177172035222094, guid: 9973ba5997a2dc64a8b6857e266e05c1, type: 3}
+  doorRightPrefab: {fileID: 8832177172035222094, guid: 186934bc6ceb0e149ba45bca787f6d88, type: 3}
   minWidth: 10
   minHeight: 7
   maxWidth: 16
   maxHeight: 12
+  maximumRoomsOnFloor: 7
+  minimumRoomsOnFloor: 5
+  shopsOnFloor: 3
 --- !u!1001 &663001166
 PrefabInstance:
   m_ObjectHideFlags: 0
