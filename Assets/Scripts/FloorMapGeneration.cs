@@ -13,13 +13,6 @@ internal enum Side
     Left
 }
 
-internal enum RoomType
-{
-    Room,
-    Shop,
-    Boss
-}
-
 public class FloorMapGeneration : MonoBehaviour
 {
     // префабы пола
@@ -44,10 +37,16 @@ public class FloorMapGeneration : MonoBehaviour
     [SerializeField] private GameObject entranceDoorPrefab;
     [SerializeField] private GameObject entranceLeftDoorPrefab;
     [SerializeField] private GameObject entranceRightDoorPrefab;
-    [SerializeField] private GameObject shopDoorPrefab;
+
     [SerializeField] private GameObject doorPrefab;
     [SerializeField] private GameObject doorLeftPrefab;
     [SerializeField] private GameObject doorRightPrefab;
+
+    [SerializeField] private GameObject shopDoorPrefab;
+    [SerializeField] private GameObject shopDoorLeftPrefab;
+    [SerializeField] private GameObject shopDoorRightPrefab;
+
+    [SerializeField] private GameObject bossDoorPrefab;
 
     // Размер матрицы пола
     [SerializeField] private int minWidth = 8;
@@ -65,10 +64,9 @@ public class FloorMapGeneration : MonoBehaviour
     [SerializeField] private int maxAmount = 4;
 
     [SerializeField] private GameObject spawnerPrefab;
+    [SerializeField] private GameObject boss;
 
     private const int NewRoomChance = 50;
-    private const int ShopRoomChance = 40;
-    private const int BossRoomChance = 10;
 
 
     private const float SizeMultiplier = 0.08f;
@@ -81,7 +79,7 @@ public class FloorMapGeneration : MonoBehaviour
     private int width;
     private int height;
 
-    private int shopsFound;
+    private int shopIsFound;
 
     // объекты сцены
     private GameObject player;
@@ -92,7 +90,8 @@ public class FloorMapGeneration : MonoBehaviour
     private GameObject[,] fieldTiles;
     private readonly List<GameObject> wallTiles = new();
     private readonly List<GameObject> doorTiles = new();
-    private bool isLastRoom;
+    private bool isBossRoom;
+    private bool isShopRoom;
 
 
     private void Start()
@@ -124,33 +123,86 @@ public class FloorMapGeneration : MonoBehaviour
                         player.GetComponent<BoxCollider2D>().size / 2, 0f)
                     .Any(obj => obj.gameObject == door &&
                                 door.activeSelf); // определяем, пересекается ли игрок с текущей дверью
-                Debug.Log($"{intersected}");
                 if (intersected)
                 {
                     var doorPos = door.transform.position;
+
+                    isShopRoom = false;
 
                     switch (doorPos.x)
                     {
                         case 0 when doorPos.y > 0:
                             lastEntranceSide = Side.Down;
                             GenerateMoveToNextRoom();
-                            Debug.Log("up");
                             break;
                         case 0 when doorPos.y < 0:
                             lastEntranceSide = Side.Up;
                             GenerateMoveToNextRoom();
-                            Debug.Log("down");
                             break;
                         case > 0 when doorPos.y == 0:
                             lastEntranceSide = Side.Left;
                             GenerateMoveToNextRoom();
-                            Debug.Log("right");
                             break;
                         case < 0 when doorPos.y == 0:
                             lastEntranceSide = Side.Right;
                             GenerateMoveToNextRoom();
-                            Debug.Log("left");
                             break;
+                    }
+                }
+
+                var shopDoor = GameObject.FindGameObjectWithTag("ShopDoor");
+                if (shopDoor is not null)
+                {
+                    if (shopDoor.GetComponent<BoxCollider2D>().bounds.Intersects(
+                            player.GetComponent<BoxCollider2D>().bounds))
+                    {
+                        var doorPos = shopDoor.transform.position;
+
+                        isShopRoom = true;
+
+                        switch (doorPos.x)
+                        {
+                            case 0 when doorPos.y > 0:
+                                lastEntranceSide = Side.Down;
+                                GenerateMoveToNextRoom();
+                                break;
+                            case 0 when doorPos.y < 0:
+                                lastEntranceSide = Side.Up;
+                                GenerateMoveToNextRoom();
+                                break;
+                            case > 0 when doorPos.y == 0:
+                                lastEntranceSide = Side.Left;
+                                GenerateMoveToNextRoom();
+                                break;
+                            case < 0 when doorPos.y == 0:
+                                lastEntranceSide = Side.Right;
+                                GenerateMoveToNextRoom();
+                                break;
+                        }
+                    }
+                }
+
+                var bossDoor = GameObject.FindGameObjectWithTag("BossDoor");
+                if (bossDoor is not null)
+                {
+                    if (bossDoor.GetComponent<BoxCollider2D>().bounds.Intersects(
+                            player.GetComponent<BoxCollider2D>().bounds))
+                    {
+                        var doorPos = bossDoor.transform.position;
+
+                        isBossRoom = true;
+
+                        switch (doorPos.x)
+                        {
+                            case 0 when doorPos.y > 0:
+                                lastEntranceSide = Side.Down;
+                                GenerateMoveToNextRoom();
+                                break;
+                            case 0 when doorPos.y < 0:
+                                lastEntranceSide = Side.Up;
+                                GenerateMoveToNextRoom();
+                                break;
+                        }
                     }
                 }
             }
@@ -201,11 +253,21 @@ public class FloorMapGeneration : MonoBehaviour
         DrawFloorTiles(floorMatrix);
         DrawWallTiles();
         DrawDoorsTiles();
-        Spawn(maxAmount, minAmount);
+        if (!(isShopRoom || isBossRoom))
+        {
+            Spawn(maxAmount, minAmount);
+            minAmount++;
+            maxAmount = minAmount * 2;
+        }
 
-        minAmount++;
-        maxAmount = minAmount * 2;
+        if (isShopRoom)
+            isShopRoom = false;
 
+        if (isBossRoom)
+        {
+            isBossRoom = false;
+            Instantiate(boss, Vector2.zero, Quaternion.identity).GetComponent<Boss>().target = player.transform;
+        }
 
         doors = GameObject.FindGameObjectsWithTag("Door"); // находим все объекты с тегом "Door"
 
@@ -388,24 +450,78 @@ public class FloorMapGeneration : MonoBehaviour
         var left = new Vector3(-width * 0.5f * SizeMultiplier, 0, 0);
         var right = new Vector3(width * 0.5f * SizeMultiplier, 0, 0);
         var down = new Vector3(0, -height * 0.5f * SizeMultiplier, 0);
+
+        var needShop = roomCounter == 3;
+        var needBoss = nearRoomSides.Length == 0;
+
         foreach (var side in nearRoomSides)
         {
             switch (side)
             {
                 case Side.Up:
-                    var upDoorTile = Instantiate(doorPrefab, up, Quaternion.identity);
+                    GameObject upDoorTile;
+                    if (needShop)
+                    {
+                        needShop = false;
+                        upDoorTile = Instantiate(shopDoorPrefab, up, Quaternion.identity);
+                    }
+                    else if (needBoss)
+                    {
+                        needBoss = false;
+                        upDoorTile = Instantiate(bossDoorPrefab, up, Quaternion.identity);
+                    }
+                    else
+                    {
+                        upDoorTile = Instantiate(doorPrefab, up, Quaternion.identity);
+                    }
+
                     doorTiles.Add(upDoorTile);
                     break;
                 case Side.Right:
-                    var rightDoorTile = Instantiate(doorRightPrefab, right, Quaternion.identity);
+                    GameObject rightDoorTile;
+                    if (needShop)
+                    {
+                        needShop = false;
+                        rightDoorTile = Instantiate(shopDoorRightPrefab, right, Quaternion.identity);
+                    }
+                    else
+                    {
+                        rightDoorTile = Instantiate(doorRightPrefab, right, Quaternion.identity);
+                    }
+
                     doorTiles.Add(rightDoorTile);
                     break;
                 case Side.Down:
-                    var downDoorTile = Instantiate(doorPrefab, down, Quaternion.Euler(0, 0, 180));
+                    GameObject downDoorTile;
+                    if (needShop)
+                    {
+                        needShop = false;
+                        downDoorTile = Instantiate(shopDoorPrefab, down, Quaternion.Euler(0, 0, 180));
+                    }
+                    else if (needBoss)
+                    {
+                        needBoss = false;
+                        downDoorTile = Instantiate(bossDoorPrefab, up, Quaternion.Euler(0, 0, 180));
+                    }
+                    else
+                    {
+                        downDoorTile = Instantiate(doorPrefab, down, Quaternion.Euler(0, 0, 180));
+                    }
+
                     doorTiles.Add(downDoorTile);
                     break;
                 case Side.Left:
-                    var leftDoorTile = Instantiate(doorLeftPrefab, left, Quaternion.identity);
+                    GameObject leftDoorTile;
+                    if (needShop)
+                    {
+                        needShop = false;
+                        leftDoorTile = Instantiate(shopDoorLeftPrefab, left, Quaternion.identity);
+                    }
+                    else
+                    {
+                        leftDoorTile = Instantiate(doorLeftPrefab, left, Quaternion.identity);
+                    }
+
                     doorTiles.Add(leftDoorTile);
                     break;
                 default:
@@ -478,9 +594,7 @@ public class FloorMapGeneration : MonoBehaviour
     private void GenerateMoveToNextRoom()
     {
         var roomChance = Random.Range(1, 100);
-        var bossChance = Random.Range(1, 100);
-        var shopChance = Random.Range(1, 100);
-            
+
         if (roomCounter < minimumRoomsOnFloor)
         {
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
@@ -492,7 +606,7 @@ public class FloorMapGeneration : MonoBehaviour
         else
         {
             nearRoomSides = Array.Empty<Side>();
-            isLastRoom = true;
+            isBossRoom = true;
         }
 
         ClearAndDestroyTileList(doorTiles);

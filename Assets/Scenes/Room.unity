@@ -176,10 +176,13 @@ MonoBehaviour:
   entranceDoorPrefab: {fileID: 8832177172035222094, guid: 7450c25970c4da74cbe5b372b82cc87a, type: 3}
   entranceLeftDoorPrefab: {fileID: 8832177172035222094, guid: 87826c9e5e3a50d42b5cdd4c37584e2e, type: 3}
   entranceRightDoorPrefab: {fileID: 8832177172035222094, guid: 9bdb4b01304a85c4095bd744a09cbc9a, type: 3}
-  shopDoorPrefab: {fileID: 0}
   doorPrefab: {fileID: 8832177172035222094, guid: c5766a5ac0859b34f8d2b1ab5404c275, type: 3}
   doorLeftPrefab: {fileID: 8832177172035222094, guid: 9973ba5997a2dc64a8b6857e266e05c1, type: 3}
   doorRightPrefab: {fileID: 8832177172035222094, guid: 186934bc6ceb0e149ba45bca787f6d88, type: 3}
+  shopDoorPrefab: {fileID: 8832177172035222094, guid: 7624f47fbd9b36a4aa39d9886b670729, type: 3}
+  shopDoorLeftPrefab: {fileID: 8832177172035222094, guid: 0e91c99c98eab8346bbe538e0c99bbcb, type: 3}
+  shopDoorRightPrefab: {fileID: 8832177172035222094, guid: f98b40be599928340ade5cf90067d480, type: 3}
+  bossDoorPrefab: {fileID: 8832177172035222094, guid: 27f85007e344868419861d362c4a72c4, type: 3}
   minWidth: 10
   minHeight: 7
   maxWidth: 16
@@ -190,6 +193,7 @@ MonoBehaviour:
   minAmount: 2
   maxAmount: 4
   spawnerPrefab: {fileID: 1940275132549276264, guid: 641f425382eba5f409e3343ee7c53fa7, type: 3}
+  boss: {fileID: 2199626911855957429, guid: ffe7ef44ad3d3164695af8e1bfcc0dad, type: 3}
 --- !u!1001 &663001166
 PrefabInstance:
   m_ObjectHideFlags: 0
