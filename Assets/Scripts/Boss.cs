@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private float rangedCooldown;
     [SerializeField] private float meleeRange;
     [SerializeField] private float laserDuration;
-    [SerializeField] private Transform target;
+    [SerializeField] public Transform target;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackPointExtension;
