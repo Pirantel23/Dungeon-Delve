@@ -27,8 +27,12 @@ public class FloorMapGeneration : MonoBehaviour
 
     // префабы дверей
     [SerializeField] private GameObject entranceDoorPrefab;
+    [SerializeField] private GameObject entranceLeftDoorPrefab;
+    [SerializeField] private GameObject entranceRightDoorPrefab;
     [SerializeField] private GameObject shopDoorPrefab;
     [SerializeField] private GameObject doorPrefab;
+    [SerializeField] private GameObject doorLeftPrefab;
+    [SerializeField] private GameObject doorRightPrefab;
 
     // Размер матрицы пола
     [SerializeField] private int minWidth = 8;
@@ -376,7 +380,7 @@ public class FloorMapGeneration : MonoBehaviour
                     doorTiles.Add(upDoorTile);
                     break;
                 case Side.Right:
-                    var rightDoorTile = Instantiate(doorPrefab, right, Quaternion.Euler(0, 0, -90));
+                    var rightDoorTile = Instantiate(doorRightPrefab, right, Quaternion.identity);
                     doorTiles.Add(rightDoorTile);
                     break;
                 case Side.Down:
@@ -384,7 +388,7 @@ public class FloorMapGeneration : MonoBehaviour
                     doorTiles.Add(downDoorTile);
                     break;
                 case Side.Left:
-                    var leftDoorTile = Instantiate(doorPrefab, left, Quaternion.Euler(0, 0, 90));
+                    var leftDoorTile = Instantiate(doorLeftPrefab, left, Quaternion.identity);
                     doorTiles.Add(leftDoorTile);
                     break;
                 default:
@@ -396,9 +400,9 @@ public class FloorMapGeneration : MonoBehaviour
         var entranceDoorTile = lastEntranceSide switch
         {
             Side.Up => Instantiate(entranceDoorPrefab, up, Quaternion.identity),
-            Side.Right => Instantiate(entranceDoorPrefab, right, Quaternion.Euler(0, 0, -90)),
+            Side.Right => Instantiate(entranceRightDoorPrefab, right, Quaternion.identity),
             Side.Down => Instantiate(entranceDoorPrefab, down, Quaternion.Euler(0, 0, 180)),
-            Side.Left => Instantiate(entranceDoorPrefab, left, Quaternion.Euler(0, 0, 90)),
+            Side.Left => Instantiate(entranceLeftDoorPrefab, left, Quaternion.identity),
             _ => throw new ArgumentOutOfRangeException()
         };
         doorTiles.Add(entranceDoorTile);

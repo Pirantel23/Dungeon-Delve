@@ -6396,18 +6396,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.009056091
       objectReference: {fileID: 0}
-    - target: {fileID: 7518307475001281432, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -549167128, guid: 370a5dad4599d3b4d842e8bfb673db54, type: 3}
     - target: {fileID: 7518307475318520808, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1776308548}
-    - target: {fileID: 7518307476101315536, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -549167128, guid: 370a5dad4599d3b4d842e8bfb673db54, type: 3}
     - target: {fileID: 7518307476118152078, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
