@@ -64,7 +64,7 @@ public class PlayerUpgrader : MonoBehaviour
     private void UpgradeParameter(string parameterName, int parameterCost, TextMeshProUGUI textObject, bool linearIncrement)
     {
         var t = PlayerPrefs.GetInt($"{parameterName}_T");
-        if (hayCount < parameterCost || t > 5) return;
+        if (hayCount < parameterCost || t > 4) return;
         PlayerPrefs.SetFloat(parameterName,
             linearIncrement
                 ? PlayerPrefs.GetFloat(parameterName) + 1
@@ -135,7 +135,7 @@ public class PlayerUpgrader : MonoBehaviour
         PlayerPrefs.SetInt("HEALTH_T", 0);
         PlayerPrefs.SetInt("AGILITY_T", 0);
 
-        PlayerPrefs.SetInt("HAY", 100);
+        PlayerPrefs.SetInt("HAY", 10000);
 
         PlayerPrefs.SetInt("PLAYED", 1);
     }
@@ -159,6 +159,19 @@ public class PlayerUpgrader : MonoBehaviour
         upgradeUI.gameObject.SetActive(true);
         regularUI.gameObject.SetActive(false);
         hayCount = PlayerPrefs.GetInt("HAY");
+        agilityCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("AGILITY_T")+1);
+        dashCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("DASH_T")+1);
+        healCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("HEAL_T")+1);
+        healthCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("HEALTH_T")+1);
+        speedCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("SPEED_T")+1);
+        strengthCost = (int)Mathf.Pow(2, PlayerPrefs.GetInt("STRENGTH_T")+1);
+        
+        ChangeText(agilityIcon, agilityCost.ToString());
+        ChangeText(dashIcon, dashCost.ToString());
+        ChangeText(healIcon, healCost.ToString());
+        ChangeText(healthIcon, healthCost.ToString());
+        ChangeText(speedIcon, speedCost.ToString());
+        ChangeText(strengthIcon, strengthCost.ToString());
     }
 
     private void CloseUI()

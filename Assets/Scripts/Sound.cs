@@ -8,7 +8,11 @@ public enum SoundType
 	PlayerDamage,
 	ShovelAttack,
 	WormDamage,
-	ButtonClick
+	ButtonClick,
+	RangeWeapon,
+	Laser,
+	GolemDamage,
+	MeleeGolem
 }
 [System.Serializable]
 public class Sound {
