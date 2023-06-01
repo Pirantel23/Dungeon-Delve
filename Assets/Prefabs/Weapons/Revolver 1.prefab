@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620f8dbed24571a46aefe3e12b506b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3975479769540847860, guid: cf7ee175926115f489615c9d7335628c, type: 3}
   sprite: {fileID: 1459834700156261297}
   id: 3
   icon: {fileID: 526593035, guid: c904dc1d5a0fe56479b2a5b3a17fc30e, type: 3}

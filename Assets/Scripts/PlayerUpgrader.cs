@@ -61,37 +61,61 @@ public class PlayerUpgrader : MonoBehaviour
 
     private void ChangeText(TextMeshProUGUI text, string newValue) => text.text = newValue;
 
-    private void UpgradeParameter(string parameterName, int parameterCost, TextMeshProUGUI textObject)
+    private void UpgradeParameter(string parameterName, int parameterCost, TextMeshProUGUI textObject, bool linearIncrement)
     {
         var t = PlayerPrefs.GetInt($"{parameterName}_T");
         if (hayCount < parameterCost || t > 5) return;
-        PlayerPrefs.SetFloat(parameterName, PlayerPrefs.GetFloat(parameterName) * upgradeMultiplier);
+        PlayerPrefs.SetFloat(parameterName,
+            linearIncrement
+                ? PlayerPrefs.GetFloat(parameterName) + 1
+                : PlayerPrefs.GetFloat(parameterName) * upgradeMultiplier);
         PlayerPrefs.SetInt($"{parameterName}_T", t + 1);
         hayCount -= parameterCost;
         parameterCost = (int)(parameterCost * costMultiplier);
+        switch (parameterName)
+        {
+            case "STRENGTH":
+                strengthCost = parameterCost;
+                break;
+            case "SPEED":
+                speedCost = parameterCost;
+                break;
+            case "DASH":
+                dashCost = parameterCost;
+                break;
+            case "HEAL":
+                healCost = parameterCost;
+                break;
+            case "HEALTH":
+                healthCost = parameterCost;
+                break;
+            case "AGILITY":
+                agilityCost = parameterCost;
+                break;
+        }
         player.InitUpgrades();
         ChangeText(textObject, parameterCost.ToString());
         PlayerPrefs.SetInt("HAY", hayCount);
     }
 
     public void UpgradeStrength() =>
-        UpgradeParameter("STRENGTH_T", strengthCost, strengthIcon);
+        UpgradeParameter("STRENGTH", strengthCost, strengthIcon, false);
 
 
     public void UpgradeSpeed() =>
-        UpgradeParameter("SPEED_T", speedCost, speedIcon);
+        UpgradeParameter("SPEED", speedCost, speedIcon, false);
 
     public void UpgradeDash() =>
-        UpgradeParameter("DASH_T", dashCost, dashIcon);
+        UpgradeParameter("DASH", dashCost, dashIcon, true);
 
     public void UpgradeHeal() =>
-        UpgradeParameter("HEAL_T", healCost, healIcon);
+        UpgradeParameter("HEAL", healCost, healIcon, false);
 
     public void UpgradeHealth() =>
-        UpgradeParameter("HEALTH_T", healthCost, healthIcon);
+        UpgradeParameter("HEALTH", healthCost, healthIcon, false);
 
     public void UpgradeAgility() =>
-        UpgradeParameter("AGILITY_T", agilityCost, agilityIcon);
+        UpgradeParameter("AGILITY", agilityCost, agilityIcon, false);
 
     private void CheckForFirstLaunch()
     {
@@ -111,7 +135,6 @@ public class PlayerUpgrader : MonoBehaviour
         PlayerPrefs.SetInt("HEALTH_T", 0);
         PlayerPrefs.SetInt("AGILITY_T", 0);
 
-        PlayerPrefs.SetInt("GOLD", 0);
         PlayerPrefs.SetInt("HAY", 100);
 
         PlayerPrefs.SetInt("PLAYED", 1);
