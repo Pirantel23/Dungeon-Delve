@@ -1,0 +1,3334 @@
+fileFormatVersion: 2
+guid: 3ad8a9f9a15d7b74b8e38f5e05746481
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: second phase golem_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1938
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723b098cfe8cc4b47bb9289105720ee3
+      internalID: 751600967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1939
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa85b7525b88fb84a830cdbf6c4c9dbb
+      internalID: 597159810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1938
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96346111c2db6a41a4dcec0f9269ee8
+      internalID: -92966556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_3
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1938
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eea676502fd7e44993922bd09102b48
+      internalID: -2134693228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_4
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85762302c842144187188ff9dbbc03a
+      internalID: 1191811092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686509b9fa9742b4a9a6957ee192c5c2
+      internalID: 125781525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_6
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27656c0daf0a14f49b2704ee114ee6e6
+      internalID: -872577628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_7
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf11e6bbe9e6464b972cd5104153585
+      internalID: 752981349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_8
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cffcc19e482414c978872d00d1743b
+      internalID: 1594749331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4fcdebe942acf43b6b7e18cc845fe2
+      internalID: -1314749427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_10
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27958abb6f823c24f9b896d0edf14d76
+      internalID: 1709310761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_11
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1838
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de2af0a6f8dca04d8c40868e3c90c35
+      internalID: -1267664135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_12
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcc3cef0f205a94a947de81f4644631
+      internalID: -1072976365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_13
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfe8827ec193ae4d979958a54b762d6
+      internalID: -834501317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_14
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc42922acfd9b44f92e320add109f27
+      internalID: -703715755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_15
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0e2e9ce227b90418cc79a9b9019d7d
+      internalID: -1837777303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_16
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0959aed02ccd8842a5ddb1141cd0b19
+      internalID: -1694880190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_17
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c53bcc1d65c0e4fb8f90118f49d97f
+      internalID: 342483482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_18
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a869a87b83c1a1e4db31450306947cdc
+      internalID: 1750191587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_19
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 1840
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8243510ba469341aa24b01ea66655d
+      internalID: 1972672272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1738
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc19735a99139d438b9efc56516bf65
+      internalID: -1952547334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_21
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1738
+        width: 51
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cd6dc31ad5712439e120c4894d0ae3
+      internalID: 637220113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 1738
+        width: 63
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa2a28f1241eae46915c75269e28995
+      internalID: 1375605140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_23
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1738
+        width: 81
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d53403ccc96e64da30efa9728c5821
+      internalID: -1621013320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1738
+        width: 83
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916defb985998df43b7609ae26d642a5
+      internalID: -2138823392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_25
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1738
+        width: 85
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62fcf20652abb645a0bc750b5b9bc40
+      internalID: 1910662693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_26
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1738
+        width: 85
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd1359e01c328b439046ca278bdb919
+      internalID: 1093112909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_27
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1738
+        width: 90
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be40af63b2b2e9d438416e9871396855
+      internalID: 2098587676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_28
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1738
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8d5843158578442a00c2d2f33bf0fb
+      internalID: -233909730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_37
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1744
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ca64e98a01cb7468caa7c7bd00c31b
+      internalID: -1347390687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_36
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 1744
+        width: 92
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b0b666dc2c4c846aa928fe87bc71b0
+      internalID: -948233711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_35
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1744
+        width: 88
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61c84ee9ac847348ab79170d36df777
+      internalID: 1759623637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_34
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 1744
+        width: 88
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc7401d670a4ac745bafda5043168b1d
+      internalID: -949884083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_33
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 1744
+        width: 84
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277c1180fd4f18441a95275bfbfa7cf8
+      internalID: -2074123313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_32
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1744
+        width: 86
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba75fbbde345204bbfd17558c288e25
+      internalID: -190274731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_31
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 1744
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6116656fc765061409a55de5019d841a
+      internalID: 656796530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_30
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1744
+        width: 54
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1715d0cb0263c40b4510e37b701b0c
+      internalID: 1174867442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_29
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1744
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4252e9d6183855645ac18efd74cb26dc
+      internalID: 800761251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_38
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1638
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4a15c3df3607f448a267e43b4257ff3
+      internalID: -333168600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_39
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1638
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1a3f0fc8321764fad41ae3c669555d
+      internalID: -1349602269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_40
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1638
+        width: 40
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c62cb14f3076c49a5a7eae5c8515ef
+      internalID: -225163179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_41
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1638
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b350300ffffcad4cbbfffa13cbebb82
+      internalID: -787116412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_42
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1638
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ab1dc28c4ab7e42a67c1bc0e2d7a9b
+      internalID: 1742797339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_43
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1638
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b969313fae5e874d9369e1af8a726b0
+      internalID: 669117776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_44
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1638
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0ad69e39831544cbf26c39307ef9ea
+      internalID: 218258786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_45
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1638
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31dcb7ca2742c642a77981e8778f6b8
+      internalID: -953921884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_53
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 1648
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d95e2bae6d5e9147baccd0278eadb63
+      internalID: -1937708132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_52
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 1648
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2a1a9b9a0fe7e4f9128020e58511a5
+      internalID: 871547075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_51
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 1648
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badf470da5998ff498b8bf3ebfe699c9
+      internalID: -2108285597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_50
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1648
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e91bdc358f41ff43b5bc970298fc008
+      internalID: 1297664850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_49
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 1648
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb58a832a0c43649b15a8155450f433
+      internalID: -1737231788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_48
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 1648
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe75f4ef15e25045bb9ee9e5a5df102
+      internalID: 1953074865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_47
+      rect:
+        serializedVersion: 2
+        x: 1722
+        y: 1648
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2315665f22101a44ea4160384d966a8f
+      internalID: -313353158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_46
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1648
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611c140fdd8dd364da275c2757273cca
+      internalID: -996951497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_54
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1538
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e072513312b10d14c9bc6eac54b3c074
+      internalID: 74194574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_55
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1538
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89503044439b1449872849a42351718
+      internalID: -141414620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_56
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 1538
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f0d6c428d42124386948dc793202cb
+      internalID: -1903576675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_57
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1538
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64aeb091e4470324885ac037f64da988
+      internalID: -1373716025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_58
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1538
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83297c8d66f4814b86d281e8563c633
+      internalID: 1489947489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_59
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1539
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190fb7ef043cd1e4781696a5d7d6fe74
+      internalID: 108443035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_60
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1535
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f81ae0d3b9b6f43be3bf6c2757aa46
+      internalID: 1549404955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_68
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1566
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22720d56c5bf1d40a1ee9db868aaf20
+      internalID: 869553868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_67
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 1570
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6235df04bf66a434a9c3df483166b475
+      internalID: 1617951260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_66
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1569
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f3358bf74bab64bb905097d6293ecf
+      internalID: 2033242005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_65
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 1569
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460087338fa275841bd9ccc38c412db9
+      internalID: -1013377375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_64
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 1569
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eaa12d9c50545e47938e043032b5d7a
+      internalID: -1386513908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_63
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 1569
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed842adf0621794298f86359e6ace81
+      internalID: -1626750685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_62
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1569
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d905b5e2f2c98c4e8a99410fcba0abb
+      internalID: 1106042874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_70
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7be7b5021a791842a7c2b5ac150dae9
+      internalID: -1260135009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_71
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8847d196b2078549a875f14028eac8b
+      internalID: 338285493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_72
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5426bc6c3e1f743b6557968c40265b
+      internalID: 1141714554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_73
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e691b6cb5e96b8843a766555819ac125
+      internalID: -1460757380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_74
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f11a3f6b82a8f42862e00504519a8a
+      internalID: 1284912006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_75
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295129c5bf0439643a92990f0b185d34
+      internalID: 185239766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_76
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1438
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2049a15aa8306549aad22cc4721acb9
+      internalID: 994783701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_77
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74cd276e56965b4abb9718fc905aaf6
+      internalID: 534762353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_78
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c4a1966e0693f47a01805043bcb010
+      internalID: 1986695228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_79
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b0f53100cdcc149971d23b45f31895
+      internalID: -1200929797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_80
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ece052d5ac2b5642bcffcd60c23dd6d
+      internalID: 1617156567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_81
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b8b1680d44b5047834b46ac84770e3
+      internalID: -956290765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_82
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71b16dc7b43cfc40b716a2fe4cc0110
+      internalID: -1692568160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_83
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1472
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c6b7bec922dcb4c9e7030c61185a3a
+      internalID: -804909427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_84
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7207731d4dd016f439c2245bdfb3eb43
+      internalID: -770031667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_85
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a8ede725bf3374b9e56be728c6614c
+      internalID: 877773659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_86
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30d2009666fbc9498f02da2bb09c465
+      internalID: 1311760451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_87
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b714c5448929456449b073aaf620bee2
+      internalID: 281605836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_88
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c6c6a999288614883d56412384c613
+      internalID: 805767614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_89
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 1404
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10b6ba7828916445a28a0ad827af74b
+      internalID: -877064065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_90
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 1408
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77f53cb0a478b144952362a1245ce28
+      internalID: 1654218204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_91
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd0c6202f4177a4aa391acacb5d671e
+      internalID: 1837131398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_92
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1408
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759657c1b65bec548adaf24f537c96e8
+      internalID: 855817277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_93
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77cd10fe66a6cf4f8661d1c54ddee33
+      internalID: -1783759614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_94
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4faeaae960b3a4c41821f2e0274f8b89
+      internalID: 911870669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_95
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a0f9066d26ea3478d7c906785667c6
+      internalID: 563977260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_96
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 1338
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b324a14227c01be46a7bcef43eff9e4c
+      internalID: 755313696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_97
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 1334
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86c2534fde5fb640a1c187c7f396d14
+      internalID: 917932082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_98
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7f7bf8b57d989468fcf1e3f0da95bd
+      internalID: 258087561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_99
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de6a4f907e057f489100a5cbb6113df
+      internalID: -1646065252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_100
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2260d8322973ef94883b5e05a6485e28
+      internalID: -1307969814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_101
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d90016f06a04cc4997e19cd3e727521
+      internalID: -1876005252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_102
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1338
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d93b160fa3d46e4faa987f5de185c5e
+      internalID: 311214509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_103
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 1328
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f25237c330bc1488dce90beb23eae0
+      internalID: -728446641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_104
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1328
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b90b6ed009edba74ca468e8e21d8b47a
+      internalID: 1105542001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_105
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 1328
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc01e0c40399ee41ba12104f7ca0ec6
+      internalID: 28054182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_106
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1328
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811d013ade9ff0d41aa9db1ec5882abb
+      internalID: -858184852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_107
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 1327
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6415626630e441c4385bc5a5faa2c429
+      internalID: -1925600371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_108
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 1325
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2db37b3c8efe95448b7da2ca72614cc
+      internalID: -1833873948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_109
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1322
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db63e85e68b498049987bdf4196bf3f2
+      internalID: 2058087187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_110
+      rect:
+        serializedVersion: 2
+        x: 1826
+        y: 1315
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc456dbea4ae1d48b19f5651062b06b
+      internalID: -974254475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_111
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1306
+        width: 44
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e23efa181c4a7044891ea060e86081f
+      internalID: -1812983324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_114
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1238
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d785ebb72042dd64cbe6e2ac3ccbe1ef
+      internalID: 1082936452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_115
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1238
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0532faa3c588bb4ebaafcdf2cd0ae21
+      internalID: 760690837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_116
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1238
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23f06c472a656c4580f902e621d12fd
+      internalID: 1958848465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_117
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1238
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d17d828b8b63c45a92bca873deda50
+      internalID: 1201357101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_118
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1237
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671d14fafab92c64f922644be8b87491
+      internalID: 464541076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_119
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1235
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46564b677ca19e4291623abfe47304e
+      internalID: -1140921610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_120
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1232
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c3ab52ccaba9e44ba2a9e52bf192e0
+      internalID: 867853079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_121
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1225
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69255a073e6e8b4abfbafa40dcaf34b
+      internalID: 612205450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_123
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1216
+        width: 44
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5a55b9a196f7446b130559fe23f06f
+      internalID: 910297711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_126
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1215
+        width: 48
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82988861cb54fe1419917bfb96fd783a
+      internalID: 284421080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_128
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1205
+        width: 48
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc51e0e3c3a8e454084b2f18db27bd35
+      internalID: 1602693802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_129
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1201
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca6e1d23ffca7541bef25985903e57f
+      internalID: -1064176439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_130
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 1203
+        width: 53
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079eb4116991cb342b151922627a9280
+      internalID: -1014263414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_131
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 1203
+        width: 51
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489bb9e92a2c7894184f4f307a6d19f4
+      internalID: -1447868108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_133
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1115
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942140d2b96102343a42202cf361e32c
+      internalID: 1805633870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_135
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1111
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5b44e3d3c795e41906708ea11cf264
+      internalID: 1770926757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_136
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1113
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c7dc6a554d37a46830f9ce35431d63
+      internalID: 1926438967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_137
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1113
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38abc03c3febc8a4a8e79f2e9a6f0661
+      internalID: 116007775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_138
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1010
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41d81b43bcbe3d4c870d7ee159eb94f
+      internalID: 48061688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_147
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1035
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e8e0cf406066b4f801f1a6ee3edd69
+      internalID: -274380112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_150
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1015
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b86cfe792899c141a55bd278f817fcd
+      internalID: 1311973420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_152
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1032
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273c49833bb1c214d8ba0bdd33477394
+      internalID: 244481595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_153
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1010
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67a5eace0bfaf0f468bfbf727a9b1a63
+      internalID: 928377879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_154
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1010
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a5e9ff82af63a41b89772e33f6bf13
+      internalID: 855490279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_155
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1010
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5161a1d302c39c4439766bf3b5aea059
+      internalID: -1683084723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_156
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1012
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be86645b874fa848b5392bdd02b8e4c
+      internalID: -696052075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_157
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1014
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0c828e9b55a864d909f1547fa0e086
+      internalID: 1086551726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_167
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 1013
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e334839c9c0ea4040a9541049531f7a0
+      internalID: -1798980610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_169
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 925
+        width: 270
+        height: 44
+      alignment: 9
+      pivot: {x: 0.08248226, y: 0.49373835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009dd1159e3d0624b90e4d1e84e59a64
+      internalID: -1008081858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_170
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 927
+        width: 270
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e18080f97b6f44e904182f24114dac
+      internalID: -1400050435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_171
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 830
+        width: 264
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53e5e4167de32f4eac315bf3df37dd6
+      internalID: -838494955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_172
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 832
+        width: 264
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47074cab978555a47901182d99ce44d6
+      internalID: 453216143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_173
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 734
+        width: 261
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7c01251ec794b45b0eb0ac3d83c52b
+      internalID: 32019039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: second phase golem_174
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 736
+        width: 261
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff6f80468d8ea143a6dacb754b3241f
+      internalID: 1497488680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      second phase golem_0: 751600967
+      second phase golem_1: 597159810
+      second phase golem_10: 1709310761
+      second phase golem_100: -1307969814
+      second phase golem_101: -1876005252
+      second phase golem_102: 311214509
+      second phase golem_103: -728446641
+      second phase golem_104: 1105542001
+      second phase golem_105: 28054182
+      second phase golem_106: -858184852
+      second phase golem_107: -1925600371
+      second phase golem_108: -1833873948
+      second phase golem_109: 2058087187
+      second phase golem_11: -1267664135
+      second phase golem_110: -974254475
+      second phase golem_111: -1812983324
+      second phase golem_112: 1798919420
+      second phase golem_113: -2020648466
+      second phase golem_114: 1082936452
+      second phase golem_115: 760690837
+      second phase golem_116: 1958848465
+      second phase golem_117: 1201357101
+      second phase golem_118: 464541076
+      second phase golem_119: -1140921610
+      second phase golem_12: -1072976365
+      second phase golem_120: 867853079
+      second phase golem_121: 612205450
+      second phase golem_122: 1171976988
+      second phase golem_123: 910297711
+      second phase golem_124: 2146820559
+      second phase golem_125: 2109087188
+      second phase golem_126: 284421080
+      second phase golem_127: 930091615
+      second phase golem_128: 1602693802
+      second phase golem_129: -1064176439
+      second phase golem_13: -834501317
+      second phase golem_130: -1014263414
+      second phase golem_131: -1447868108
+      second phase golem_132: -1025328830
+      second phase golem_133: 1805633870
+      second phase golem_134: 1440590486
+      second phase golem_135: 1770926757
+      second phase golem_136: 1926438967
+      second phase golem_137: 116007775
+      second phase golem_138: 48061688
+      second phase golem_139: -346722496
+      second phase golem_14: -703715755
+      second phase golem_140: -2064486514
+      second phase golem_141: 373265778
+      second phase golem_142: -2116512316
+      second phase golem_143: -1052490816
+      second phase golem_144: 551597409
+      second phase golem_145: 854657286
+      second phase golem_146: 704904490
+      second phase golem_147: -274380112
+      second phase golem_148: 712520449
+      second phase golem_149: 111036503
+      second phase golem_15: -1837777303
+      second phase golem_150: 1311973420
+      second phase golem_151: 1111216125
+      second phase golem_152: 244481595
+      second phase golem_153: 928377879
+      second phase golem_154: 855490279
+      second phase golem_155: -1683084723
+      second phase golem_156: -696052075
+      second phase golem_157: 1086551726
+      second phase golem_158: -908730177
+      second phase golem_159: -425927871
+      second phase golem_16: -1694880190
+      second phase golem_160: 274658227
+      second phase golem_161: 1427068174
+      second phase golem_162: -102281578
+      second phase golem_163: -1276026245
+      second phase golem_164: 2084119260
+      second phase golem_165: -1860355541
+      second phase golem_166: -2132199239
+      second phase golem_167: -1798980610
+      second phase golem_168: -1118578361
+      second phase golem_169: -1008081858
+      second phase golem_17: 342483482
+      second phase golem_170: -1400050435
+      second phase golem_171: -838494955
+      second phase golem_172: 453216143
+      second phase golem_173: 32019039
+      second phase golem_174: 1497488680
+      second phase golem_18: 1750191587
+      second phase golem_19: 1972672272
+      second phase golem_2: -92966556
+      second phase golem_20: -1952547334
+      second phase golem_21: 637220113
+      second phase golem_22: 1375605140
+      second phase golem_23: -1621013320
+      second phase golem_24: -2138823392
+      second phase golem_25: 1910662693
+      second phase golem_26: 1093112909
+      second phase golem_27: 2098587676
+      second phase golem_28: -233909730
+      second phase golem_29: 800761251
+      second phase golem_3: -2134693228
+      second phase golem_30: 1174867442
+      second phase golem_31: 656796530
+      second phase golem_32: -190274731
+      second phase golem_33: -2074123313
+      second phase golem_34: -949884083
+      second phase golem_35: 1759623637
+      second phase golem_36: 1174867442
+      second phase golem_37: -948233711
+      second phase golem_38: -333168600
+      second phase golem_39: -1349602269
+      second phase golem_4: 1191811092
+      second phase golem_40: -225163179
+      second phase golem_41: -787116412
+      second phase golem_42: 1742797339
+      second phase golem_43: 669117776
+      second phase golem_44: 218258786
+      second phase golem_45: -953921884
+      second phase golem_46: -996951497
+      second phase golem_47: -313353158
+      second phase golem_48: 1953074865
+      second phase golem_49: -1737231788
+      second phase golem_5: 125781525
+      second phase golem_50: 1297664850
+      second phase golem_51: -2108285597
+      second phase golem_52: 871547075
+      second phase golem_53: -1937708132
+      second phase golem_54: 74194574
+      second phase golem_55: -141414620
+      second phase golem_56: -1903576675
+      second phase golem_57: -1373716025
+      second phase golem_58: 1489947489
+      second phase golem_59: 108443035
+      second phase golem_6: -872577628
+      second phase golem_60: 1549404955
+      second phase golem_61: -1617727615
+      second phase golem_62: 1106042874
+      second phase golem_63: -1626750685
+      second phase golem_64: -1386513908
+      second phase golem_65: -1013377375
+      second phase golem_66: 2033242005
+      second phase golem_67: 1617951260
+      second phase golem_68: 869553868
+      second phase golem_69: 1031754327
+      second phase golem_7: 752981349
+      second phase golem_70: -1260135009
+      second phase golem_71: 338285493
+      second phase golem_72: 1141714554
+      second phase golem_73: -1460757380
+      second phase golem_74: 1284912006
+      second phase golem_75: 185239766
+      second phase golem_76: 994783701
+      second phase golem_77: 534762353
+      second phase golem_78: 1986695228
+      second phase golem_79: -1200929797
+      second phase golem_8: 1594749331
+      second phase golem_80: 1617156567
+      second phase golem_81: -956290765
+      second phase golem_82: -1692568160
+      second phase golem_83: -804909427
+      second phase golem_84: -770031667
+      second phase golem_85: 877773659
+      second phase golem_86: 1311760451
+      second phase golem_87: 281605836
+      second phase golem_88: 805767614
+      second phase golem_89: -877064065
+      second phase golem_9: -1314749427
+      second phase golem_90: 1654218204
+      second phase golem_91: 1837131398
+      second phase golem_92: 855817277
+      second phase golem_93: -1783759614
+      second phase golem_94: 911870669
+      second phase golem_95: 563977260
+      second phase golem_96: 755313696
+      second phase golem_97: 917932082
+      second phase golem_98: 258087561
+      second phase golem_99: -1646065252
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

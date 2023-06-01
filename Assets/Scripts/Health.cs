@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float amount;
     [SerializeField] private Animator animator;
     [SerializeField] private float despawnTime;
+    [SerializeField] private GameObject deadScreen;
     private float maxHealth;
     private static readonly int Hurt = Animator.StringToHash("hurt");
     private static readonly int Dead = Animator.StringToHash("dead");
@@ -48,6 +49,8 @@ public class Health : MonoBehaviour
         {
             GetComponent<PlayerController>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            deadScreen.SetActive(true);
+            
         }
         else if (CompareTag("Enemy"))
         {

@@ -125,7 +125,7 @@ TextureImporter:
         width: 50
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +158,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: press_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 46
+        width: 52
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1adeb8334ed0c8b4381b8b45da072386
+      internalID: -95802477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: press_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 33
+        width: 52
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537f6d7118d1b2f4389c064ed6d1538d
+      internalID: -365761990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: press_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 12
+        width: 54
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048eeee7b0652ea4a8363d6c8107d578
+      internalID: 326956953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -171,6 +234,9 @@ TextureImporter:
     nameFileIdTable:
       press_0: -1284060201
       press_1: -279015668
+      press_2: -95802477
+      press_3: -365761990
+      press_4: 326956953
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
