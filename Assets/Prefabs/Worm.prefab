@@ -187,7 +187,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 50
   animator: {fileID: 129066371062769211}
-  despawnTime: 5
+  despawnTime: 2
+  deadScreen: {fileID: 0}
+  maxHealth: 0
 --- !u!50 &129066371980968430
 Rigidbody2D:
   serializedVersion: 4

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Codice.Client.ChangeTrackerService;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -132,7 +133,10 @@ public class Boss : MonoBehaviour
         animator.SetBool(Dead, true);
         enabled = false;
         _rigidbody.velocity = Vector2.zero;
+        Destroy(laser.gameObject);
+        Destroy(healthbar.gameObject);
         yield return new WaitForSeconds(despawnTime);
+        FindObjectOfType<SceneLoader>().LoadScene(0);
         Destroy(gameObject);
     }
 

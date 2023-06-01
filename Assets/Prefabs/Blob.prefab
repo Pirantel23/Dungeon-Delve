@@ -116,9 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f686afdc5a0954642a8adf6855d23406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 200
+  amount: 100
   animator: {fileID: 6896334597162658302}
-  despawnTime: 5
+  despawnTime: 2
+  deadScreen: {fileID: 0}
+  maxHealth: 0
 --- !u!1 &6896334597162658289
 GameObject:
   m_ObjectHideFlags: 0

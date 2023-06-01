@@ -254,7 +254,7 @@ MonoBehaviour:
   meleeDamage: 30
   laserDamage: 0.5
   meleeCooldown: 3
-  rangedCooldown: 4
+  rangedCooldown: 2
   meleeRange: 0.5
   laserDuration: 5
   target: {fileID: 0}
@@ -270,22 +270,22 @@ MonoBehaviour:
   timeToMeleeDamage: 0.5
   timeToRangedDamage: 0.2
   timeToLaserDamage: 1.5
-  decisionTime: 10
+  decisionTime: 12
   meleeModeChance: 40
-  laserAttackChance: 100
+  laserAttackChance: 40
   laserRotationSpeed: 0.3
   despawnTime: 10
-  health: 300
-  healAmount: 0.02
+  health: 666
+  healAmount: 0.05
   healthbar: {fileID: 2199626911550387562}
-  shieldChance: 30
+  shieldChance: 20
   shieldDuration: 5
-  shieldAbsorb: 0.5
+  shieldAbsorb: 0.75
   invincibilityDuration: 5
-  secondPhaseHp: 150
-  secondPhaseHeal: 0.05
+  secondPhaseHp: 333
+  secondPhaseHeal: 0.1
   secondPhaseMeleeChance: 70
-  secondPhaseDamage: 50
+  secondPhaseDamage: 60
   secondPhaseSpeed: 50
   secondPhaseAttackCooldown: 2
 --- !u!50 &2199626911855957433
