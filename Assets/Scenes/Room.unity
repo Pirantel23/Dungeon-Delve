@@ -187,6 +187,9 @@ MonoBehaviour:
   maximumRoomsOnFloor: 7
   minimumRoomsOnFloor: 5
   shopsOnFloor: 3
+  minAmount: 2
+  maxAmount: 4
+  spawnerPrefab: {fileID: 1940275132549276264, guid: 641f425382eba5f409e3343ee7c53fa7, type: 3}
 --- !u!1001 &663001166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,10 +327,15 @@ PrefabInstance:
       objectReference: {fileID: 1479335398}
     - target: {fileID: 7518307476655372621, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
+--- !u!1 &663001167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6296954058757670069, guid: 22feec71f2985c14c84663bb16f93d34, type: 3}
+  m_PrefabInstance: {fileID: 663001166}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1479335396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +387,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4339087029484761453, guid: 632778a3538fcc245ac8d35e633e0554, type: 3}
+      propertyPath: deadScreen
+      value: 
+      objectReference: {fileID: 663001167}
     - target: {fileID: 4339087029484761454, guid: 632778a3538fcc245ac8d35e633e0554, type: 3}
       propertyPath: m_Name
       value: Player

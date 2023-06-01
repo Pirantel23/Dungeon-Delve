@@ -5,6 +5,21 @@ using System.Linq;
 using System.Reflection;
 using Random = UnityEngine.Random;
 
+internal enum Side
+{
+    Up,
+    Right,
+    Down,
+    Left
+}
+
+internal enum RoomType
+{
+    Room,
+    Shop,
+    Boss
+}
+
 public class FloorMapGeneration : MonoBehaviour
 {
     // префабы пола
@@ -40,15 +55,23 @@ public class FloorMapGeneration : MonoBehaviour
     [SerializeField] private int maxWidth = 16;
     [SerializeField] private int maxHeight = 12;
 
+    // размер этажа
     [SerializeField] private int maximumRoomsOnFloor = 7;
     [SerializeField] private int minimumRoomsOnFloor = 5;
     [SerializeField] private int shopsOnFloor = 3;
 
-    private const int NewRoomChance = 50;
-    // private const int ShopHeight = 8;
-    // private const int ShopWidth = 12;
+    // количество мобов и спавнер
+    [SerializeField] private int minAmount = 2;
+    [SerializeField] private int maxAmount = 4;
 
-    private float sizeMultiplier = 0.08f;
+    [SerializeField] private GameObject spawnerPrefab;
+
+    private const int NewRoomChance = 50;
+    private const int ShopRoomChance = 40;
+    private const int BossRoomChance = 10;
+
+
+    private const float SizeMultiplier = 0.08f;
     private (float, float)[] tilesSizes;
     private Side lastEntranceSide = Side.Up;
     private int roomCounter;
@@ -60,15 +83,16 @@ public class FloorMapGeneration : MonoBehaviour
 
     private int shopsFound;
 
-    // 
+    // объекты сцены
     private GameObject player;
     private GameObject mainCamera;
     private GameObject[] doors;
 
     // Ссылка на созданные тайлы поля
     private GameObject[,] fieldTiles;
-    private List<GameObject> wallTiles = new();
-    private List<GameObject> doorTiles = new();
+    private readonly List<GameObject> wallTiles = new();
+    private readonly List<GameObject> doorTiles = new();
+    private bool isLastRoom;
 
 
     private void Start()
@@ -90,22 +114,10 @@ public class FloorMapGeneration : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ClearFloorTiles();
-            ClearAndDestroyTileList(wallTiles);
-            ClearAndDestroyTileList(doorTiles);
-
-            FillTileSizes();
-
-            roomCounter = 1;
-            nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
-
-            GenerateCurrentRoom();
-        }
-
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0) return;
+
             foreach (var door in doors)
             {
                 var intersected = Physics2D.OverlapBoxAll(player.transform.position,
@@ -182,16 +194,21 @@ public class FloorMapGeneration : MonoBehaviour
     {
         height = Random.Range(minHeight, maxHeight) * 2;
         width = Random.Range(minWidth, maxWidth) * 2;
-        xOffset = width * 0.5f * -sizeMultiplier;
-        yOffset = height * 0.5f * -sizeMultiplier + sizeMultiplier;
+        xOffset = width * 0.5f * -SizeMultiplier;
+        yOffset = height * 0.5f * -SizeMultiplier + SizeMultiplier;
         fieldTiles = new GameObject[height, width];
         var floorMatrix = CreateFloorMatrix();
         DrawFloorTiles(floorMatrix);
         DrawWallTiles();
         DrawDoorsTiles();
-        
+        Spawn(maxAmount, minAmount);
+
+        minAmount++;
+        maxAmount = minAmount * 2;
+
+
         doors = GameObject.FindGameObjectsWithTag("Door"); // находим все объекты с тегом "Door"
-        
+
         MovePlayerToNextRoom();
     }
 
@@ -227,7 +244,7 @@ public class FloorMapGeneration : MonoBehaviour
 
                 // Получаем позицию для текущего тайла
 
-                var position = new Vector3(j * sizeMultiplier + xOffset, i * sizeMultiplier + yOffset, 0);
+                var position = new Vector3(j * SizeMultiplier + xOffset, i * SizeMultiplier + yOffset, 0);
 
                 // Создаем новый тайл и устанавливаем его позицию
                 var (tile, dx, dy) = i >= height - 2 && j >= width - 2
@@ -295,71 +312,71 @@ public class FloorMapGeneration : MonoBehaviour
     {
         var currentX = xOffset;
         var currentY = yOffset;
-        var maxX = xOffset + width * sizeMultiplier;
-        var maxY = yOffset + height * sizeMultiplier;
-        var modified = maxX - sizeMultiplier * 3;
+        var maxX = xOffset + width * SizeMultiplier;
+        var maxY = yOffset + height * SizeMultiplier;
+        var modified = maxX - SizeMultiplier * 3;
 
         while (currentX < modified)
         {
-            var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            var position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             var tile = Instantiate(upWallTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            currentX += sizeMultiplier * 2;
+            currentX += SizeMultiplier * 2;
 
             if (currentX < modified) continue;
 
-            position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             tile = Instantiate(upRightWallTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            currentX += sizeMultiplier * 2;
+            currentX += SizeMultiplier * 2;
 
-            position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             tile = Instantiate(upRightCornerTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            maxY -= sizeMultiplier * 2;
+            maxY -= SizeMultiplier * 2;
         }
 
-        while (currentY - sizeMultiplier < maxY)
+        while (currentY - SizeMultiplier < maxY)
         {
-            var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            var position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             var tile = Instantiate(rightWallTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            maxY -= sizeMultiplier * 2;
+            maxY -= SizeMultiplier * 2;
 
-            if (currentY - sizeMultiplier < maxY) continue;
+            if (currentY - SizeMultiplier < maxY) continue;
 
-            position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             tile = Instantiate(downRightCornerTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            maxY -= sizeMultiplier * 2;
+            maxY -= SizeMultiplier * 2;
         }
 
-        while (currentX - sizeMultiplier > xOffset)
+        while (currentX - SizeMultiplier > xOffset)
         {
-            var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            var position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             var tile = Instantiate(downWallTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            currentX -= sizeMultiplier * 2;
+            currentX -= SizeMultiplier * 2;
 
-            if (currentX - sizeMultiplier > xOffset) continue;
+            if (currentX - SizeMultiplier > xOffset) continue;
 
-            maxY += sizeMultiplier * 2;
+            maxY += SizeMultiplier * 2;
 
-            position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             tile = Instantiate(downLeftCornerTile, position, Quaternion.identity);
             wallTiles.Add(tile);
         }
 
-        while (maxY < -yOffset - sizeMultiplier * 3)
+        while (maxY < -yOffset - SizeMultiplier * 3)
         {
-            var position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            var position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             var tile = Instantiate(leftWallTile, position, Quaternion.identity);
             wallTiles.Add(tile);
-            maxY += sizeMultiplier * 2;
+            maxY += SizeMultiplier * 2;
 
-            if (maxY < -yOffset - sizeMultiplier * 3) continue;
+            if (maxY < -yOffset - SizeMultiplier * 3) continue;
 
-            position = new Vector3(currentX, maxY + sizeMultiplier * 3, 0);
+            position = new Vector3(currentX, maxY + SizeMultiplier * 3, 0);
             tile = Instantiate(upLeftCorner, position, Quaternion.identity);
             wallTiles.Add(tile);
         }
@@ -367,10 +384,10 @@ public class FloorMapGeneration : MonoBehaviour
 
     private void DrawDoorsTiles()
     {
-        var up = new Vector3(0, height * 0.5f * sizeMultiplier, 0);
-        var left = new Vector3(-width * 0.5f * sizeMultiplier, 0, 0);
-        var right = new Vector3(width * 0.5f * sizeMultiplier, 0, 0);
-        var down = new Vector3(0, -height * 0.5f * sizeMultiplier, 0);
+        var up = new Vector3(0, height * 0.5f * SizeMultiplier, 0);
+        var left = new Vector3(-width * 0.5f * SizeMultiplier, 0, 0);
+        var right = new Vector3(width * 0.5f * SizeMultiplier, 0, 0);
+        var down = new Vector3(0, -height * 0.5f * SizeMultiplier, 0);
         foreach (var side in nearRoomSides)
         {
             switch (side)
@@ -432,8 +449,8 @@ public class FloorMapGeneration : MonoBehaviour
         // tiles = isShadowedRight ? shadowRightFloorTiles : tiles;
 
         var tile = Instantiate(tiles[index], position, Quaternion.identity);
-        var dx = (int)Math.Round(tilesSizes[index].Item1 / sizeMultiplier);
-        var dy = (int)Math.Round(tilesSizes[index].Item2 / sizeMultiplier);
+        var dx = (int)Math.Round(tilesSizes[index].Item1 / SizeMultiplier);
+        var dy = (int)Math.Round(tilesSizes[index].Item2 / SizeMultiplier);
 
         return (tile, dx, dy);
     }
@@ -460,17 +477,23 @@ public class FloorMapGeneration : MonoBehaviour
 
     private void GenerateMoveToNextRoom()
     {
-        var a = Random.Range(1, 100);
+        var roomChance = Random.Range(1, 100);
+        var bossChance = Random.Range(1, 100);
+        var shopChance = Random.Range(1, 100);
+            
         if (roomCounter < minimumRoomsOnFloor)
         {
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
         }
 
-        if ((a > NewRoomChance && maximumRoomsOnFloor > roomCounter &&
+        if ((roomChance < NewRoomChance && maximumRoomsOnFloor > roomCounter &&
              roomCounter >= minimumRoomsOnFloor) || roomCounter < minimumRoomsOnFloor)
             nearRoomSides = GenerateNearRoomSides(lastEntranceSide);
         else
+        {
             nearRoomSides = Array.Empty<Side>();
+            isLastRoom = true;
+        }
 
         ClearAndDestroyTileList(doorTiles);
         ClearAndDestroyTileList(wallTiles);
@@ -480,13 +503,13 @@ public class FloorMapGeneration : MonoBehaviour
 
         GenerateCurrentRoom();
     }
-    
+
     private void MovePlayerToNextRoom()
     {
-        var up = new Vector3(0, height * 0.5f * sizeMultiplier - sizeMultiplier, 0);
-        var left = new Vector3(-width * 0.5f * sizeMultiplier + sizeMultiplier, 0, 0);
-        var right = new Vector3(width * 0.5f * sizeMultiplier - sizeMultiplier, 0, 0);
-        var down = new Vector3(0, -height * 0.5f * sizeMultiplier + sizeMultiplier, 0);
+        var up = new Vector3(0, height * 0.5f * SizeMultiplier - SizeMultiplier, 0);
+        var left = new Vector3(-width * 0.5f * SizeMultiplier + SizeMultiplier, 0, 0);
+        var right = new Vector3(width * 0.5f * SizeMultiplier - SizeMultiplier, 0, 0);
+        var down = new Vector3(0, -height * 0.5f * SizeMultiplier + SizeMultiplier, 0);
         switch (lastEntranceSide)
         {
             case Side.Up:
@@ -504,5 +527,15 @@ public class FloorMapGeneration : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private void Spawn(int maxAmount, int minAmount)
+    {
+        var position = new Vector2(xOffset, yOffset);
+
+        var tile = Instantiate(spawnerPrefab, position, Quaternion.identity).GetComponent<SpawnerScript>();
+        tile.maxAmount = maxAmount;
+        tile.minAmount = minAmount;
+        tile.topRightCorner = new Vector2(width, height) * SizeMultiplier;
     }
 }
