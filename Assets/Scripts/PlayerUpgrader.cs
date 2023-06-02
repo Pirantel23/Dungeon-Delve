@@ -41,10 +41,9 @@ public class PlayerUpgrader : MonoBehaviour
     private int hayCount;
     private PlayerController player;
 
-    private void Start()
+    private void Awake()
     {
         hayCount = PlayerPrefs.GetInt("HAY");
-        Money.SetAmount(0);
         CheckForFirstLaunch();
         player = FindObjectOfType<PlayerController>();
         ChangeText(strengthIcon, strengthCost.ToString());
