@@ -1,0 +1,1191 @@
+fileFormatVersion: 2
+guid: 940d9513a74d31f41bad76dfe34236e1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anime_with_range_weapon_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815033a6ed1e9fe47944d1eaeb105d99
+      internalID: -1903946021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f4780b66556c14fae1c6a6b5c0f3af
+      internalID: -1639191242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06081257aef0b804097fa33c6d213462
+      internalID: 727183932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_3
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4df097eda6a78740bd60a248c08c75e
+      internalID: -89180826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_4
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 343478f13ec076a40b3c3527993b7bf4
+      internalID: -1746591699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_5
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3210d00105d1768459cbc66513f51471
+      internalID: 282258967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_6
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073308cd358760147b410a5693a01d00
+      internalID: 1610064585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_7
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 469
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874a42d52f9163540ae0870a41f71059
+      internalID: -833537458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_8
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b35e15d2b97d14190589ce4c18b767
+      internalID: -2103666508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 468
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdee472fe3d0f0b49bb05f86346e6fea
+      internalID: 1052478279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 469
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c3d28c0d179e041a1d0b4a7b247771
+      internalID: -457590483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 469
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16349392a9866bb41bef60d182f1574b
+      internalID: -791140006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361dcf91aa66d8446acd8ae242d4a3a0
+      internalID: -1296045049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847f48b76c54a4d4895536ef270e7945
+      internalID: 1639423428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7267552c17243d4488c40bdf2d88ccfa
+      internalID: -222923184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_15
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dded860892bd5f94cb9e99bdedbb975c
+      internalID: 565468962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1488f9a08aecb8e43b79c96cd21315ce
+      internalID: -156370489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225487ae0f7f0cb4198496b13e8683b3
+      internalID: -1581996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_18
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59293755addc95045b81577d08a55eb5
+      internalID: 1195817394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_19
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 421
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2344389a317c848965e5ee55d5343f
+      internalID: -306040798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_20
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207def37cf7d5a4438d0e29f2cfd62ae
+      internalID: 1604281867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_21
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 420
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739e6b0bf9b36014f8e03e1dcd2693fb
+      internalID: 260456851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_22
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 421
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49bfb5383a816146a8297aedd1fbac7
+      internalID: -693156958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_23
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 421
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6333446dd719349ba2eedba59f444c
+      internalID: -157387430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a91821d63b3eac48938fcfa8917e14a
+      internalID: -1809187591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fdf4698e9ec071408da7174ac16793d
+      internalID: 509669969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_26
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38469b09208e5f48bfa3d6ba2efa5be
+      internalID: -409185662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_27
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3eaca144bc1397448cdc91bd83f6c4c
+      internalID: 992785602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_28
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb0c11ed92a7cc4388cc2243396b443
+      internalID: 1337972219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5900eefc177374d8f6e282d0a7d35a
+      internalID: 1710975144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3adc2c6700d39e448b313d0541fc6d58
+      internalID: 2121344595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92839f6b1e8204141bc935984704db94
+      internalID: 782267813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_32
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd15298ec501fe04494e727b1624a02c
+      internalID: 1735256970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3c702992a653149982cb0344ce79d9
+      internalID: 192310452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_34
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606bdff03766d7841bf1801b6e513427
+      internalID: 126998510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 372
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78aca9ba37c2d547b7438bd1c1be9d5
+      internalID: 1851520786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_36
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 324
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf0458db4ea46f4fb1c33ee9f908c01
+      internalID: 331708731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_37
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 325
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380503786d69006488505d638cd57408
+      internalID: 1648864505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_38
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 324
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21c9f8946076f24490b97758ab3d594
+      internalID: 207738196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_39
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 324
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f435638b565131746b68cfb9a91394a4
+      internalID: -1747780958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_40
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 325
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8162174585caf147bc13a91e363b03c
+      internalID: 1423411121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_41
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 324
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379fa5b7c64c73c458ca30db41add8c0
+      internalID: 603075494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_42
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 324
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25061ca33b634594aa5ae7c3b9e64d81
+      internalID: -371178696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_43
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 325
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ae9b9ac547c2c4ca6ad0f582372fa6
+      internalID: -2025328183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_44
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 324
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf9543fef390a047b9c00f9423fc989
+      internalID: -191663294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_45
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 324
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538833dfa71f8c04e8320ddb51d1666e
+      internalID: -1617881512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_46
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 325
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf04548778cb3d34db1f108d62bd4e56
+      internalID: -93609721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_range_weapon_47
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 324
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7c529e1e4a8854e8ecfe15f863dfe6
+      internalID: -1589507305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      anime_with_range_weapon_0: -1903946021
+      anime_with_range_weapon_1: -1639191242
+      anime_with_range_weapon_10: -457590483
+      anime_with_range_weapon_11: -791140006
+      anime_with_range_weapon_12: -1296045049
+      anime_with_range_weapon_13: 1639423428
+      anime_with_range_weapon_14: -222923184
+      anime_with_range_weapon_15: 565468962
+      anime_with_range_weapon_16: -156370489
+      anime_with_range_weapon_17: -1581996
+      anime_with_range_weapon_18: 1195817394
+      anime_with_range_weapon_19: -306040798
+      anime_with_range_weapon_2: 727183932
+      anime_with_range_weapon_20: 1604281867
+      anime_with_range_weapon_21: 260456851
+      anime_with_range_weapon_22: -693156958
+      anime_with_range_weapon_23: -157387430
+      anime_with_range_weapon_24: -1809187591
+      anime_with_range_weapon_25: 509669969
+      anime_with_range_weapon_26: -409185662
+      anime_with_range_weapon_27: 992785602
+      anime_with_range_weapon_28: 1337972219
+      anime_with_range_weapon_29: 1710975144
+      anime_with_range_weapon_3: -89180826
+      anime_with_range_weapon_30: 2121344595
+      anime_with_range_weapon_31: 782267813
+      anime_with_range_weapon_32: 1735256970
+      anime_with_range_weapon_33: 192310452
+      anime_with_range_weapon_34: 126998510
+      anime_with_range_weapon_35: 1851520786
+      anime_with_range_weapon_36: 331708731
+      anime_with_range_weapon_37: 1648864505
+      anime_with_range_weapon_38: 207738196
+      anime_with_range_weapon_39: -1747780958
+      anime_with_range_weapon_4: -1746591699
+      anime_with_range_weapon_40: 1423411121
+      anime_with_range_weapon_41: 603075494
+      anime_with_range_weapon_42: -371178696
+      anime_with_range_weapon_43: -2025328183
+      anime_with_range_weapon_44: -191663294
+      anime_with_range_weapon_45: -1617881512
+      anime_with_range_weapon_46: -93609721
+      anime_with_range_weapon_47: -1589507305
+      anime_with_range_weapon_5: 282258967
+      anime_with_range_weapon_6: 1610064585
+      anime_with_range_weapon_7: -833537458
+      anime_with_range_weapon_8: -2103666508
+      anime_with_range_weapon_9: 1052478279
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

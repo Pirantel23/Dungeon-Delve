@@ -1,0 +1,1205 @@
+fileFormatVersion: 2
+guid: 55da37314cb191d40a9f5e1b92b641bc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: anime_with_shovel_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 402
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e00083cdfce3c644917199421fb6eb6
+      internalID: -58150554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 396
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819e6eee06bfab44cbb7e75af6799eda
+      internalID: 1081922203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 396
+        width: 26
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d4720b98264514cacb49db94b71ff4
+      internalID: -2138721138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_3
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 400
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08355a3dd7d9d4346922b505cb52f07d
+      internalID: -717117761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 403
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e1cddfd1d64a640a5b29fe6a1fb1a2
+      internalID: -1623723632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 403
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19756deb37b7b03469c7e7a16ea0043d
+      internalID: 135101094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 411
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02389045e57ddc747a934323399901a4
+      internalID: -1412346786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_7
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 412
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7e3ffdfb692493429804b75907d5963
+      internalID: 940808950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_8
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 412
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c680819f320301f489a4d0c4641d5255
+      internalID: 1836937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_10
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 412
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb04371cc831d9d48b6761f8652fe96b
+      internalID: -1608841483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_12
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 411
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9cd81457e5fea144bf636bca7c89613
+      internalID: 101703792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_14
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 412
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26af98bc664b26248b307f63387f0b6e
+      internalID: -1556856633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_16
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 334
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1bc567c61efb79489306f8a7075c33a
+      internalID: 1647976495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_17
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 327
+        width: 26
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ce6178e205604429f4c8c8fdaa375c
+      internalID: 543103627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_18
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 328
+        width: 26
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3309b4fbea7d9b04f971a5a0a40a4653
+      internalID: -1309312392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 328
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cf22d6ef1c9d44aa1cd42b3776dbbd
+      internalID: 1889979802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_20
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 336
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811787a19a537f04b8d91c172e44c20f
+      internalID: -814766148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 332
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3028be881bce9544cb28ca7f44fa3f1f
+      internalID: 1272659582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 355
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47d9a13237ad8346bb7046a8bc3313b
+      internalID: 828492717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_23
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 355
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4fe4bd4e0cafb459ad4a0ae7627eb6
+      internalID: 1039707429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_24
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 358
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f30b3dc8eb16f4a842e019dc2f3c14
+      internalID: 633376365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_26
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 356
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb00166cbf16ea6478a2d68be05433e5
+      internalID: -1146235751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_28
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 356
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5d2473ecff75c41a390079fad9dffb
+      internalID: -1665945892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_30
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 357
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe1db345fcfe044bb4d5fd546fb8e22
+      internalID: -6710253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_31
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 302
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b065259396b24c41a61e1e9b30a1c99
+      internalID: -1934386328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_33
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 301
+        width: 38
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae1535e49ab2e3d439f9beee481f6119
+      internalID: -1351366232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_35
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 302
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 452569cb631771e40b8fac22baf24b0e
+      internalID: -2014530151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_37
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 302
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8b1e7df32699b4c84b6c287b392d6f
+      internalID: 2067987861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_38
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 302
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609de543a2431d94991be57aa23b49de
+      internalID: -2046110333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_39
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 301
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59264d8ce0d27ba459757dd4c998b7a9
+      internalID: -186914990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_40
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 258
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380f1d962a1f7264fa87a4ebc4721840
+      internalID: 452091482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_41
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 248
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f585f7ae1fffaf245a4f433d3562cf4b
+      internalID: 1528759232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_42
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 248
+        width: 26
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510d48fbc1a9a344384ebaad30d84dfa
+      internalID: 439874593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_43
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 252
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93632c9f3abf89541bc33d3f361ced25
+      internalID: -1585551024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_44
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 261
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3467c6e497a3cb84fab827204491cb26
+      internalID: -2111015855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_45
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 258
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3127908b8a259b144903ab341f931c48
+      internalID: 1973901802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_46
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 247
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d3fab3c6a36784faf6a5c549355e41
+      internalID: -1784759085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_47
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 246
+        width: 39
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25f80ca8a95a7b4682e5833dcb495ad
+      internalID: 1796133677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_48
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 246
+        width: 41
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1bfda99c1ea3c4ca77450497a4c887
+      internalID: -528167690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_49
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 248
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bcf1404327530c48b9d85fbc28d3db4
+      internalID: -2052785937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_50
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 247
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72a8890323ff284c851d2a29b0c2bc5
+      internalID: 1830206992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_51
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 247
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499877f3140fa8349a2a1a5f9edd5e7b
+      internalID: -1004820767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_56
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 184
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9a8267b5c28014f8df6f26d7b994a2
+      internalID: -516548621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_57
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 177
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525514d655f865f4ea1af041390468fd
+      internalID: -499237103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_58
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 178
+        width: 26
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f8c3b18c9b3d24b83da3906d4572eb
+      internalID: 667762277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_59
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 178
+        width: 24
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6fab80ce3f6c9c40828b81ee78ec246
+      internalID: 556934151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_60
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 187
+        width: 20
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d217f6b52dea1c478958284083e1c78
+      internalID: -446036547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: anime_with_shovel_61
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 184
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98da5f1b0479bf47a3703ac3917217e
+      internalID: 1543540645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      anime_with_shovel_0: -58150554
+      anime_with_shovel_1: 1081922203
+      anime_with_shovel_10: -1608841483
+      anime_with_shovel_11: 616710116
+      anime_with_shovel_12: 101703792
+      anime_with_shovel_13: 552940112
+      anime_with_shovel_14: -1556856633
+      anime_with_shovel_15: 1312896400
+      anime_with_shovel_16: 1647976495
+      anime_with_shovel_17: 543103627
+      anime_with_shovel_18: -1309312392
+      anime_with_shovel_19: 1889979802
+      anime_with_shovel_2: -2138721138
+      anime_with_shovel_20: -814766148
+      anime_with_shovel_21: 1272659582
+      anime_with_shovel_22: 828492717
+      anime_with_shovel_23: 1039707429
+      anime_with_shovel_24: 633376365
+      anime_with_shovel_25: -982678473
+      anime_with_shovel_26: -1146235751
+      anime_with_shovel_27: -1303586998
+      anime_with_shovel_28: -1665945892
+      anime_with_shovel_29: -2107927246
+      anime_with_shovel_3: -717117761
+      anime_with_shovel_30: -6710253
+      anime_with_shovel_31: -1934386328
+      anime_with_shovel_32: 498773597
+      anime_with_shovel_33: -1351366232
+      anime_with_shovel_34: -1274797796
+      anime_with_shovel_35: -2014530151
+      anime_with_shovel_36: -1453133269
+      anime_with_shovel_37: 2067987861
+      anime_with_shovel_38: -2046110333
+      anime_with_shovel_39: -186914990
+      anime_with_shovel_4: -1623723632
+      anime_with_shovel_40: 452091482
+      anime_with_shovel_41: 1528759232
+      anime_with_shovel_42: 439874593
+      anime_with_shovel_43: -1585551024
+      anime_with_shovel_44: -2111015855
+      anime_with_shovel_45: 1973901802
+      anime_with_shovel_46: -1784759085
+      anime_with_shovel_47: 1796133677
+      anime_with_shovel_48: -528167690
+      anime_with_shovel_49: -2052785937
+      anime_with_shovel_5: 135101094
+      anime_with_shovel_50: 1830206992
+      anime_with_shovel_51: -1004820767
+      anime_with_shovel_52: 297490312
+      anime_with_shovel_53: -495029180
+      anime_with_shovel_54: 1876614346
+      anime_with_shovel_55: -244136323
+      anime_with_shovel_56: -516548621
+      anime_with_shovel_57: -499237103
+      anime_with_shovel_58: 667762277
+      anime_with_shovel_59: 556934151
+      anime_with_shovel_6: -1412346786
+      anime_with_shovel_60: -446036547
+      anime_with_shovel_61: 1543540645
+      anime_with_shovel_7: 940808950
+      anime_with_shovel_8: 1836937
+      anime_with_shovel_9: 1261399285
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

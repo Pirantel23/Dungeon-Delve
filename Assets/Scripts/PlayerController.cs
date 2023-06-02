@@ -1,100 +1,224 @@
+using System;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Stats
+    [SerializeField] private float _strength;
     [SerializeField] private float _speed;
     [SerializeField] private float _dashForce;
     [SerializeField] private float _dashCooldown;
     [SerializeField] private float _dashAmount;
-    [SerializeField] private Transform _hand;
-    [SerializeField] private float _minimumDistance;
-    [SerializeField] private float _rotationSpeed;
-    [SerializeField] private Sprite _dashSprite;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator animator;
-    private Sprite originalSprite;
-
-    public float DashAmount
-    {
-        get => _dashAmount;
-        set => _dashAmount = Mathf.Clamp(value, 0, MaxDashes);
-    }
-
-    public float MaxDashes { get; set; }
-
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackPointExtension;
+    [SerializeField] private float healAmount;
+    [SerializeField] private float attackSpeed;
+    
     private float dashedTimes;
     private Rigidbody2D _rigidbody;
     private Vector2 direction;
+    private Vector2 lastDirection;
+    private bool walking;
     private bool dashing;
     private bool readyToDash = true;
+    private bool readyToAttack = true;
+    private bool attacking;
+    private Health health;
     private Camera _camera;
+    private Vector2 attackDirection;
     private Vector3 mousePosition;
+    private Collider2D[] enemyHits;
+    private static readonly int X = Animator.StringToHash("x");
+    private static readonly int Y = Animator.StringToHash("y");
+    private static readonly int LastDirX = Animator.StringToHash("lastDir_x");
+    private static readonly int LastDirY = Animator.StringToHash("lastDir_y");
+    private static readonly int Walking = Animator.StringToHash("walking");
+    private static readonly int Dashing = Animator.StringToHash("dashing");
+    private static readonly int Attacking = Animator.StringToHash("attacking");
+    public Weapon weapon;
+    private static readonly int WeaponID = Animator.StringToHash("weaponID");
+    private static readonly int AttackX = Animator.StringToHash("Attack_X");
+    private static readonly int AttackY = Animator.StringToHash("Attack_Y");
 
 
-    private void Awake()
+    private void Start()
     {
-        originalSprite = _spriteRenderer.sprite;
-        MaxDashes = DashAmount;
         _rigidbody = GetComponent<Rigidbody2D>();
         _camera = Camera.main;
+        health = GetComponent<Health>();
+        StartCoroutine(Heal());
+        InitUpgrades();
     }
 
+    // Initialize stats from saved upgrades
+    public void InitUpgrades()
+    {
+        _strength = PlayerPrefs.GetFloat("STRENGTH");
+        _speed = PlayerPrefs.GetFloat("SPEED");
+        _dashAmount = PlayerPrefs.GetFloat("DASH");
+        healAmount = PlayerPrefs.GetFloat("HEAL");
+        attackSpeed = PlayerPrefs.GetFloat("AGILITY");
+        health.SetNewMaxHealth(PlayerPrefs.GetFloat("HEALTH"));
+    }
+
+    /// <summary>
+    /// Gets keyboard and mouse input
+    /// </summary>
     private void GetInput()
     {
+        walking = false;
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        dashing = Input.GetKey(KeyCode.Space);
-        mousePosition = Input.mousePosition;
+        mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+        attacking = Input.GetMouseButton(0) && readyToAttack;
+        if (direction.magnitude == 0) return;
+        // Don't need this if player isn't moving
+        lastDirection = direction;
+        dashing = Input.GetKey(KeyCode.Space) && readyToDash && _dashAmount > 0;
+        walking = true;
     }
 
     private void Animate()
     {
-        animator.SetFloat("x", direction.x);
-        animator.SetFloat("y", direction.y);
+        animator.SetFloat(X, direction.x);
+        animator.SetFloat(Y, direction.y);
+        animator.SetFloat(LastDirX, lastDirection.x);
+        animator.SetFloat(LastDirY, lastDirection.y);
+        animator.SetBool(Walking, walking);
+        animator.SetBool(Dashing, dashing);
+        animator.SetBool(Attacking, attacking);
+        animator.SetInteger(WeaponID, weapon is null ? 0 : weapon.id);
+        animator.SetFloat(AttackX, attackDirection.x);
+        animator.SetFloat(AttackY, attackDirection.y);
     }
 
     private void Update()
     {
         GetInput();
         Animate();
+        MoveAttackPoint();
     }
 
     private void FixedUpdate()
     {
         Movement();
-        HandRotation();
-        if (dashing && readyToDash && DashAmount > 0) StartCoroutine(PerformDash());;
+        if (dashing && readyToDash && _dashAmount > 0) StartCoroutine(PerformDash());
+        if (attacking && readyToAttack && weapon is not null)
+        {
+            StartCoroutine(weapon.ranged ? PerformRangedAttack() : PerformMeleeAttack());
+        }
     }
 
+    /// <summary>
+    /// Move towards keyboard input direction
+    /// </summary>
     private void Movement()
     {
         var move = direction * (_speed * Time.fixedDeltaTime);
         _rigidbody.velocity = move;
     }
     
-
+    /// <summary>
+    /// Dash towards current direction
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformDash()
     {
-        _spriteRenderer.sprite = _dashSprite;
-        DashAmount--;
+        _dashAmount--;
         readyToDash = false;
         _rigidbody.AddForce(direction * _dashForce, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.1f);
-        _spriteRenderer.sprite = originalSprite;
+        yield return new WaitForSeconds(0.5f);
         readyToDash = true;
         yield return new WaitForSeconds(_dashCooldown);
-        DashAmount++;
+        _dashAmount++;
+    }
+
+    /// <summary>
+    /// Extend attack point for further reach
+    /// </summary>
+    private void MoveAttackPoint()
+    {
+        var position = transform.position;
+        attackPoint.position = new Vector2(
+                position.x + lastDirection.x * attackPointExtension, 
+                position.y + lastDirection.y * attackPointExtension);
+    }
+
+    /// <summary>
+    /// Close range attack with any weapon
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator PerformMeleeAttack()
+    {
+        readyToAttack = false;
+        AudioManager.instance.Play(GetWeaponSoundType());
+        enemyHits = Physics2D.OverlapCircleAll(attackPoint.position, weapon.range, enemyLayer);
+        yield return new WaitForSeconds(weapon.timeToDamage);
+        foreach (var hit in enemyHits)
+        {
+            try
+            {
+                if (!hit.isTrigger) continue;
+                if (hit.CompareTag("Enemy")) hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
+                if (hit.CompareTag("Boss")) hit.GetComponent<Boss>().TakeDamage(_strength + weapon.damage);
+                if (!weapon.splashDamage) break;
+            }
+            catch (MissingReferenceException)
+            {
+            }
+        }
+        yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
+        readyToAttack = true;
+    }
+
+    /// <summary>
+    /// Long range attack with any weapon
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator PerformRangedAttack()
+    {
+        readyToAttack = false;
+        AudioManager.instance.Play(GetWeaponSoundType());
+        attackDirection =
+            new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y).normalized;
+        var projectile = Instantiate(weapon.projectile, 
+            new Vector3(transform.position.x + attackDirection.x * attackPointExtension, 
+                        transform.position.y + attackDirection.y * attackPointExtension, 
+                        transform.position.z), Quaternion.identity);
+        
+        yield return new WaitForSeconds(weapon.timeToDamage);
+        projectile.GetComponent<BoxCollider2D>().isTrigger = false;
+        projectile.GetComponent<Projectile>().damage = weapon.damage;
+        projectile.GetComponent<Rigidbody2D>().velocity = attackDirection * weapon.speed;
+        yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
+        readyToAttack = true;
     }
     
-    private void HandRotation()
+    
+    private IEnumerator Heal()
     {
-        var mouseWorldPosition = _camera.ScreenToWorldPoint(mousePosition);
-        var position = _hand.position;
-        var directionToMouse = new Vector2(mouseWorldPosition.x - position.x,
-            mouseWorldPosition.y - position.y);
-        if (directionToMouse.magnitude < _minimumDistance) return;
-        var angle = Mathf.Atan2(directionToMouse.y, directionToMouse.x) * Mathf.Rad2Deg;
-        var rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        _hand.rotation = Quaternion.Lerp(_hand.rotation, rotation, _rotationSpeed * Time.fixedDeltaTime);
+        health.Heal(healAmount);
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Heal());
+    }
+
+    /// <summary>
+    /// Decides which sound to play
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    private SoundType GetWeaponSoundType()
+    {
+        return weapon.id switch
+        {
+            1 => SoundType.ForkAttack,
+            2 => SoundType.ShovelAttack,
+            3 => SoundType.RangeWeapon,
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 }
