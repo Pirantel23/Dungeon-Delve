@@ -1,14 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using Codice.Client.ChangeTrackerService;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
+    // Phase 1 stats
     [SerializeField] private float minimumRange;
     [SerializeField] private float meleeSpeed;
     [SerializeField] private float rangedSpeed;
@@ -34,6 +30,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private int laserAttackChance;
     [SerializeField] private float laserRotationSpeed;
 
+    
+    // Special stats
     [SerializeField] private float despawnTime;
     [SerializeField] private float health;
     [SerializeField] private float healAmount;
@@ -42,6 +40,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private int shieldDuration;
     [SerializeField] private float shieldAbsorb;
 
+    
+    // Phase 2 stats
     [SerializeField] private float invincibilityDuration;
     [SerializeField] private float secondPhaseHp;
     [SerializeField] private float secondPhaseHeal;
@@ -50,6 +50,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float secondPhaseSpeed;
     [SerializeField] private float secondPhaseAttackCooldown;
     
+    
+    // Private variables
     private bool meleeMode;
     private Collider2D[] hits;
     private Vector2 direction;
@@ -64,6 +66,7 @@ public class Boss : MonoBehaviour
     private bool secondPhase;
     private bool transforming;
 
+    // Cached string variables for animator
     private static readonly int Dead = Animator.StringToHash("Dead");
     private static readonly int Phase = Animator.StringToHash("SecondPhase");
     private static readonly int X = Animator.StringToHash("x");
@@ -91,6 +94,10 @@ public class Boss : MonoBehaviour
         if (!meleeMode) RotateLaser();
     }
 
+    /// <summary>
+    /// Shield that reduces damage
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Shield()
     {
         Debug.Log("shield");
@@ -101,8 +108,13 @@ public class Boss : MonoBehaviour
 
     private void UpdateHealthbar() => healthbar.value = health / maxHealth;
     
+    /// <summary>
+    /// Reduce HP
+    /// </summary>
+    /// <param name="amount"></param>
     public void TakeDamage(float amount)
     {
+        AudioManager.instance.Play(SoundType.GolemDamage);
         if (transforming) return;
         Debug.Log($"damage {amount}");
         if (Random.Range(0, 100) < shieldChance && !shielded) StartCoroutine(Shield()); 
@@ -111,6 +123,10 @@ public class Boss : MonoBehaviour
         if (health <= 0) StartCoroutine(Die());
     }
 
+    /// <summary>
+    /// Activate second phase
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SecondPhase()
     {
         var bodyType = _rigidbody.bodyType;
@@ -128,6 +144,10 @@ public class Boss : MonoBehaviour
         _rigidbody.bodyType = bodyType;
     }
     
+    /// <summary>
+    /// Death
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator Die()
     {
         animator.SetBool(Dead, true);
@@ -148,6 +168,10 @@ public class Boss : MonoBehaviour
         StartCoroutine(Heal());
     }
 
+    /// <summary>
+    /// Boss changes his attack patern
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ChangeAttackDecision()
     {
         meleeMode = Random.Range(0, 100) < meleeModeChance;
@@ -185,6 +209,9 @@ public class Boss : MonoBehaviour
         animator.SetBool(Armor, shielded);
     }
 
+    /// <summary>
+    /// Rotate laser towards target
+    /// </summary>
     private void RotateLaser()
     {
         var position = laser.transform.position;
@@ -204,6 +231,11 @@ public class Boss : MonoBehaviour
                 position.y + direction.y * attackPointExtension);
     }
 
+    
+    /// <summary>
+    /// Powerful laser attack
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformLaserAttack()
     {
         var l = laser.GetComponent<Laser>();
@@ -216,6 +248,7 @@ public class Boss : MonoBehaviour
         laserAnimator.SetFloat("SecondPhase", secondPhase ? 1f : 0f);
         yield return new WaitForSeconds(0.5f);
         l.damage = laserDamage;
+        AudioManager.instance.Play(SoundType.Laser);
         yield return new WaitForSeconds(laserDuration);
         laser.SetActive(false);
         yield return new WaitForSeconds(rangedCooldown);
@@ -223,9 +256,14 @@ public class Boss : MonoBehaviour
     }
     
     // ReSharper disable Unity.PerformanceAnalysis
+    /// <summary>
+    /// Close attack
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformMeleeAttack()
     {
         if (distanceToTarget > meleeRange) yield break;
+        AudioManager.instance.Play(SoundType.MeleeGolem);
         animator.SetTrigger(Melee);
         Debug.Log("melee");
         readyToAttack = false;
@@ -241,6 +279,10 @@ public class Boss : MonoBehaviour
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
+    /// <summary>
+    /// Long range attack with hand
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformRangedAttack()
     {
         animator.SetTrigger(Ranged);

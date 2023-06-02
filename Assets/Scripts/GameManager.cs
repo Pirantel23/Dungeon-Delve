@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     public Weapon weapon1;
     public Weapon weapon2;
     public int coins;
+    private GameManager instance;
     void Start()
     {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 

@@ -27,6 +27,8 @@ public class Health : MonoBehaviour
     /// </summary>
     public void TakeDamage(float damage)
     {
+        if (CompareTag("Player")) AudioManager.instance.Play(SoundType.PlayerDamage);
+        else if (CompareTag("Enemy")) AudioManager.instance.Play(SoundType.WormDamage);
         amount -= damage;
         if (amount <= 0) StartCoroutine(Die());
         else animator.SetTrigger(Hurt);
@@ -51,7 +53,6 @@ public class Health : MonoBehaviour
             GetComponent<PlayerController>().enabled = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             deadScreen.SetActive(true);
-            
         }
         else if (CompareTag("Enemy"))
         {
@@ -62,7 +63,7 @@ public class Health : MonoBehaviour
         }
         
         yield return new WaitForSeconds(despawnTime);
-        if (Random.Range(0, 100) < 100)
+        if (Random.Range(0, 100) < 50)
         {
             Instantiate(healBall,transform.position, Quaternion.identity);
         }

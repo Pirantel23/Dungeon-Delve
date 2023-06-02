@@ -21,6 +21,9 @@ public class Weapon : MonoBehaviour
     public bool buyable;
     public int cost;
 
+    public GameObject buymenu;
+    public GameObject text;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!buyable)
@@ -36,7 +39,19 @@ public class Weapon : MonoBehaviour
             {
                 Money.ChangeValue(-cost);
                 FindObjectOfType<WeaponHandler>().TryChangeWeapon(this);
+                Destroy(buymenu);
+                Destroy(text);
             }
         }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player")) buymenu.SetActive(true);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")) buymenu.SetActive(false);
     }
 }

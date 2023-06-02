@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Stats
     [SerializeField] private float _strength;
     [SerializeField] private float _speed;
     [SerializeField] private float _dashForce;
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
         InitUpgrades();
     }
 
+    // Initialize stats from saved upgrades
     public void InitUpgrades()
     {
         _strength = PlayerPrefs.GetFloat("STRENGTH");
@@ -64,6 +66,9 @@ public class PlayerController : MonoBehaviour
         health.SetNewMaxHealth(PlayerPrefs.GetFloat("HEALTH"));
     }
 
+    /// <summary>
+    /// Gets keyboard and mouse input
+    /// </summary>
     private void GetInput()
     {
         walking = false;
@@ -108,13 +113,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Move towards keyboard input direction
+    /// </summary>
     private void Movement()
     {
         var move = direction * (_speed * Time.fixedDeltaTime);
         _rigidbody.velocity = move;
     }
     
-
+    /// <summary>
+    /// Dash towards current direction
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformDash()
     {
         _dashAmount--;
@@ -126,6 +137,9 @@ public class PlayerController : MonoBehaviour
         _dashAmount++;
     }
 
+    /// <summary>
+    /// Extend attack point for further reach
+    /// </summary>
     private void MoveAttackPoint()
     {
         var position = transform.position;
@@ -134,6 +148,10 @@ public class PlayerController : MonoBehaviour
                 position.y + lastDirection.y * attackPointExtension);
     }
 
+    /// <summary>
+    /// Close range attack with any weapon
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformMeleeAttack()
     {
         readyToAttack = false;
@@ -142,15 +160,25 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(weapon.timeToDamage);
         foreach (var hit in enemyHits)
         {
-            if (!hit.isTrigger) continue;
-            if (hit.CompareTag("Enemy")) hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
-            if (hit.CompareTag("Boss")) hit.GetComponent<Boss>().TakeDamage(_strength + weapon.damage);
-            if (!weapon.splashDamage) break;
+            try
+            {
+                if (!hit.isTrigger) continue;
+                if (hit.CompareTag("Enemy")) hit.GetComponent<Health>().TakeDamage(_strength + weapon.damage);
+                if (hit.CompareTag("Boss")) hit.GetComponent<Boss>().TakeDamage(_strength + weapon.damage);
+                if (!weapon.splashDamage) break;
+            }
+            catch (MissingReferenceException)
+            {
+            }
         }
         yield return new WaitForSeconds(weapon.cooldown / attackSpeed);
         readyToAttack = true;
     }
 
+    /// <summary>
+    /// Long range attack with any weapon
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PerformRangedAttack()
     {
         readyToAttack = false;
@@ -178,13 +206,18 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Heal());
     }
 
+    /// <summary>
+    /// Decides which sound to play
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
     private SoundType GetWeaponSoundType()
     {
         return weapon.id switch
         {
             1 => SoundType.ForkAttack,
             2 => SoundType.ShovelAttack,
-            3 => SoundType.ButtonClick,
+            3 => SoundType.RangeWeapon,
             _ => throw new ArgumentOutOfRangeException()
         };
     }

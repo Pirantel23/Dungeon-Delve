@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using System.Reflection;
 using Random = UnityEngine.Random;
 
 internal enum Side
@@ -57,7 +56,6 @@ public class FloorMapGeneration : MonoBehaviour
     // размер этажа
     [SerializeField] private int maximumRoomsOnFloor = 7;
     [SerializeField] private int minimumRoomsOnFloor = 5;
-    [SerializeField] private int shopsOnFloor = 3;
 
     // количество мобов и спавнер
     [SerializeField] private int minAmount = 2;
@@ -65,6 +63,7 @@ public class FloorMapGeneration : MonoBehaviour
 
     [SerializeField] private GameObject spawnerPrefab;
     [SerializeField] private GameObject boss;
+    [SerializeField] private GameObject shop;
 
     private const int NewRoomChance = 50;
 
@@ -261,7 +260,11 @@ public class FloorMapGeneration : MonoBehaviour
         }
 
         if (isShopRoom)
+        {
             isShopRoom = false;
+            Instantiate(shop, Vector2.zero, Quaternion.identity);
+        }
+            
 
         if (isBossRoom)
         {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6896334596924838916}
   - component: {fileID: 6896334596924838915}
   - component: {fileID: 6896334596924838914}
+  - component: {fileID: 5116102571041872165}
   m_Layer: 6
   m_Name: Blob
   m_TagString: Enemy
@@ -52,7 +53,7 @@ MonoBehaviour:
   detectionRange: 100
   minimumRange: 0.01
   speed: 0.2
-  attackDamage: 30
+  attackDamage: 15
   attackCooldown: 2
   attackRange: 20
   target: {fileID: 0}
@@ -64,7 +65,7 @@ MonoBehaviour:
     m_Bits: 128
   ranged: 1
   projectile: {fileID: 2455617937724279203, guid: b3947aef10b16e740a552b6c5012e337, type: 3}
-  projectileSpeed: 5
+  projectileSpeed: 3
   timeToDamage: 0.05
   moneyDropped: 10
 --- !u!50 &6896334596924838916
@@ -122,6 +123,32 @@ MonoBehaviour:
   deadScreen: {fileID: 0}
   healBall: {fileID: 2811503559717506420, guid: 914a516ce543f9f47a9e7754b636eae1, type: 3}
   maxHealth: 0
+--- !u!61 &5116102571041872165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896334596924838919}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &6896334597162658289
 GameObject:
   m_ObjectHideFlags: 0

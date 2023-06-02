@@ -41,9 +41,10 @@ public class PlayerUpgrader : MonoBehaviour
     private int hayCount;
     private PlayerController player;
 
-    private void Awake()
+    private void Start()
     {
         hayCount = PlayerPrefs.GetInt("HAY");
+        Money.SetAmount(0);
         CheckForFirstLaunch();
         player = FindObjectOfType<PlayerController>();
         ChangeText(strengthIcon, strengthCost.ToString());
@@ -61,6 +62,13 @@ public class PlayerUpgrader : MonoBehaviour
 
     private void ChangeText(TextMeshProUGUI text, string newValue) => text.text = newValue;
 
+    /// <summary>
+    /// Upgrade certain parameter and update its cost
+    /// </summary>
+    /// <param name="parameterName"></param>
+    /// <param name="parameterCost"></param>
+    /// <param name="textObject"></param>
+    /// <param name="linearIncrement"></param>
     private void UpgradeParameter(string parameterName, int parameterCost, TextMeshProUGUI textObject, bool linearIncrement)
     {
         var t = PlayerPrefs.GetInt($"{parameterName}_T");
@@ -135,7 +143,7 @@ public class PlayerUpgrader : MonoBehaviour
         PlayerPrefs.SetInt("HEALTH_T", 0);
         PlayerPrefs.SetInt("AGILITY_T", 0);
 
-        PlayerPrefs.SetInt("HAY", 10000);
+        PlayerPrefs.SetInt("HAY", 0);
 
         PlayerPrefs.SetInt("PLAYED", 1);
     }
